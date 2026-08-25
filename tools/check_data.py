@@ -9,7 +9,78 @@ import json
 import sys
 from pathlib import Path
 
-DATA = Path(__file__).resolve().parent.parent / "data" / "skills.json"
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data" / "skills.json"
+PROGRAMS = ROOT / "data" / "programs.json"
+
+DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+
+
+def check_programs(branch_ids, tier_numbers):
+    """Validate data/programs.json — the file a coach edits by hand."""
+    payload = json.loads(PROGRAMS.read_text())
+    problems = []
+
+    focus = payload["focus"]
+    for name, spec in focus.items():
+        if "label" not in spec:
+            problems.append(f"focus {name!r}: no label")
+        for branch in spec.get("branches", []):
+            if branch not in branch_ids:
+                problems.append(f"focus {name!r}: unknown branch {branch!r}")
+    if "rest" not in focus:
+        problems.append("focus: a 'rest' entry is required")
+
+    block_ids = []
+    for block in payload["blocks"]:
+        block_ids.append(block["id"])
+        if block["pick"] not in ("hold", "reps", "any"):
+            problems.append(f"block {block['id']!r}: pick must be hold/reps/any")
+        if block.get("include", "working") not in ("working", "owned", "any"):
+            problems.append(f"block {block['id']!r}: include must be working/owned/any")
+        if not isinstance(block.get("count"), int) or block["count"] < 1:
+            problems.append(f"block {block['id']!r}: count must be a positive integer")
+
+    for tier in tier_numbers:
+        prescription = payload["prescriptions"].get(str(tier))
+        if not prescription:
+            problems.append(f"prescriptions: nothing for tier {tier}")
+            continue
+        for block_id in block_ids:
+            spec = prescription.get(block_id)
+            if not spec:
+                problems.append(f"prescriptions[{tier}]: no {block_id!r} prescription")
+            elif not spec.get("sets") or not spec.get("amount"):
+                problems.append(f"prescriptions[{tier}].{block_id}: needs sets and amount")
+
+    seen = set()
+    for template in payload["templates"]:
+        if template["id"] in seen:
+            problems.append(f"template {template['id']!r}: duplicate id")
+        seen.add(template["id"])
+        if template["tier"] not in tier_numbers:
+            problems.append(f"template {template['id']!r}: unknown tier {template['tier']}")
+        week = template.get("week", {})
+        for day in DAYS:
+            if day not in week:
+                problems.append(f"template {template['id']!r}: missing {day}")
+            elif week[day] not in focus:
+                problems.append(f"template {template['id']!r}: {day} has unknown focus {week[day]!r}")
+        # A 'light' focus (mobility) is a day you show up for but not a
+        # training session — sessionsPerWeek counts the hard ones.
+        training = sum(1 for d in DAYS
+                       if week.get(d) and week[d] != "rest"
+                       and not focus.get(week[d], {}).get("light"))
+        if training != template.get("sessionsPerWeek"):
+            problems.append(
+                f"template {template['id']!r}: sessionsPerWeek says "
+                f"{template.get('sessionsPerWeek')} but the week has {training} training days")
+
+    for tier in tier_numbers:
+        if not any(t["tier"] == tier for t in payload["templates"]):
+            problems.append(f"templates: no split written for tier {tier}")
+
+    return problems, payload
 
 
 def main():
@@ -83,6 +154,9 @@ def main():
     for skill in skills:
         visit(skill["id"], [])
 
+    program_problems, programs = check_programs(branch_ids, tier_numbers)
+    problems.extend(program_problems)
+
     if problems:
         print(f"FAIL — {len(problems)} problem(s):")
         for p in problems[:40]:
@@ -91,6 +165,8 @@ def main():
 
     print(f"OK — {len(skills)} skills, {sum(len(s['prereqs']) for s in skills)} edges, "
           f"{sum(1 for s in skills if not s['prereqs'])} entry points, no cycles.")
+    print(f"OK — {len(programs['templates'])} program templates, "
+          f"{len(programs['blocks'])} blocks, {len(programs['focus'])} focus types.")
     return 0
 
 

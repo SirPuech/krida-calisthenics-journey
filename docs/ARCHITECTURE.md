@@ -48,6 +48,13 @@ Under `store` sits an *adapter*, and an adapter is only four methods:
 implements the same four methods against the GitHub Gists API. Swapping or
 adding a backend touches neither the views nor the unlock engine.
 
+`js/coach.js` sits on the same principle: it holds the resolution logic but no
+coaching judgement. Splits, session structure and every set/rep prescription
+live in `data/programs.json`, so a coach retunes the product by editing JSON and
+a developer is not in the loop. The file names no skills — blocks describe what
+to select and the resolver matches that against the athlete's unlock state,
+which is what keeps a template valid as someone progresses through the tree.
+
 `js/progress.js` is deliberately pure — every function takes
 `(catalogue, profile)` and returns a value. That is what makes phase 3 cheap: an
 XP total or a streak can be computed on a CI runner, from a stored profile, with
@@ -130,9 +137,10 @@ new file in `js/store/`, not a rewrite.
 source/skill-tree.xlsx
     │  tools/build_skills.py     (parses the sheet, its arrows and its geometry)
     ▼
-data/skills.json  ──▶ tools/check_data.py  ──▶ Pages deploy
-                       reachability, cycles,
-                       tier monotonicity
+data/skills.json  ──┬─▶ tools/check_data.py  ──▶ Pages deploy
+                    │      reachability, cycles,
+data/programs.json ─┘      tier monotonicity,
+  (hand-authored)          template/prescription integrity
 ```
 
 CI regenerates `data/skills.json` and fails if it differs from what is committed,

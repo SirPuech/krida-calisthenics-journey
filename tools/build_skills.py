@@ -52,8 +52,10 @@ ALIASES = {
 BRANCH_RULES = [
     ("legs",      r"squat|leg ext|leg press|nordic|hamstring|pistol|shrimp|shrip|sissy|hawaiian"),
     ("core",      r"plank|dragon|l-sit|v-sit|manna|tuck.sit|reverse planche|leg ext\. lever"),
-    ("handstand", r"\bhs\b|handstand|tigerbend|planche press|maltese press"),
+    # Rings before handstand on purpose: "Ring HS" and "Ring Planche Press" are
+    # done on rings and sit in the sheet's ring cluster, so the apparatus wins.
     ("rings",     r"\bring|iron cross|\bic\b|butterfly|azarian|van gelder|zanetti|carmona|victorian|bulgarian"),
+    ("handstand", r"\bhs\b|handstand|tigerbend|planche press|maltese press"),
     ("pull",      r"pull|chin|\bmu\b|muscle up|front lever|back lever|\bbl\b|hefesto|pelikan|\bfl\b"),
     ("push",      r"push|dip|planche|maltese|morozov"),
 ]

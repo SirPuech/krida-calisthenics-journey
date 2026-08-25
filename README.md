@@ -46,8 +46,9 @@ project page, a user page or a subdirectory without configuration.
 index.html                app shell — header, nav, mount point
 assets/css/app.css        Cyber Kinetic design tokens and components
 js/app.js                 bootstrap + hash router
-js/data.js                loads data/skills.json, builds the lookups
+js/data.js                loads the JSON data files, builds the lookups
 js/progress.js            unlock engine: status, XP, streak, badges (pure functions)
+js/coach.js               session builder — resolves programs.json against your unlocks
 js/i18n.js                EN / TH interface copy
 js/store/                 profile persistence
   schema.js                 profile shape + migrations
@@ -56,7 +57,8 @@ js/store/                 profile persistence
   index.js                  the facade every view talks to
 js/views/                 one module per screen
 data/skills.json          generated skill catalogue — do not hand-edit
-source/skill-tree.xlsx    the workbook everything derives from
+data/programs.json        coach-editable splits and prescriptions — hand-edit this
+source/skill-tree.xlsx    the workbook the catalogue derives from
 tools/build_skills.py     regenerates data/skills.json
 tools/check_data.py       validates the catalogue (runs in CI)
 ```
@@ -102,6 +104,45 @@ re-checks that, plus reachability and cycles, on every push.
 
 **If a prerequisite looks wrong to you, it probably is.** Put the correction in
 `TIER_OVERRIDES` or `OVERRIDES` in `tools/build_skills.py` and rebuild.
+
+## The program (for a coach)
+
+`data/programs.json` is the one file a calisthenics coach can retune the whole
+app from. Nothing generates it — edit it directly and the change is live on the
+next deploy. It holds no skill names at all; it describes **what to pick**, and
+`js/coach.js` resolves that against whatever the athlete has actually unlocked.
+
+Three things live in it:
+
+- **`templates`** — the weekly splits, each tagged with the tier it is written
+  for. The app auto-selects the closest match to the athlete's level, and they
+  can pick a different one. Add a template and it appears in the dropdown.
+- **`prescriptions`** — sets, reps/seconds and rest per tier, per block. Change
+  the tier-2 strength line and every intermediate strength block changes.
+- **`blocks`** — the shape of a session, in order. Each block says which
+  movement type to pick (`hold` / `reps` / `any`), which pool to draw from
+  (`working` = unlocked but not yet cleared, `owned` = already cleared), how far
+  from the athlete's level (`tierOffset`), and how many.
+
+The default structure is skill work → strength → accessory: statics first on a
+fresh nervous system, dynamic strength as the main work, then cleared skills a
+tier down for accessory volume.
+
+**Training level** drives all of it. `Auto` follows the highest tier the athlete
+has cleared anything in; they can also pin a level to deliberately train below
+or above it. Any day's focus can be overridden without leaving the split.
+
+`tools/check_data.py` validates this file too — unknown branches, missing
+prescriptions, a template whose week does not match its advertised
+`sessionsPerWeek`, or a tier with no split written for it will all fail CI.
+
+Thai copy goes in `labelTh` / `noteTh` alongside each English field, and
+templates take optional `nameTh` / `summaryTh`. Anything untranslated falls back
+to English rather than rendering blank.
+
+**What it is not:** general programming based on tier, not individual coaching.
+It knows nothing about injuries, sleep or recovery, and the app says so on the
+program page.
 
 ## Your progress
 

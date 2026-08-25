@@ -15,12 +15,12 @@
    "label": "Core"
   },
   {
-   "id": "handstand",
-   "label": "Handstand"
-  },
-  {
    "id": "rings",
    "label": "Rings"
+  },
+  {
+   "id": "handstand",
+   "label": "Handstand"
   },
   {
    "id": "pull",
@@ -792,52 +792,6 @@
    }
   },
   {
-   "id": "ring-hs",
-   "name": "Ring HS",
-   "sheetName": "Ring HS",
-   "branch": "handstand",
-   "branchLabel": "Handstand",
-   "tier": 2,
-   "tierName": "Intermediate",
-   "depth": 13.0,
-   "xp": 250,
-   "standard": {
-    "sets": 3,
-    "type": "hold",
-    "amount": 15,
-    "source": "default"
-   },
-   "prereqs": [
-    "ring-dip"
-   ],
-   "videos": [
-    {
-     "kind": "form",
-     "url": "https://youtu.be/BTAsmZAOLVU?t=7",
-     "credit": "Jared Rodriguez"
-    },
-    {
-     "kind": "tutorial",
-     "url": "https://youtu.be/MxQjAcIG7k4",
-     "credit": "Fitness On The Run"
-    },
-    {
-     "kind": "alt",
-     "url": "https://www.youtube.com/watch?v=UU2gnuYZYcE",
-     "credit": "ringsking"
-    }
-   ],
-   "variations": [
-    "Ring Straps Assisted HS",
-    "Shoulder Ring HS",
-    "Shoulder Tuck Ring HS"
-   ],
-   "pos": {
-    "row": 29,
-    "col": 17
-   }
-  },
-  {
    "id": "ol-nordic-hamstring-curl",
    "name": "OL Nordic Hamstring Curl",
    "sheetName": "OL Nordic Hamstring Curl",
@@ -1365,6 +1319,52 @@
    }
   },
   {
+   "id": "ring-hs",
+   "name": "Ring HS",
+   "sheetName": "Ring HS",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 13.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BTAsmZAOLVU?t=7",
+     "credit": "Jared Rodriguez"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/MxQjAcIG7k4",
+     "credit": "Fitness On The Run"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=UU2gnuYZYcE",
+     "credit": "ringsking"
+    }
+   ],
+   "variations": [
+    "Ring Straps Assisted HS",
+    "Shoulder Ring HS",
+    "Shoulder Tuck Ring HS"
+   ],
+   "pos": {
+    "row": 29,
+    "col": 17
+   }
+  },
+  {
    "id": "straight-arm-ring-flies",
    "name": "Straight Arm Ring Flies",
    "sheetName": "Straight Arm Ring Flies",
@@ -1696,43 +1696,6 @@
    "pos": {
     "row": 8,
     "col": 17
-   }
-  },
-  {
-   "id": "ring-planche-press",
-   "name": "Ring Planche Press",
-   "sheetName": "Ring Planche Press",
-   "branch": "handstand",
-   "branchLabel": "Handstand",
-   "tier": 3,
-   "tierName": "Advanced",
-   "depth": 21.0,
-   "xp": 500,
-   "standard": {
-    "sets": 3,
-    "type": "hold",
-    "amount": 10,
-    "source": "default"
-   },
-   "prereqs": [
-    "planche-lean"
-   ],
-   "videos": [
-    {
-     "kind": "form",
-     "url": "https://youtu.be/6iC3dxxtFD8?t=137",
-     "credit": "Yuri Van Gelder"
-    },
-    {
-     "kind": "tutorial",
-     "url": "https://youtu.be/sa4vKNEWKQ0",
-     "credit": "David Packer"
-    }
-   ],
-   "variations": [],
-   "pos": {
-    "row": 31,
-    "col": 22
    }
   },
   {
@@ -2873,6 +2836,43 @@
    }
   },
   {
+   "id": "ring-planche-press",
+   "name": "Ring Planche Press",
+   "sheetName": "Ring Planche Press",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 21.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "planche-lean"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/6iC3dxxtFD8?t=137",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sa4vKNEWKQ0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 31,
+    "col": 22
+   }
+  },
+  {
    "id": "ring-victorian-cross",
    "name": "Ring Victorian Cross",
    "sheetName": "Ring Victorian Cross",
@@ -2889,7 +2889,7 @@
     "source": "default"
    },
    "prereqs": [
-    "ring-planche"
+    "ring-planche-press"
    ],
    "videos": [
     {

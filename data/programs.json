@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "editableBy": "coach",
+  "notes": [
+    "Hand-authored, unlike data/skills.json — edit this file directly, nothing regenerates it.",
+    "A coach can retune the whole app from here: change a prescription to change every session at that level, add a template to add a split, or rewrite the block structure to change how a session is ordered.",
+    "block.include picks the pool: 'working' = unlocked but not yet cleared (what you are chasing), 'owned' = already cleared (what you train for volume), 'any' = both.",
+    "Skills are never named here. Blocks describe WHAT to pick (hold vs reps, which branches, which tier relative to the athlete) and js/coach.js resolves that against whatever the athlete has actually unlocked.",
+    "General programming, not individual coaching. It knows nothing about injuries, sleep or recovery.",
+    "Thai copy: focus.labelTh and block.labelTh/noteTh are used when the interface is in Thai. Templates take optional nameTh and summaryTh the same way — add them and they are picked up automatically; without them the English text is shown."
+  ],
+  "focus": {
+    "full": {
+      "label": "Full body",
+      "branches": [
+        "push",
+        "pull",
+        "core",
+        "legs"
+      ],
+      "labelTh": "เต็มตัว"
+    },
+    "push": {
+      "label": "Push",
+      "branches": [
+        "push"
+      ],
+      "labelTh": "ดัน"
+    },
+    "pull": {
+      "label": "Pull",
+      "branches": [
+        "pull"
+      ],
+      "labelTh": "ดึง"
+    },
+    "upper": {
+      "label": "Upper body",
+      "branches": [
+        "push",
+        "pull"
+      ],
+      "labelTh": "ช่วงบน"
+    },
+    "core": {
+      "label": "Core",
+      "branches": [
+        "core"
+      ],
+      "labelTh": "แกนกลาง"
+    },
+    "legs": {
+      "label": "Legs",
+      "branches": [
+        "legs"
+      ],
+      "labelTh": "ขา"
+    },
+    "handstand": {
+      "label": "Handstand",
+      "branches": [
+        "handstand"
+      ],
+      "labelTh": "ยืนมือ"
+    },
+    "rings": {
+      "label": "Rings",
+      "branches": [
+        "rings"
+      ],
+      "labelTh": "ห่วง"
+    },
+    "skill": {
+      "label": "Skill day",
+      "branches": [
+        "handstand",
+        "rings",
+        "core"
+      ],
+      "labelTh": "วันฝึกท่า"
+    },
+    "mobility": {
+      "label": "Mobility",
+      "branches": [
+        "core",
+        "legs"
+      ],
+      "light": true,
+      "labelTh": "ยืดเหยียด"
+    },
+    "rest": {
+      "label": "Rest",
+      "branches": [],
+      "labelTh": "พัก"
+    }
+  },
+  "blocks": [
+    {
+      "id": "skill",
+      "label": "Skill work",
+      "pick": "hold",
+      "tierOffset": 0,
+      "count": 2,
+      "note": "First, on a fresh nervous system. Quality over accumulation — end the set while the shape is still clean.",
+      "include": "working",
+      "labelTh": "ฝึกท่า",
+      "noteTh": "ทำเป็นอย่างแรกตอนที่ระบบประสาทยังสด เน้นคุณภาพมากกว่าปริมาณ — หยุดเซ็ตตอนที่ฟอร์มยังสวย"
+    },
+    {
+      "id": "strength",
+      "label": "Strength",
+      "pick": "reps",
+      "tierOffset": 0,
+      "count": 2,
+      "note": "The session's main work. Full range, controlled negative, stop 1–2 reps short of failure.",
+      "include": "working",
+      "labelTh": "สร้างแรง",
+      "noteTh": "งานหลักของวัน เต็มช่วงการเคลื่อนไหว ลงช้าและควบคุม หยุดก่อนหมดแรง 1–2 ครั้ง"
+    },
+    {
+      "id": "accessory",
+      "label": "Accessory",
+      "pick": "any",
+      "tierOffset": -1,
+      "count": 2,
+      "note": "Skills you already own, a tier below your working level. Volume and joint prep — this is where the reps live, not where you chase a new shape.",
+      "include": "owned",
+      "labelTh": "เสริม",
+      "noteTh": "ท่าที่คุณผ่านแล้ว ต่ำกว่าระดับที่ฝึกอยู่หนึ่งขั้น เน้นปริมาณและเตรียมข้อต่อ ไม่ใช่การไล่ท่าใหม่"
+    }
+  ],
+  "prescriptions": {
+    "1": {
+      "skill": {
+        "sets": 3,
+        "amount": 15,
+        "unit": "s",
+        "rest": "60s"
+      },
+      "strength": {
+        "sets": 3,
+        "amount": 10,
+        "unit": "reps",
+        "rest": "90s"
+      },
+      "accessory": {
+        "sets": 3,
+        "amount": 12,
+        "unit": "reps",
+        "rest": "60s"
+      }
+    },
+    "2": {
+      "skill": {
+        "sets": 5,
+        "amount": 10,
+        "unit": "s",
+        "rest": "90s"
+      },
+      "strength": {
+        "sets": 4,
+        "amount": 8,
+        "unit": "reps",
+        "rest": "2 min"
+      },
+      "accessory": {
+        "sets": 3,
+        "amount": 10,
+        "unit": "reps",
+        "rest": "90s"
+      }
+    },
+    "3": {
+      "skill": {
+        "sets": 6,
+        "amount": 8,
+        "unit": "s",
+        "rest": "2 min"
+      },
+      "strength": {
+        "sets": 5,
+        "amount": 5,
+        "unit": "reps",
+        "rest": "3 min"
+      },
+      "accessory": {
+        "sets": 3,
+        "amount": 8,
+        "unit": "reps",
+        "rest": "2 min"
+      }
+    },
+    "4": {
+      "skill": {
+        "sets": 6,
+        "amount": 5,
+        "unit": "s",
+        "rest": "3 min"
+      },
+      "strength": {
+        "sets": 5,
+        "amount": 3,
+        "unit": "reps",
+        "rest": "3–4 min"
+      },
+      "accessory": {
+        "sets": 3,
+        "amount": 6,
+        "unit": "reps",
+        "rest": "2 min"
+      }
+    }
+  },
+  "templates": [
+    {
+      "id": "foundation-3",
+      "tier": 1,
+      "name": "Foundation full-body",
+      "summary": "Three full-body days with a rest day between each. Everything is trained often enough to learn the movement, lightly enough to recover.",
+      "sessionsPerWeek": 3,
+      "week": {
+        "mon": "full",
+        "tue": "rest",
+        "wed": "full",
+        "thu": "rest",
+        "fri": "full",
+        "sat": "mobility",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "upper-lower-4",
+      "tier": 1,
+      "name": "Upper / lower",
+      "summary": "Four days, upper and lower alternating. Slightly more volume per movement than the full-body split once three days stops being enough.",
+      "sessionsPerWeek": 4,
+      "week": {
+        "mon": "upper",
+        "tue": "legs",
+        "wed": "rest",
+        "thu": "upper",
+        "fri": "core",
+        "sat": "mobility",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "push-pull-4",
+      "tier": 2,
+      "name": "Push / pull split",
+      "summary": "The standard intermediate split. Push and pull get a dedicated day each, with a skill day for handstand and ring work.",
+      "sessionsPerWeek": 4,
+      "week": {
+        "mon": "push",
+        "tue": "pull",
+        "wed": "mobility",
+        "thu": "legs",
+        "fri": "skill",
+        "sat": "rest",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "ppl-5",
+      "tier": 2,
+      "name": "Push / pull / legs",
+      "summary": "Five days. Each pattern twice a fortnight with a core day — for when four days is recovering easily.",
+      "sessionsPerWeek": 5,
+      "week": {
+        "mon": "push",
+        "tue": "pull",
+        "wed": "legs",
+        "thu": "rest",
+        "fri": "push",
+        "sat": "pull",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "straight-arm-5",
+      "tier": 3,
+      "name": "Straight-arm focus",
+      "summary": "Static work leads every session and dynamic strength follows it. This is the split for planche and front-lever progress.",
+      "sessionsPerWeek": 5,
+      "week": {
+        "mon": "push",
+        "tue": "pull",
+        "wed": "handstand",
+        "thu": "rest",
+        "fri": "rings",
+        "sat": "legs",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "rings-5",
+      "tier": 3,
+      "name": "Rings emphasis",
+      "summary": "Ring strength twice a week either side of the push and pull days, for the cross and ring-planche line.",
+      "sessionsPerWeek": 5,
+      "week": {
+        "mon": "rings",
+        "tue": "pull",
+        "wed": "mobility",
+        "thu": "rings",
+        "fri": "push",
+        "sat": "legs",
+        "sun": "rest"
+      }
+    },
+    {
+      "id": "high-frequency-6",
+      "tier": 4,
+      "name": "High-frequency skill",
+      "summary": "Six short sessions. At this level the limit is connective tissue, not muscle — frequent low-volume exposure beats long sessions.",
+      "sessionsPerWeek": 6,
+      "week": {
+        "mon": "skill",
+        "tue": "push",
+        "wed": "pull",
+        "thu": "skill",
+        "fri": "rings",
+        "sat": "legs",
+        "sun": "rest"
+      }
+    }
+  ]
+}

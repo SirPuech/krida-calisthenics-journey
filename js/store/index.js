@@ -87,8 +87,31 @@ export const store = {
     });
   },
 
-  setProgramDay(day, branch) {
-    this.update((p) => { p.program[day] = branch; });
+  setProgramDay(day, focus) {
+    this.update((p) => {
+      if (focus) p.program.days[day] = focus;
+      else delete p.program.days[day];
+    });
+  },
+
+  /** 'auto' follows your cleared skills; a number pins the training level. */
+  setProgramLevel(level) {
+    this.update((p) => {
+      p.program.level = level === 'auto' ? 'auto' : Number(level);
+      p.program.templateId = null;   // the old split may not fit the new level
+      p.program.days = {};           // and neither do its per-day overrides
+    });
+  },
+
+  setProgramTemplate(templateId) {
+    this.update((p) => {
+      p.program.templateId = templateId || null;
+      p.program.days = {};           // a new split replaces the week wholesale
+    });
+  },
+
+  resetProgramDays() {
+    this.update((p) => { p.program.days = {}; });
   },
 
   setName(name) {

@@ -6,7 +6,7 @@
  * there is no 404 rewrite rule to get wrong and the site works identically
  * from a user page, a project page or a local file server.
  */
-import { loadCatalogue } from './data.js';
+import { loadCatalogue, loadPrograms } from './data.js';
 import { store } from './store/index.js';
 import { setLang, t } from './i18n.js';
 
@@ -30,6 +30,7 @@ const ROUTES = [
 
 const main = document.querySelector('main');
 let catalogue = null;
+let programs = null;
 let currentRoute = null;
 
 function parseHash() {
@@ -52,7 +53,7 @@ function render({ scroll = true } = {}) {
   markNav(route.name);
   main.innerHTML = '<div class="wrap"></div>';
   const mount = main.firstElementChild;
-  const context = { catalogue, store, profile: store.profile, params, mount, rerender: () => render({ scroll: false }) };
+  const context = { catalogue, programs, store, profile: store.profile, params, mount, rerender: () => render({ scroll: false }) };
   try {
     route.view(context);
   } catch (err) {
@@ -98,7 +99,7 @@ function wireChrome() {
 
 async function boot() {
   try {
-    [catalogue] = await Promise.all([loadCatalogue(), store.init()]);
+    [catalogue, programs] = await Promise.all([loadCatalogue(), loadPrograms(), store.init()]);
   } catch (err) {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;

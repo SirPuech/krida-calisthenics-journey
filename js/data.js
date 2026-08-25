@@ -2,12 +2,21 @@
 
 let cache = null;
 
+async function fetchJson(name, label) {
+  // Relative so the site works from a project page (/repo-name/) as well as root.
+  const res = await fetch(new URL(`../data/${name}`, import.meta.url));
+  if (!res.ok) throw new Error(`Could not load ${label} (${res.status}).`);
+  return res.json();
+}
+
+/** Coach-authored program templates and prescriptions. */
+export function loadPrograms() {
+  return fetchJson('programs.json', 'the program templates');
+}
+
 export async function loadCatalogue() {
   if (cache) return cache;
-  // Relative so the site works from a project page (/repo-name/) as well as root.
-  const res = await fetch(new URL('../data/skills.json', import.meta.url));
-  if (!res.ok) throw new Error(`Could not load the skill catalogue (${res.status}).`);
-  const raw = await res.json();
+  const raw = await fetchJson('skills.json', 'the skill catalogue');
 
   const byId = new Map(raw.skills.map((s) => [s.id, s]));
   const unlocks = new Map();           // skillId -> skills it opens up
