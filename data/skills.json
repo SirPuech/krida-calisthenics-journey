@@ -1,0 +1,4241 @@
+{
+ "version": 1,
+ "generatedFrom": "skill-tree.xlsx",
+ "root": {
+  "row": 21,
+  "col": 16
+ },
+ "branches": [
+  {
+   "id": "legs",
+   "label": "Legs"
+  },
+  {
+   "id": "core",
+   "label": "Core"
+  },
+  {
+   "id": "handstand",
+   "label": "Handstand"
+  },
+  {
+   "id": "rings",
+   "label": "Rings"
+  },
+  {
+   "id": "pull",
+   "label": "Pull"
+  },
+  {
+   "id": "push",
+   "label": "Push"
+  }
+ ],
+ "tiers": [
+  {
+   "tier": 1,
+   "name": "Beginner",
+   "xp": 100
+  },
+  {
+   "tier": 2,
+   "name": "Intermediate",
+   "xp": 250
+  },
+  {
+   "tier": 3,
+   "name": "Advanced",
+   "xp": 500
+  },
+  {
+   "tier": 4,
+   "name": "Master",
+   "xp": 1000
+  }
+ ],
+ "notes": [
+  "Skill names, video credits and variations come straight from the workbook.",
+  "branch / tier / prereqs are derived: tier from distance to the root column, prereqs from the arrows drawn on the TREE sheet with a nearest-neighbour fallback.",
+  "standard.source == 'default' means the rep target is a placeholder, not sheet data."
+ ],
+ "skills": [
+  {
+   "id": "plank",
+   "name": "Plank",
+   "sheetName": "Plank(s)",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 6.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 20,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/F-nQ_KJgfCY?t=22",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/F-nQ_KJgfCY",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/CvjgEoZ2a88",
+     "credit": "Calimnastic"
+    }
+   ],
+   "variations": [
+    "Elbow Plank",
+    "Side Plank",
+    "Superman Plank",
+    "Reverse Plank"
+   ],
+   "pos": {
+    "row": 21,
+    "col": 22
+   }
+  },
+  {
+   "id": "tuck-sit",
+   "name": "Tuck-Sit",
+   "sheetName": "Tuck-Sit",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 7.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 20,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/eRDcHCSlyo4",
+     "credit": "Nicolas Kabbani"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 19,
+    "col": 20
+   }
+  },
+  {
+   "id": "dragon-flag",
+   "name": "Dragon-Flag",
+   "sheetName": "Dragon-Flag",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 8.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "plank"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/pvz7k5gO-DE?t=221",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/pvz7k5gO-DE",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=jtNDhT0fWQg",
+     "credit": "Bodyweight Mastery"
+    }
+   ],
+   "variations": [
+    "Tuck",
+    "Single Leg",
+    "Straddle",
+    "Full",
+    "Straight Arms",
+    "Straight Arms Bar Over Head",
+    "OA Push-Up",
+    "Fingertip OA Push-Up",
+    "Hinge OA Push-Up",
+    "Incline OA Push-Up"
+   ],
+   "pos": {
+    "row": 21,
+    "col": 24
+   }
+  },
+  {
+   "id": "wall-hs",
+   "name": "Wall HS",
+   "sheetName": "Wall HS",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 7.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 20,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/QlvhMCV_ImM?t=41",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/H2KSIMwNOfA",
+     "credit": "Tom Merrick"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/QlvhMCV_ImM",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 17,
+    "col": 17
+   }
+  },
+  {
+   "id": "hamstring-bridge",
+   "name": "Hamstring Bridge",
+   "sheetName": "Hamstring Bridge",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 3.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 21,
+    "col": 13
+   }
+  },
+  {
+   "id": "nordic-hamstring-curl",
+   "name": "Nordic Hamstring Curl",
+   "sheetName": "Nordic Hamstring Curl",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 7.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "hamstring-bridge"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 21,
+    "col": 9
+   }
+  },
+  {
+   "id": "squat",
+   "name": "Squat",
+   "sheetName": "Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 9.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 17,
+    "col": 19
+   }
+  },
+  {
+   "id": "pull-up",
+   "name": "Pull-Up",
+   "sheetName": "Pull-Up",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 5.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/XB_7En-zf_M?t=51",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=XB_7En-zf_M",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+     "credit": "Calisthenicmovement"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 23,
+    "col": 14
+   }
+  },
+  {
+   "id": "push-up",
+   "name": "Push-Up",
+   "sheetName": "Push-Up",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 5.5,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/IODxDxX7oi4",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/-WXc4E-zcao",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/IODxDxX7oi4",
+     "credit": "Calisthenicmovement"
+    }
+   ],
+   "variations": [
+    "Diamond Push-Up",
+    "Tiger Band Push-Up",
+    "Archer Push-Up",
+    "Walking Gecko Push-Up",
+    "Incline Push-Up",
+    "Scapula Push-Up",
+    "Explosive Push-Up",
+    "Dip",
+    "Straight Bar Dip",
+    "Russian Dip",
+    "Korean Dip",
+    "Archer Dip",
+    "Swinging Dip",
+    "Morozov (Hold)",
+    "Band Assisted Morozov Hold"
+   ],
+   "pos": {
+    "row": 22,
+    "col": 20
+   }
+  },
+  {
+   "id": "dip",
+   "name": "Dip",
+   "sheetName": "Dip",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 10.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/2z8JmcrW-As?t=30",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/2z8JmcrW-As",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/T1L4smOP0L8",
+     "credit": "FitnessFAQs"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 25,
+    "col": 20
+   }
+  },
+  {
+   "id": "ring-turn-out",
+   "name": "Ring Turn Out",
+   "sheetName": "Ring Turn Out",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 4.5,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/i4uew2bAU3E",
+     "credit": "Dusty Hyland"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/31HMRQisaFU",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/phmRwn-sosI?t=15",
+     "credit": "GMB Fitness"
+    }
+   ],
+   "variations": [
+    "Rings Support Hold (Extended)",
+    "Regular Rings Support Hold",
+    "Tuck Rings Support Hold",
+    "L-Sit Rings Support Hold",
+    "Bulgarian Dip",
+    "L-Sit Bulgarian Dip"
+   ],
+   "pos": {
+    "row": 24,
+    "col": 16
+   }
+  },
+  {
+   "id": "ring-push-up",
+   "name": "Ring Push-Up",
+   "sheetName": "Ring Push-Up",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 7.5,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/dSRY2IHqOsI?t=10",
+     "credit": "Tykato Fitness"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rUGZwSa9WUc",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=sE0pjie3Pqo",
+     "credit": "RedDeltaProject"
+    }
+   ],
+   "variations": [
+    "Archer Ring Push-Up",
+    "Wide Ring Push-Up",
+    "Pelican Ring Push-Up"
+   ],
+   "pos": {
+    "row": 22,
+    "col": 22
+   }
+  },
+  {
+   "id": "ring-pu",
+   "name": "Ring PU",
+   "sheetName": "Ring PU",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 8.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/ESF3YdVt5RM?t=8",
+     "credit": "Taylor Beech"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=IKOeF0VFSq8",
+     "credit": "GMB Fitness"
+    }
+   ],
+   "variations": [
+    "Switch Grip Ring PU",
+    "L-Sit Ring PU"
+   ],
+   "pos": {
+    "row": 25,
+    "col": 14
+   }
+  },
+  {
+   "id": "ring-dip",
+   "name": "Ring Dip",
+   "sheetName": "Ring Dip",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 1,
+   "tierName": "Beginner",
+   "depth": 9.0,
+   "xp": 100,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/Kr5Uuuy5DAI?t=106",
+     "credit": "Bodyweight Mastery"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/Kr5Uuuy5DAI?t=60",
+     "credit": "Bodyweight Mastery"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/jCtSXZk9nko",
+     "credit": "Dan Jeong"
+    }
+   ],
+   "variations": [
+    "OA Assisted Ring Dip",
+    "Archer Ring Dip"
+   ],
+   "pos": {
+    "row": 27,
+    "col": 16
+   }
+  },
+  {
+   "id": "l-sit",
+   "name": "L-Sit",
+   "sheetName": "L-Sit",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 10.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "tuck-sit"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/cu0fHp8HCDo",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/IUZJoSP66HI",
+     "credit": "Antranik"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/playlist?list=PLHh3zEi0_nqcN4bGB77WJhG0g-EbRf8Li",
+     "credit": "Calimnastic"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 18,
+    "col": 22
+   }
+  },
+  {
+   "id": "oa-dragon-flag",
+   "name": "OA Dragon Flag",
+   "sheetName": "OA Dragon Flag",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 11.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "dragon-flag"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hTo_CvJCGw0?t=75",
+     "credit": "Pilous"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 21,
+    "col": 27
+   }
+  },
+  {
+   "id": "dragon-press",
+   "name": "Dragon Press",
+   "sheetName": "Dragon Press",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 14.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-dragon-flag"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/T9Vyl3H4njA",
+     "credit": "Gioele Cuccu"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/RQXpYUIt9gc",
+     "credit": "Hoso Street Workout"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/fMz9MnyOG1o",
+     "credit": "Cesar_7SW"
+    }
+   ],
+   "variations": [
+    "Tuck",
+    "Single Leg",
+    "Extended Tuck",
+    "Full",
+    "Wide Hands"
+   ],
+   "pos": {
+    "row": 21,
+    "col": 30
+   }
+  },
+  {
+   "id": "hs",
+   "name": "HS",
+   "sheetName": "HS",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 11.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "wall-hs"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/h680H2ft4yA?t=273",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/NkzbyRAoQ8c",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=jlIa8fgk7D0",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [
+    "Parallettes HS",
+    "Straddle HS",
+    "Bent",
+    "Straight Bar HS",
+    "Over Arched HS",
+    "X Handstand",
+    "Reverse Planche",
+    "Floor Reverse Planche",
+    "PB Reverse Planche"
+   ],
+   "pos": {
+    "row": 14,
+    "col": 17
+   }
+  },
+  {
+   "id": "ring-hs",
+   "name": "Ring HS",
+   "sheetName": "Ring HS",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 13.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BTAsmZAOLVU?t=7",
+     "credit": "Jared Rodriguez"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/MxQjAcIG7k4",
+     "credit": "Fitness On The Run"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=UU2gnuYZYcE",
+     "credit": "ringsking"
+    }
+   ],
+   "variations": [
+    "Ring Straps Assisted HS",
+    "Shoulder Ring HS",
+    "Shoulder Tuck Ring HS"
+   ],
+   "pos": {
+    "row": 29,
+    "col": 17
+   }
+  },
+  {
+   "id": "ol-nordic-hamstring-curl",
+   "name": "OL Nordic Hamstring Curl",
+   "sheetName": "OL Nordic Hamstring Curl",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 11.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "nordic-hamstring-curl"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 21,
+    "col": 5
+   }
+  },
+  {
+   "id": "pistol-squat",
+   "name": "Pistol Squat",
+   "sheetName": "Pistol Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 12.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 16,
+    "col": 21
+   }
+  },
+  {
+   "id": "inv-nordic-hamstring-curl",
+   "name": "Inv. Nordic Hamstring Curl",
+   "sheetName": "Inv. Nordic Hamstring Curl",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 14.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-nordic-hamstring-curl"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 19,
+    "col": 5
+   }
+  },
+  {
+   "id": "natural-leg-ext",
+   "name": "Natural Leg Ext.",
+   "sheetName": "Natural Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 15.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 13,
+    "col": 19
+   }
+  },
+  {
+   "id": "back-lever",
+   "name": "Back Lever",
+   "sheetName": "Back Lever",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 6.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 20,
+    "source": "default"
+   },
+   "prereqs": [
+    "pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/HXaG8mJmSnU?t=131",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/PFALmtU6J6U",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/iYeUmEhKjeE",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [
+    "Close Grip Back Lever",
+    "Wide Grip Back Lever",
+    "Ring Back Lever",
+    "1 Finger Back Lever",
+    "OA BL PU (One Arm; Back Lever; Pull Up)",
+    "Grip Assisted OA Back Lever PU"
+   ],
+   "pos": {
+    "row": 19,
+    "col": 13
+   }
+  },
+  {
+   "id": "bar-mu",
+   "name": "Bar MU",
+   "sheetName": "Bar MU",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 11.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/PNrYETmkw-I?t=69",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3SduiaXqAT4?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/p7q0UhxPdLY?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "Thenx"
+    }
+   ],
+   "variations": [
+    "Close Grip MU",
+    "Slow Muscle MU",
+    "Wide MU",
+    "Archer MU",
+    "X Grip MU",
+    "Terrorist Pull Up",
+    "Front Lever Pull",
+    "Tuck Front Lever Pull",
+    "Adv. Tuck Front Lever Pull",
+    "Straddle Front Lever Pull",
+    "Half Lay Front Lever Pull",
+    "Full Front Lever Pull",
+    "Front Lever Grip Variations"
+   ],
+   "pos": {
+    "row": 26,
+    "col": 12
+   }
+  },
+  {
+   "id": "oa-push-up",
+   "name": "OA Push-Up",
+   "sheetName": "OA Push-Up",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 10.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/r8MhfU4Qs2g?t=431",
+     "credit": "Arthem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/KIEAbfk4cQU",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=edoINNsVu8Q",
+     "credit": "Austin Dunham"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 24,
+    "col": 22
+   }
+  },
+  {
+   "id": "imp-dip",
+   "name": "Imp. Dip",
+   "sheetName": "Imp. Dip",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 12.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/rbzJvb0Y9Uk?t=320",
+     "credit": "Pilous"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rbzJvb0Y9Uk",
+     "credit": "Pilous"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/LTqzzJOjGfc",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [
+    "Lean Imp. Dip",
+    "Imp. Dip Without Elbow Support",
+    "No Grip Imp. Dip",
+    "Straight Bar Imp. Dip",
+    "Wrist Imp. Dip",
+    "Psuedo Push-Up",
+    "Psuedo Push-Up Bicep Turned Out",
+    "Archer Psuedo Push-Up"
+   ],
+   "pos": {
+    "row": 27,
+    "col": 19
+   }
+  },
+  {
+   "id": "planche-lean",
+   "name": "Planche Lean",
+   "sheetName": "Planche Lean",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 13.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/5D5PB5VCCDU?t=15",
+     "credit": "Calimnastic"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/ns_5fl0oN4A",
+     "credit": "Calimnastic"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/ACCElohmii0",
+     "credit": "FitnessFAQs"
+    }
+   ],
+   "variations": [
+    "Planche Lean Cranks",
+    "Elbow Planche Lean",
+    "Elevated Planche Lean",
+    "Pseudo Maltese Press"
+   ],
+   "pos": {
+    "row": 26,
+    "col": 22
+   }
+  },
+  {
+   "id": "morozov",
+   "name": "Morozov",
+   "sheetName": "Morozov",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 15.0,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "imp-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/ZQzQRaQ0Lb0?t=119",
+     "credit": "Arthem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rbzJvb0Y9Uk",
+     "credit": "Pilous"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/LTqzzJOjGfc",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 29,
+    "col": 19
+   }
+  },
+  {
+   "id": "oa-dip",
+   "name": "OA Dip",
+   "sheetName": "OA Dip",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 15.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "imp-dip",
+    "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/8lu2c3E3NSc?t=20",
+     "credit": "Raffaele Petito"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/bAI0XtahBOg?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "KASS Calisthenics"
+    }
+   ],
+   "variations": [
+    "Assisted OA Dip",
+    "Half ROM OA Dip"
+   ],
+   "pos": {
+    "row": 28,
+    "col": 21
+   }
+  },
+  {
+   "id": "ring-flies",
+   "name": "Ring Flies",
+   "sheetName": "Ring Flies",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 10.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/1eqKau93EPw?t=29",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=1eqKau93EPw",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/TRZhw7t7Qgo?t=357",
+     "credit": "Thenx"
+    }
+   ],
+   "variations": [
+    "Incline Ring Flies",
+    "Decline Ring Flies"
+   ],
+   "pos": {
+    "row": 22,
+    "col": 25
+   }
+  },
+  {
+   "id": "ring-mu",
+   "name": "Ring MU",
+   "sheetName": "Ring MU",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 12.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/vpPjY4BtJuI",
+     "credit": "Fitness FAQs"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/vpPjY4BtJuI",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=0t_rhEgz-7I",
+     "credit": "Troy Nevrela"
+    }
+   ],
+   "variations": [
+    "Slow Ring MU",
+    "L-Sit Ring MU",
+    "Archer Ring MU",
+    "Iron Cross Press",
+    "Band Assisted Iron Cross Press",
+    "Forearm Assisted Iron Cross Press",
+    "Ring Lever Assisted Iron Cross Press"
+   ],
+   "pos": {
+    "row": 28,
+    "col": 14
+   }
+  },
+  {
+   "id": "straight-arm-ring-flies",
+   "name": "Straight Arm Ring Flies",
+   "sheetName": "Straight Arm Ring Flies",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 2,
+   "tierName": "Intermediate",
+   "depth": 13.5,
+   "xp": 250,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-flies"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/JhToSOOqYdI?t=15",
+     "credit": "Metal bodies"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/JhToSOOqYdI",
+     "credit": "Metal bodies"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/iVDKfv5Tlms?t=3",
+     "credit": "CrossFit"
+    }
+   ],
+   "variations": [
+    "Incline Straight Arm Ring Flies",
+    "Decline Straight Arm Ring Flies"
+   ],
+   "pos": {
+    "row": 22,
+    "col": 28
+   }
+  },
+  {
+   "id": "v-sit",
+   "name": "V-Sit",
+   "sheetName": "V-Sit",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 14.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "l-sit"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/4c5U7acR9Y0?t=65",
+     "credit": "Gymnastics Bodies"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/P83rvEDFTjg",
+     "credit": "Bodyweight Mastery"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=emyOfFK2S8o",
+     "credit": "SaturnoMovement"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 17,
+    "col": 24
+   }
+  },
+  {
+   "id": "oa-dragon-press",
+   "name": "OA Dragon Press",
+   "sheetName": "OA Dragon Press",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "dragon-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/6009QVxS4Us",
+     "credit": "Steven Dupuis"
+    }
+   ],
+   "variations": [
+    "Tuck",
+    "Single Leg",
+    "Extended Tuck",
+    "Full"
+   ],
+   "pos": {
+    "row": 21,
+    "col": 33
+   }
+  },
+  {
+   "id": "reverse-planche",
+   "name": "Reverse Planche",
+   "sheetName": "Reverse Planche",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 19.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "v-sit"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/OxIYm7UFaJc?t=8",
+     "credit": "Flo Lit"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/0t1ThGLaAkc",
+     "credit": "Flo Lit"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/sHZReAwO_h0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 15,
+    "col": 26
+   }
+  },
+  {
+   "id": "pb-fl-to-reverse-planche",
+   "name": "PB FL to Reverse Planche",
+   "sheetName": "PB FL to Reverse Planche",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 23.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "reverse-planche"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 14,
+    "col": 29
+   }
+  },
+  {
+   "id": "hs-push-up",
+   "name": "HS Push-Up",
+   "sheetName": "HS Push-Up",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 16.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/h0HjqYRlXYg?t=18",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/h0HjqYRlXYg",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Y90EIjhdAfY",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [
+    "Tiger Bend HS Push-Up",
+    "90° HS Push-Up",
+    "Extremly Wide HS Push-Up",
+    "Clapping HS Push-Up",
+    "Elevator HS Push-Up",
+    "Inverted MU On Bar",
+    "OA Dragon Flag (One Arm)",
+    "OA Dragon Flag 1 + OA Dragon Press (One Arm)"
+   ],
+   "pos": {
+    "row": 12,
+    "col": 13
+   }
+  },
+  {
+   "id": "hs-pike-press",
+   "name": "HS Pike Press",
+   "sheetName": "HS Pike Press",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "hs-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/jmLGE8sO8nk?t=14",
+     "credit": "Jackmonx"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/jmLGE8sO8nk",
+     "credit": "Jackmonx"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/gQG_s5y37gY",
+     "credit": "Bodyweight Mastery"
+    }
+   ],
+   "variations": [
+    "Straddle HS Press",
+    "Tuck HS Press",
+    "Frog HS Press"
+   ],
+   "pos": {
+    "row": 10,
+    "col": 15
+   }
+  },
+  {
+   "id": "oa-hs",
+   "name": "OA HS",
+   "sheetName": "OA HS",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 20.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-natural-leg-ext"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/lVqDPymzcDQ?t=18",
+     "credit": "Miguel Santana"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/UE9Tn08BZBA",
+     "credit": "Tom Merrick"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/gN5MozT4A_w",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [
+    "//////////////////////////////////////////////////////////",
+    "//////////////////////////////////////////////////////////"
+   ],
+   "pos": {
+    "row": 8,
+    "col": 17
+   }
+  },
+  {
+   "id": "ring-planche-press",
+   "name": "Ring Planche Press",
+   "sheetName": "Ring Planche Press",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 21.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "planche-lean"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/6iC3dxxtFD8?t=137",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sa4vKNEWKQ0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 31,
+    "col": 22
+   }
+  },
+  {
+   "id": "imp-tigerbend-hs-push-up",
+   "name": "Imp. Tigerbend HS Push-Up",
+   "sheetName": "Imp. Tigerbend HS Push-Up",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 23.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-hs"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xCzD-_-b2Y8?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq&t=221",
+     "credit": "Noa Man Workout"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 8,
+    "col": 12
+   }
+  },
+  {
+   "id": "oa-hs-press",
+   "name": "OA HS Press",
+   "sheetName": "OA HS Press",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 24.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-hs"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/lVqDPymzcDQ?t=163",
+     "credit": "--------------------"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 5,
+    "col": 16
+   }
+  },
+  {
+   "id": "elev-ol-nordic-hamstring-curl",
+   "name": "Elev. OL Nordic Hamstring Curl",
+   "sheetName": "Elev. OL Nodrdic Hamstring Curl",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "inv-nordic-hamstring-curl"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 20,
+    "col": 0
+   }
+  },
+  {
+   "id": "sissy-squat",
+   "name": "Sissy Squat",
+   "sheetName": "Sissy Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "pistol-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 14,
+    "col": 23
+   }
+  },
+  {
+   "id": "ol-natural-leg-ext",
+   "name": "OL Natural Leg Ext.",
+   "sheetName": "OL Natural Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 18.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "natural-leg-ext"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 10,
+    "col": 18
+   }
+  },
+  {
+   "id": "hawaiian-squat",
+   "name": "Hawaiian Squat",
+   "sheetName": "Hawaiian Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 19.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "sissy-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 12,
+    "col": 22
+   }
+  },
+  {
+   "id": "leg-ext-lever",
+   "name": "Leg Ext. Lever",
+   "sheetName": "Leg Ext. Lever",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 21.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-natural-leg-ext"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 10,
+    "col": 21
+   }
+  },
+  {
+   "id": "shrimp-squat",
+   "name": "Shrimp Squat",
+   "sheetName": "Shrimp Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 22.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "sissy-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 13,
+    "col": 26
+   }
+  },
+  {
+   "id": "matrix-leg-ext",
+   "name": "Matrix Leg Ext.",
+   "sheetName": "Matrix Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 23.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "leg-ext-lever"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 8,
+    "col": 20
+   }
+  },
+  {
+   "id": "ol-inv-nordic-hamstring-curl",
+   "name": "OL Inv. Nordic Hamstring Curl",
+   "sheetName": "OL Inv. Nordic Hamstring Curl",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 24.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "inv-nordic-hamstring-curl"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 15,
+    "col": 1
+   }
+  },
+  {
+   "id": "ol-sissy-squat",
+   "name": "OL Sissy Squat",
+   "sheetName": "OL Sissy Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 24.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "tuck-sit"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 11,
+    "col": 25
+   }
+  },
+  {
+   "id": "hefesto",
+   "name": "Hefesto",
+   "sheetName": "Hefesto",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 9.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 12,
+    "source": "default"
+   },
+   "prereqs": [
+    "back-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/1Dw356KyYvc?t=322",
+     "credit": "Viktor Kamenov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/SQ8zhIe3WJE",
+     "credit": "Viktor Kamenov"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/e1KlyRiaiP8",
+     "credit": "Wolf's Bar"
+    }
+   ],
+   "variations": [
+    "Supinated Hefesto",
+    "Wide Hefesto",
+    "1 Finger Hefesto",
+    "Entrada De Angel",
+    "Ring Hefesto",
+    "Hefesto from BL (Back Lever)",
+    "Supinated Hefesto from BL",
+    "Wide Hefesto from BL",
+    "1 Finger Hefesto from BL"
+   ],
+   "pos": {
+    "row": 17,
+    "col": 13
+   }
+  },
+  {
+   "id": "back-lever-pu",
+   "name": "Back Lever PU",
+   "sheetName": "Back Lever Pull-Up",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 12.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/Pz1cZWXqUhI?t=113",
+     "credit": "Slavan Kripak"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/JGEBdK2fN4s",
+     "credit": "BaristiWorkout"
+    }
+   ],
+   "variations": [
+    "Close Grip Back Lever Pull Up",
+    "Wide Grip Back Lever Pull Up",
+    "Ring Back Lever Pull Up",
+    "1 Finger Back Lever Pull Up",
+    "Wall HS (Handstand)",
+    "Wall HS Kick Off",
+    "Stomach To Wall HS",
+    "Back To Wall HS"
+   ],
+   "pos": {
+    "row": 17,
+    "col": 10
+   }
+  },
+  {
+   "id": "front-lever",
+   "name": "Front Lever",
+   "sheetName": "Front Lever",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 13.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "bar-mu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/pNs4FUTiZAk?t=25",
+     "credit": "Manimal ZYK"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3_iCRuxkX2Y",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/TiimddLns8U",
+     "credit": "Pilous"
+    }
+   ],
+   "variations": [
+    "Tuck Front Lever",
+    "Adv. Tuck Front Lever",
+    "Straddle Front Lever",
+    "Half Lay Front Lever",
+    "Full Front Lever",
+    "Mixed Grip Front Lever",
+    "X Grip Front Lever",
+    "One Finger Grip Front Lever",
+    "Patriot Grip Front Lever",
+    "Elbow Grip Front Lever",
+    "Wide Front Lever",
+    "Floor Victorian",
+    "Forearm Supported Floor Victorian"
+   ],
+   "pos": {
+    "row": 25,
+    "col": 9
+   }
+  },
+  {
+   "id": "oa-hefesto",
+   "name": "OA Hefesto",
+   "sheetName": "OA Hefesto",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 13.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sQCVdibjcC8?t=15",
+     "credit": "matteodeu"
+    }
+   ],
+   "variations": [
+    "Grip Assisted OA Hefesto"
+   ],
+   "pos": {
+    "row": 15,
+    "col": 12
+   }
+  },
+  {
+   "id": "oa-front-lever",
+   "name": "OA Front Lever",
+   "sheetName": "OA Front Lever",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 15.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "front-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/5W9jY3Kghk8?t=25",
+     "credit": "Andrey Kobelev"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/IXmYzmhgkzo?t=392",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Do-Mol-KTy8?t=259",
+     "credit": "Umberto Miletto"
+    }
+   ],
+   "variations": [
+    "OA Front Lever Arm Along The Side"
+   ],
+   "pos": {
+    "row": 23,
+    "col": 4
+   }
+  },
+  {
+   "id": "oa-chin-up",
+   "name": "OA Chin Up",
+   "sheetName": "OA Chin Up",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 16.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 8,
+    "source": "default"
+   },
+   "prereqs": [
+    "front-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/9X8qDYL86z8",
+     "credit": "TrainingPal"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=Nj1NvN7Te_s",
+     "credit": "FitnessFAQs"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/8REZ-YtVyAM",
+     "credit": "Austin Dunham"
+    }
+   ],
+   "variations": [
+    "Finger Assisted OA Chin-UP",
+    "Band Aissisted OA Chin-Up"
+   ],
+   "pos": {
+    "row": 27,
+    "col": 9
+   }
+  },
+  {
+   "id": "oa-front-lever-pu",
+   "name": "OA Front Lever PU",
+   "sheetName": "OA Front Lever PU",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 16.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-front-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/smlsCapA3oQ?t=209",
+     "credit": "Andrey Kobelev"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 22,
+    "col": 1
+   }
+  },
+  {
+   "id": "oa-bl",
+   "name": "OA BL",
+   "sheetName": "OA Back Lever",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "back-lever-pu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/cIVtPseYjiI",
+     "credit": "Marko Bojovic"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/Gnqsw3dtOWE",
+     "credit": "StevieStayFit"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 16,
+    "col": 6
+   }
+  },
+  {
+   "id": "front-lever-pull",
+   "name": "Front Lever Pull",
+   "sheetName": "Front Lever Pull",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 18.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-front-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/JSIfkc_e3Sg?t=397",
+     "credit": "Manuel Caruso"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/IXmYzmhgkzo",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/-a1Nxuowz1w",
+     "credit": "Gyampaolo Calvaresi"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 25,
+    "col": 4
+   }
+  },
+  {
+   "id": "hefesto-from-bl",
+   "name": "Hefesto From BL",
+   "sheetName": "Hefesto From BL",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 18.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/1Dw356KyYvc?t=322",
+     "credit": "Viktor Kamenov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/SQ8zhIe3WJE",
+     "credit": "Viktor Kamenov"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 13,
+    "col": 10
+   }
+  },
+  {
+   "id": "oa-bl-pu",
+   "name": "OA BL PU",
+   "sheetName": "OA Back Lever PU",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 19.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-bl"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/kjBQmtex5UQ?t=4",
+     "credit": "matteodeu"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 17,
+    "col": 3
+   }
+  },
+  {
+   "id": "oa-hefesto-from-bl",
+   "name": "OA Hefesto from BL",
+   "sheetName": "OA Hefesto from BL",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 22.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "hefesto-from-bl"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sQCVdibjcC8?t=15",
+     "credit": "matteodeu"
+    }
+   ],
+   "variations": [
+    "Grip Assisted OA Hefesto From Back Lever"
+   ],
+   "pos": {
+    "row": 10,
+    "col": 10
+   }
+  },
+  {
+   "id": "front-lever-pull-up",
+   "name": "Front Lever Pull-Up",
+   "sheetName": "Front Lever Pull-Up",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 23.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "front-lever-pull"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/RYvoAiXejkw?t=149",
+     "credit": "Anton Zhang"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/IXmYzmhgkzo",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [
+    "No False Grip Front Lever Pull-Up",
+    "Archer Front Lever Pull-Up",
+    "Neutral Grip Front Lever Pull-Up",
+    "Wider Front Lever Pull-Up",
+    "Front Lever Chin-Up"
+   ],
+   "pos": {
+    "row": 29,
+    "col": 5
+   }
+  },
+  {
+   "id": "pseudo-push-up",
+   "name": "Pseudo Push-Up",
+   "sheetName": "Psuedo PU",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 18.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/G7GTVsxNU7g?t=47",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=G7GTVsxNU7g",
+     "credit": "Artem Morozov"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/2aU9vkaN-Pk",
+     "credit": "Calimnastic"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 28,
+    "col": 24
+   }
+  },
+  {
+   "id": "bicep-planche",
+   "name": "Bicep Planche",
+   "sheetName": "Bicep Planche",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 22.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "pseudo-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/4FIGVlylUWw",
+     "credit": "Ziolus"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 27,
+    "col": 29
+   }
+  },
+  {
+   "id": "oa-bicep-planche",
+   "name": "OA Bicep Planche",
+   "sheetName": "OA Bicep Planche",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 22.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-dragon-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/s3mC7KO-9kg?t=97",
+     "credit": "matteodeu"
+    }
+   ],
+   "variations": [
+    "Assisted OA Bicep Planche"
+   ],
+   "pos": {
+    "row": 25,
+    "col": 32
+   }
+  },
+  {
+   "id": "bulgarian-dip",
+   "name": "Bulgarian Dip",
+   "sheetName": "Bulgarian Dip",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-mu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/9mKyrPmmPt0",
+     "credit": "GymnasticBodies"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/L6xJyFU9OBA",
+     "credit": "Jakub Kowalski"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/rV_TMhoASpw",
+     "credit": "Eastern Bar Athletics"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 31,
+    "col": 14
+   }
+  },
+  {
+   "id": "ring-planche",
+   "name": "Ring Planche",
+   "sheetName": "Ring Planche",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "morozov"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/DsHRWT2-PvY",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 31,
+    "col": 18
+   }
+  },
+  {
+   "id": "wide-ring-mu",
+   "name": "Wide Ring MU",
+   "sheetName": "Wide Ring MU",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 17.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "bar-mu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/TYqUlv401mM?t=5",
+     "credit": "Superando mis limites"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/McSrX-cnv4g?t=25",
+     "credit": "Calisthenics 2.0"
+    }
+   ],
+   "variations": [
+    "Band Assisted Wide Ring MU"
+   ],
+   "pos": {
+    "row": 29,
+    "col": 11
+   }
+  },
+  {
+   "id": "pb-victorian",
+   "name": "PB Victorian",
+   "sheetName": "PB Victorian",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 20.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "wide-ring-mu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/yJx6aRUkdaE?t=195",
+     "credit": "Zoran Pesterac"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3AVzBOSYO-4",
+     "credit": "PlamkoSW"
+    }
+   ],
+   "variations": [
+    "No Shoulder Support PB Victorian",
+    "Archer PB Victorian",
+    "Wide PB Victorian"
+   ],
+   "pos": {
+    "row": 27,
+    "col": 5
+   }
+  },
+  {
+   "id": "ring-maltese",
+   "name": "Ring Maltese",
+   "sheetName": "Ring Maltese",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 20.0,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-hs",
+    "ring-planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/CvVSQjBGdxY",
+     "credit": "matteodeu"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 33,
+    "col": 18
+   }
+  },
+  {
+   "id": "ring-victorian-cross",
+   "name": "Ring Victorian Cross",
+   "sheetName": "Ring Victorian Cross",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 3,
+   "tierName": "Advanced",
+   "depth": 21.5,
+   "xp": 500,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/zNqNDhap-QQ?t=45",
+     "credit": "Danny Rodriguez"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 32,
+    "col": 21
+   }
+  },
+  {
+   "id": "manna",
+   "name": "Manna",
+   "sheetName": "Manna",
+   "branch": "core",
+   "branchLabel": "Core",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 14.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 15,
+    "source": "default"
+   },
+   "prereqs": [
+    "dragon-flag"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/rX4zPm95dAY?t=5",
+     "credit": "Gymnastics Bodies"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/playlist?list=PLHh3zEi0_nqeJlBi3-ezRbMj_F7UQcOlD",
+     "credit": "Bodyweight Mastery"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/o9nzRpYbyWQ?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "BarBarics StreetWorkout"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 18,
+    "col": 26
+   }
+  },
+  {
+   "id": "planche-press",
+   "name": "Planche Press",
+   "sheetName": "Planche Press",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 25.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "imp-tigerbend-hs-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/wD3Mk7WSTgc",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sa4vKNEWKQ0",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Sgah5-gtPUM",
+     "credit": "Gaggy Yatarov"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 6,
+    "col": 13
+   }
+  },
+  {
+   "id": "maltese-press",
+   "name": "Maltese Press",
+   "sheetName": "Maltese Press",
+   "branch": "handstand",
+   "branchLabel": "Handstand",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 30.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "planche-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/Wwro7ZIBFa4?t=7",
+     "credit": "Bekhzodbek Ashyraliev"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sHZReAwO_h0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 4,
+    "col": 11
+   }
+  },
+  {
+   "id": "ol-leg-ext-lever",
+   "name": "OL Leg Ext. Lever",
+   "sheetName": "OL Leg Ext. Lever",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 26.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-sissy-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 9,
+    "col": 24
+   }
+  },
+  {
+   "id": "elv-shrimp-squat",
+   "name": "Elv. Shrimp Squat",
+   "sheetName": "Elv. Shrimp Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 27.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-sissy-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 11,
+    "col": 28
+   }
+  },
+  {
+   "id": "natural-leg-press",
+   "name": "Natural Leg Press",
+   "sheetName": "Natural Leg Press",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 28.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-leg-ext-lever"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 7,
+    "col": 23
+   }
+  },
+  {
+   "id": "elv-ol-sissy-squat",
+   "name": "Elv. OL Sissy Squat",
+   "sheetName": "Elv. OL Sissy Squat",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 29.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-leg-ext-lever"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 9,
+    "col": 27
+   }
+  },
+  {
+   "id": "ol-matrix-leg-ext",
+   "name": "OL Matrix Leg Ext.",
+   "sheetName": "OL Matrix Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 29.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "natural-leg-press"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 5,
+    "col": 21
+   }
+  },
+  {
+   "id": "ol-natural-leg-press",
+   "name": "OL Natural Leg Press",
+   "sheetName": "OL Natural Leg Press",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 32.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-matrix-leg-ext"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 5,
+    "col": 24
+   }
+  },
+  {
+   "id": "shrimp-squat-blaster",
+   "name": "Shrimp Squat Blaster",
+   "sheetName": "Shrip Squat Blaster",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 32.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "elv-ol-sissy-squat"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 9,
+    "col": 30
+   }
+  },
+  {
+   "id": "elv-matrix-leg-ext",
+   "name": "Elv. Matrix Leg Ext.",
+   "sheetName": "Elv. Matrix Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 34.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-natural-leg-press"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 3,
+    "col": 23
+   }
+  },
+  {
+   "id": "elv-ol-natural-leg-press",
+   "name": "Elv. OL Natural Leg Press",
+   "sheetName": "Elv. OL Natural Leg Press",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 37.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ol-natural-leg-press"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 3,
+    "col": 26
+   }
+  },
+  {
+   "id": "elv-ol-matrix-leg-ext",
+   "name": "Elv. OL Matrix Leg Ext.",
+   "sheetName": "Elv. OL Matrix Leg Ext.",
+   "branch": "legs",
+   "branchLabel": "Legs",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 40.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "elv-ol-natural-leg-press"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 1,
+    "col": 26
+   }
+  },
+  {
+   "id": "pelikan",
+   "name": "Pelikan",
+   "sheetName": "Pelikan",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 18.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "hefesto-from-bl"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BtKpknJbG7k?t=79",
+     "credit": "Sergei Bashmakov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/aH7ob38sGN8",
+     "credit": "willusionist"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 14,
+    "col": 8
+   }
+  },
+  {
+   "id": "oa-pu",
+   "name": "OA PU",
+   "sheetName": "OA Pull-Up",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 25.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "front-lever-pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/11CyoGLEWvA?t=5",
+     "credit": "Noa Man Workout"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/vdjWgw98EeI",
+     "credit": "Calisthenicmovement"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/5yCXYEXQWMw",
+     "credit": "Artem Morozov"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 31,
+    "col": 6
+   }
+  },
+  {
+   "id": "oa-mu-no-armpit",
+   "name": "OA MU no Armpit",
+   "sheetName": "OA MU no Armpit",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 32.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-pu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/dzRN9KBzFS0?t=74",
+     "credit": "Zoran Pesterac"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/AbTDBXjAUXI",
+     "credit": "Thenx"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 34,
+    "col": 3
+   }
+  },
+  {
+   "id": "fl-to-rp",
+   "name": "FL to RP",
+   "sheetName": "FL to RP",
+   "branch": "pull",
+   "branchLabel": "Pull",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 43.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "victorian-cross-to-rp"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 39,
+    "col": 32
+   }
+  },
+  {
+   "id": "planche",
+   "name": "Planche",
+   "sheetName": "Planche",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 24.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "pseudo-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/FwcjA2ZR5UA?t=102",
+     "credit": "Calimnastic"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3UpGBGV5Sxo",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=3N63S6shAv0",
+     "credit": "Gioser 30"
+    }
+   ],
+   "variations": [
+    "Tuck Planche",
+    "Adv. Tuck Planche",
+    "Straddle Planche",
+    "Half Lay Planche",
+    "Full Planche",
+    "2 Finger Planche",
+    "2 + 1 Finger Planche",
+    "Straight Bar Planche",
+    "OA Planche Push Up (One Arm)",
+    "90° OA Push Up"
+   ],
+   "pos": {
+    "row": 30,
+    "col": 27
+   }
+  },
+  {
+   "id": "planche-push-up",
+   "name": "Planche Push-Up",
+   "sheetName": "Planche Push-Up",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 25.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "bicep-planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hqGiXHOLgoM?t=110",
+     "credit": "Dao ba zai"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3UpGBGV5Sxo?t=389",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [
+    "Tuck Planche",
+    "Adv. Tuck Planche",
+    "Straddle Planche",
+    "Full Planche",
+    "Extra ROM Planche Push-Up",
+    "Archer Planche Push-Up",
+    "Bicep Planche",
+    "Pinkies Bicep Planche"
+   ],
+   "pos": {
+    "row": 29,
+    "col": 29
+   }
+  },
+  {
+   "id": "oa-planche",
+   "name": "OA Planche",
+   "sheetName": "OA Planche",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 26.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BRG4iHBj3EU?t=244",
+     "credit": "Zoran Pesterac"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/ALctTQ9TzoA",
+     "credit": "Aladren Hand"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=LHZpHEMvfos",
+     "credit": "Mister H"
+    }
+   ],
+   "variations": [
+    "Band Assisted OA Planche",
+    "Arm Assisted OA Planche"
+   ],
+   "pos": {
+    "row": 32,
+    "col": 26
+   }
+  },
+  {
+   "id": "maltese",
+   "name": "Maltese",
+   "sheetName": "Maltese",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 28.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "planche-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BREPvFm4ZNA?t=5",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/sIfl4kpIRt0",
+     "credit": "WARMAXINSO"
+    }
+   ],
+   "variations": [
+    "Straight Bar Maltese",
+    "Parallel Bar Maltese",
+    "Dragon Maltese"
+   ],
+   "pos": {
+    "row": 31,
+    "col": 29
+   }
+  },
+  {
+   "id": "oa-planche-push-up",
+   "name": "OA Planche Push-Up",
+   "sheetName": "OA Planche Push-Up",
+   "branch": "push",
+   "branchLabel": "Push",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 32.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "maltese"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/St6O79TszOY?t=82",
+     "credit": "Ziolus"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 33,
+    "col": 30
+   }
+  },
+  {
+   "id": "iron-cross",
+   "name": "Iron Cross",
+   "sheetName": "Iron Cross",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 20.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "bulgarian-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/HZbee93OIdo?t=12",
+     "credit": "Tyler Yamauchi"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/lHKaQx6duC0",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/oUltGGhvSsM",
+     "credit": "CalisthenicsDude"
+    }
+   ],
+   "variations": [
+    "Band Assisted Iron Cross",
+    "Forearm Assisted Iron Cross",
+    "Ring Lever Assisted Iron Cross",
+    "Pull-Up",
+    "Chin-Up",
+    "Close Grip Pull-Up",
+    "L-Sit High Pull-Up",
+    "Commando Pull-Up",
+    "Explosive Pull-Up",
+    "Inverted L Pull-Up",
+    "Archer Pull-Up",
+    "OA PU (One Arm; Pull-Up)",
+    "Finger Assisted OA Pull-Up",
+    "Band Assisted OA Pull-Up",
+    "Hand Assisted OA Pull-Up",
+    "1 Finger OA Pull-Up"
+   ],
+   "pos": {
+    "row": 33,
+    "col": 14
+   }
+  },
+  {
+   "id": "butterfly",
+   "name": "Butterfly",
+   "sheetName": "Butterfly",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 23.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "bulgarian-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/mnmIKqx-V-Y?t=687",
+     "credit": "Yudenkov"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/lHKaQx6duC0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 34,
+    "col": 12
+   }
+  },
+  {
+   "id": "inverted-iron-cross",
+   "name": "Inverted Iron Cross",
+   "sheetName": "Inverted Iron Cross",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 24.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 10,
+    "source": "default"
+   },
+   "prereqs": [
+    "iron-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xHO3jP-eF_U?t=27",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sHZReAwO_h0?t=90",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [
+    "Ring Straps Assisted Inverted Iron Cross"
+   ],
+   "pos": {
+    "row": 37,
+    "col": 16
+   }
+  },
+  {
+   "id": "iron-cross-press",
+   "name": "Iron Cross Press",
+   "sheetName": "Iron Cross Press",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 24.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "inverted-iron-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/H7TQ3qtCYIE?t=147",
+     "credit": "Nick Silagy"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/lHKaQx6duC0",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=tBcik2wHh5c",
+     "credit": "Tyson Edwards"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 36,
+    "col": 14
+   }
+  },
+  {
+   "id": "van-gelder",
+   "name": "Van Gelder",
+   "sheetName": "Van Gelder",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 24.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "ring-victorian-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/--U_mgXrYbY?t=250",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 34,
+    "col": 21
+   }
+  },
+  {
+   "id": "floor-victorian",
+   "name": "Floor Victorian",
+   "sheetName": "Floor Victorian",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 26.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "pb-victorian"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hZYaShVZ16o?t=100",
+     "credit": "Zoran Pesterac"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 29,
+    "col": 2
+   }
+  },
+  {
+   "id": "inv-butterfly",
+   "name": "Inv. Butterfly",
+   "sheetName": "Inv. Butterfly",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 27.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "inverted-iron-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/yElLMbilg0g?t=2",
+     "credit": "Pavel Sobolev"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 39,
+    "col": 16
+   }
+  },
+  {
+   "id": "azarian-to-planche-maltese",
+   "name": "Azarian to Planche/Maltese",
+   "sheetName": "Azarian to Planche/Maltese",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 27.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "van-gelder"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/DlAbv0fnBEg",
+     "credit": "coolgymnast"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E?t=188",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 36,
+    "col": 21
+   }
+  },
+  {
+   "id": "maltese-to-inv-ic",
+   "name": "Maltese to Inv. IC",
+   "sheetName": "Maltese Press to Inv. IC",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 28.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "morozov"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xHO3jP-eF_U?t=25",
+     "credit": "Yuri Van Gelder"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 37,
+    "col": 20
+   }
+  },
+  {
+   "id": "azarian-to-ic",
+   "name": "Azarian to IC",
+   "sheetName": "Azarian to IC",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 29.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "iron-cross-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/--U_mgXrYbY?t=166",
+     "credit": "Eduard Azaryan"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/bFSzahMTtzA?list=PLEZ9j_KUTdv6OYAleCmgjmqfGMh1uBCtE&t=76",
+     "credit": "Lachlan Walker"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 37,
+    "col": 11
+   }
+  },
+  {
+   "id": "butterfly-to-inv-ic",
+   "name": "Butterfly to Inv. IC",
+   "sheetName": "Butterfly to Inv. IC",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 29.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "azarian-to-ic"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/zNqNDhap-QQ?t=245",
+     "credit": "Aleksandr Balandin"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sHZReAwO_h0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 36,
+    "col": 9
+   }
+  },
+  {
+   "id": "zanetti",
+   "name": "Zanetti",
+   "sheetName": "Zanetti",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 31.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "azarian-to-planche-maltese"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sDqUD_oiDY4?t=31",
+     "credit": "Arthur Zanetti"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=E1yk6EB4AxI",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 36,
+    "col": 25
+   }
+  },
+  {
+   "id": "fl-to-victorian-cross",
+   "name": "FL to Victorian Cross",
+   "sheetName": "FL to Victorian Cross",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 32.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "oa-planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/YcVVxrxyVmY?t=87",
+     "credit": "Pietro Bruno"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/sHZReAwO_h0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 35,
+    "col": 27
+   }
+  },
+  {
+   "id": "carmona",
+   "name": "Carmona",
+   "sheetName": "Carmona",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 35.5,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "reps",
+    "amount": 3,
+    "source": "default"
+   },
+   "prereqs": [
+    "zanetti"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sDqUD_oiDY4?t=100",
+     "credit": "Regulo Carmona"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/7AdMqt8i60E",
+     "credit": "David Packer"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/sHZReAwO_h0",
+     "credit": "David Packer"
+    }
+   ],
+   "variations": [],
+   "pos": {
+    "row": 38,
+    "col": 26
+   }
+  },
+  {
+   "id": "victorian-cross-to-rp",
+   "name": "Victorian Cross to RP",
+   "sheetName": "Victorian Cross to RP",
+   "branch": "rings",
+   "branchLabel": "Rings",
+   "tier": 4,
+   "tierName": "Master",
+   "depth": 37.0,
+   "xp": 1000,
+   "standard": {
+    "sets": 3,
+    "type": "hold",
+    "amount": 5,
+    "source": "default"
+   },
+   "prereqs": [
+    "carmona"
+   ],
+   "videos": [],
+   "variations": [],
+   "pos": {
+    "row": 37,
+    "col": 29
+   }
+  }
+ ]
+}
