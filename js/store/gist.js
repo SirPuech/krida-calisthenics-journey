@@ -1,6 +1,6 @@
 /**
- * Optional phase-1.5 storage: a private GitHub Gist, so one person's progress
- * follows them between devices without any server of our own.
+ * Shared storage: one private GitHub Gist holding the account roster, so a
+ * small group's progress follows them between devices without a server.
  *
  * The token lives in this browser's localStorage and is sent only to
  * api.github.com. Use a fine-grained personal access token whose *only*
@@ -13,7 +13,10 @@
 import { localAdapter } from './local.js';
 
 const CONFIG_KEY = 'krida.remote.v1';
-const FILENAME = 'krida-progress.json';
+// The gist holds the whole roster, not one profile: every account's sealed
+// vault plus the plaintext names. Anyone with the token can add themselves and
+// sync, and nobody can read anyone else's vault without their passphrase.
+const FILENAME = 'krida-accounts.json';
 const API = 'https://api.github.com';
 
 export function readConfig() {
@@ -67,10 +70,10 @@ export const gistAdapter = {
     return JSON.parse(content);
   },
 
-  async save(profile) {
+  async save(roster) {
     const config = readConfig();
     if (!config?.token) throw new Error('No GitHub token configured.');
-    const files = { [FILENAME]: { content: JSON.stringify(profile, null, 1) } };
+    const files = { [FILENAME]: { content: JSON.stringify(roster, null, 1) } };
     if (config.gistId) {
       await call(`/gists/${config.gistId}`, { token: config.token, method: 'PATCH', body: { files } });
       return config.gistId;
@@ -78,7 +81,7 @@ export const gistAdapter = {
     const created = await call('/gists', {
       token: config.token,
       method: 'POST',
-      body: { description: 'KRIDA Calisthenics Journey — progress', public: false, files },
+      body: { description: 'KRIDA Calisthenics Journey — account roster', public: false, files },
     });
     writeConfig({ ...config, gistId: created.id });
     return created.id;

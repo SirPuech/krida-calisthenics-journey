@@ -6,10 +6,9 @@ branches, each node gated behind a prerequisite, a form video and a rep standard
 Static site, no backend. It builds from `source/skill-tree.xlsx` and deploys
 straight to GitHub Pages.
 
-**Phase 1 — what this is right now:** one profile, stored in your browser, for
-your own training. Accounts, per-person profiles and a leaderboard are designed
-for but not built; see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the seams
-that make them a small change rather than a rewrite.
+**Phase 2 — what this is right now:** up to five accounts, each with its own
+profile, sealed with its own passphrase. A leaderboard is designed for but not
+built; see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ---
 
@@ -50,10 +49,12 @@ js/data.js                loads the JSON data files, builds the lookups
 js/progress.js            unlock engine: status, XP, streak, badges (pure functions)
 js/coach.js               session builder — resolves programs.json against your unlocks
 js/i18n.js                EN / TH interface copy
+js/crypto.js              PBKDF2 + AES-GCM vault sealing (WebCrypto)
 js/store/                 profile persistence
   schema.js                 profile shape + migrations
-  local.js                  localStorage adapter (phase 1 default)
-  gist.js                   optional GitHub Gist adapter
+  accounts.js               the roster: create, sign in, seal, merge
+  local.js                  localStorage adapter (pre-accounts profiles)
+  gist.js                   optional shared-Gist adapter
   index.js                  the facade every view talks to
 js/views/                 one module per screen
 data/skills.json          generated skill catalogue — do not hand-edit
@@ -144,15 +145,49 @@ to English rather than rendering blank.
 It knows nothing about injuries, sleep or recovery, and the app says so on the
 program page.
 
+## Accounts
+
+Up to **five** people share one deployment. There is no server, so sign-in works
+like this:
+
+- Each account has a **passphrase**, and that passphrase derives an AES-GCM key
+  via PBKDF2 (250,000 iterations, WebCrypto). The profile is **encrypted** with
+  it before it ever touches localStorage or the shared Gist.
+- Names stay in the clear — the sign-in screen needs them, and a future
+  leaderboard reads the small opted-in `public` summary without any passphrase.
+- Everything else about a person is inside the sealed vault. One member of the
+  roster **cannot** read another's training log.
+
+**There is no password reset.** Nothing on the device can decrypt a vault
+without its passphrase — that is the point of the design, and the cost of it.
+Lose the passphrase and that account's history is gone.
+
+### What this is and is not
+
+It is real encryption at rest: a stolen Gist, or someone poking at localStorage,
+gets ciphertext. It is **not** server-enforced authentication — there is no
+server to enforce anything. Anyone who can load the page can see the roster's
+*names* and create an account while seats remain. That is the right trade for a
+private training group; do not treat it as protection against a determined
+attacker, and do not put anything in here you would not put in a shared note.
+
+The passphrase is held in `sessionStorage` while you are signed in, so a reload
+keeps you in and closing the tab signs you out.
+
+A profile from before accounts existed is offered on first load as *"claim your
+existing progress"* — pick a passphrase and it becomes your account.
+
 ## Your progress
 
-Stored in this browser under `krida.profile.v1`. **Settings → Export JSON** before
-you clear site data or move machines.
+Sealed in this browser under `krida.accounts.v1`. **Settings → Export JSON**
+before you clear site data or move machines.
 
 ### Optional: sync through GitHub
 
-Settings → *Sync with GitHub* mirrors your profile to a private Gist so it
-follows you between devices.
+Settings → *Sync with GitHub* mirrors the whole roster to one private Gist so
+accounts follow the group between devices. **Pulling never opens anyone's
+vault** — it merges opaque entries by id, newest `updatedAt` winning, so each
+account is only ever written by the person who can decrypt it.
 
 Create a [fine-grained personal access token](https://github.com/settings/tokens?type=beta)
 whose **only** permission is *Gists: read and write*, and paste it in. It is kept
@@ -160,8 +195,9 @@ in this browser's localStorage and sent only to `api.github.com`. Leave the gist
 id blank the first time and one is created for you.
 
 A token in localStorage is readable by anything that can run script on this
-origin. That is an acceptable trade for a personal site with a gist-only token;
-it is not the model phase 2 ships to other people, which uses OAuth instead.
+origin. That is an acceptable trade for a small private group with a gist-only
+token; if this ever opens to strangers, move to OAuth — see
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Language
 

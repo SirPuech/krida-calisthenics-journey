@@ -17,6 +17,8 @@ import renderProgram from './views/program.js';
 import renderDashboard from './views/dashboard.js';
 import renderLibrary from './views/library.js';
 import renderSettings from './views/settings.js';
+import renderSignIn, { resetSignInView } from './views/signin.js';
+import { summarise } from './progress.js';
 
 const ROUTES = [
   { pattern: /^\/?$/, name: 'home', view: renderHome },
@@ -32,6 +34,7 @@ const main = document.querySelector('main');
 let catalogue = null;
 let programs = null;
 let currentRoute = null;
+let legacyProfile = null;
 
 function parseHash() {
   const raw = location.hash.replace(/^#/, '') || '/';
@@ -50,10 +53,29 @@ function markNav(name) {
 
 function render({ scroll = true } = {}) {
   const { route, params, raw } = parseHash();
-  markNav(route.name);
   main.innerHTML = '<div class="wrap"></div>';
   const mount = main.firstElementChild;
-  const context = { catalogue, programs, store, profile: store.profile, params, mount, rerender: () => render({ scroll: false }) };
+  const context = {
+    catalogue, programs, store, profile: store.profile, params, mount,
+    rerender: () => render({ scroll: false }),
+  };
+
+  // Everything behind the account gate. Signed out, the only screen is sign-in.
+  if (!store.signedIn) {
+    document.body.classList.add('is-signed-out');
+    markNav(null);
+    try {
+      renderSignIn({ ...context, legacyProfile, onSignedIn });
+    } catch (err) {
+      console.error('[krida] sign-in failed to render', err);
+      mount.innerHTML = `<div class="empty">${err.message}</div>`;
+    }
+    updateChrome();
+    return;
+  }
+
+  document.body.classList.remove('is-signed-out');
+  markNav(route.name);
   try {
     route.view(context);
   } catch (err) {
@@ -62,10 +84,16 @@ function render({ scroll = true } = {}) {
   }
   if (scroll && raw !== currentRoute) window.scrollTo({ top: 0, behavior: 'instant' });
   currentRoute = raw;
-  updateFooter();
+  updateChrome();
 }
 
-function updateFooter() {
+function onSignedIn() {
+  legacyProfile = null;
+  resetSignInView();
+  render();
+}
+
+function updateChrome() {
   const meta = document.getElementById('footer-meta');
   const remote = store.remoteState;
   const bits = [`${catalogue?.skills.length ?? 0} skills`];
@@ -73,6 +101,14 @@ function updateFooter() {
   else if (remote.status === 'error') bits.push('gist sync failed');
   else if (remote.status === 'syncing') bits.push('syncing…');
   meta.textContent = bits.join(' · ');
+
+  const who = document.getElementById('whoami');
+  who.hidden = !store.signedIn;
+  if (store.signedIn) {
+    who.querySelector('.whoami-name').textContent = store.profile.name;
+    who.querySelector('.whoami-avatar').textContent =
+      (store.profile.name || '?').charAt(0).toUpperCase();
+  }
 }
 
 function wireChrome() {
@@ -95,6 +131,12 @@ function wireChrome() {
       render({ scroll: false });
     });
   });
+  document.getElementById('signout').addEventListener('click', () => {
+    store.signOut();
+    resetSignInView();
+    location.hash = '#/';
+    render();
+  });
 }
 
 async function boot() {
@@ -104,10 +146,18 @@ async function boot() {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;
   }
+  // Phase-1 progress lives in an unsealed profile; offer to claim it as an account.
+  if (!store.signedIn && !store.listAccounts().length) {
+    legacyProfile = await store.legacyProfile().catch(() => null);
+  }
+  store.setSummaryProvider((profile) => {
+    const s = summarise(catalogue, profile);
+    return { xp: s.xp, streak: s.streak, tier: s.tier, cleared: s.counts.cleared };
+  });
   setLang(store.profile.lang || 'en');
   wireChrome();
   window.addEventListener('hashchange', () => render());
-  store.subscribe(() => updateFooter());
+  store.subscribe(() => updateChrome());
   render();
 }
 

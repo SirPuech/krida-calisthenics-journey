@@ -1,10 +1,12 @@
 import { t } from '../i18n.js';
 import { esc } from '../dom.js';
 import { gistAdapter } from '../store/index.js';
+import { formatDate } from '../dom.js';
 
 export default function renderSettings({ store, profile, mount, rerender }) {
   const remote = store.remoteConfig() || {};
   const connected = Boolean(remote.token);
+  const roster = store.listAccounts();
 
   mount.innerHTML = `
     <div class="page-head"><div><div class="eyebrow">KRIDA</div><h1>${esc(t('set.title'))}</h1></div></div>
@@ -26,6 +28,40 @@ export default function renderSettings({ store, profile, mount, rerender }) {
           </div>
           <div class="row-actions"><button class="btn btn-primary btn-sm" type="submit">${esc(t('set.save'))}</button></div>
         </form>
+      </section>
+
+      <section class="panel">
+        <h2>${esc(t('set.account'))}</h2>
+        <form class="stack" id="pass-form">
+          <div class="field">
+            <label for="pw-old">${esc(t('set.account.old'))}</label>
+            <input id="pw-old" name="old" type="password" autocomplete="current-password" required>
+          </div>
+          <div class="field">
+            <label for="pw-new">${esc(t('set.account.new'))}</label>
+            <input id="pw-new" name="new" type="password" minlength="8" autocomplete="new-password" required>
+          </div>
+          <div class="row-actions">
+            <button class="btn btn-primary btn-sm" type="submit">${esc(t('set.account.change'))}</button>
+            <button class="btn btn-ghost btn-sm" type="button" data-del-account
+                    style="border-color:rgba(248,113,113,.5);color:#f87171">${esc(t('set.account.delete'))}</button>
+          </div>
+        </form>
+        <p class="status-line" id="account-status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>${esc(t('set.roster'))}</h2>
+        <p>${esc(t('set.roster.body'))}</p>
+        <div class="roster-list">
+          ${roster.map((a) => `
+            <div class="roster-row ${a.id === profile.id ? 'is-me' : ''}">
+              <span class="account-avatar" style="width:28px;height:28px;font-size:12px">${esc((a.name || '?').charAt(0).toUpperCase())}</span>
+              <span>${esc(a.name)}</span>
+              <span class="mono">${esc(formatDate(a.createdAt))}${a.hasPublic ? ' · public' : ''}</span>
+            </div>`).join('')}
+        </div>
+        <p class="status-line is-ok">${esc(t('set.roster.seats', { used: roster.length, max: store.maxAccounts }))}</p>
       </section>
 
       <section class="panel">
@@ -74,12 +110,40 @@ export default function renderSettings({ store, profile, mount, rerender }) {
       </section>
     </div>`;
 
+  const accountStatus = mount.querySelector('#account-status');
   const syncStatus = mount.querySelector('#sync-status');
   const dataStatus = mount.querySelector('#data-status');
   const say = (node, message, ok = true) => {
     node.textContent = message;
     node.className = `status-line ${ok ? 'is-ok' : 'is-bad'}`;
   };
+
+  mount.querySelector('#pass-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    say(accountStatus, '…');
+    try {
+      await store.changePassphrase(form.get('old'), form.get('new'));
+      say(accountStatus, t('set.account.changed'));
+      e.target.reset();
+    } catch (err) {
+      say(accountStatus, err.message === 'WRONG_PASSPHRASE'
+        ? t('auth.err.passphrase')
+        : err.message === 'PASSPHRASE_TOO_SHORT' ? t('auth.err.short') : err.message, false);
+    }
+  });
+
+  mount.querySelector('[data-del-account]').addEventListener('click', async () => {
+    const passphrase = prompt(t('set.account.deleteConfirm'));
+    if (!passphrase) return;
+    try {
+      await store.deleteAccount(passphrase);
+      location.hash = '#/';
+      location.reload();
+    } catch (err) {
+      say(accountStatus, err.message === 'WRONG_PASSPHRASE' ? t('auth.err.passphrase') : err.message, false);
+    }
+  });
 
   mount.querySelector('#profile-form').addEventListener('submit', (e) => {
     e.preventDefault();

@@ -67,32 +67,47 @@ They are inert with a single local profile, but they are exactly the columns a
 multi-user store and a leaderboard need — writing them now avoids migrating
 every existing profile later.
 
-## Phase 2 — accounts
+## Phase 2 — accounts (built)
 
-**Trigger:** more than one person wants to use it.
+Five accounts share one deployment, each sealed with its own passphrase.
 
-Sign in with GitHub, each person's progress in a Gist their own account owns.
-Nobody's data sits in this repo, and there is no database to run.
+The design question was how to authenticate with no server. Real GitHub OAuth
+was the obvious answer and was rejected for this stage: the web flow needs a
+client secret a static site cannot hold, and GitHub's device-flow endpoints send
+no CORS headers, so a browser cannot call them directly either. Both roads lead
+to running a proxy — a real dependency for what is currently a private group of
+five, several of whom would need to create GitHub accounts first.
 
-The obstacle is that GitHub's OAuth web flow needs a client secret to exchange
-the code for a token, and a static site cannot hold a secret. Two ways out:
+So authentication is **passphrase-derived encryption** instead of a login check:
 
-1. **A one-function proxy** (Cloudflare Worker or Vercel function) that does the
-   code-for-token exchange and nothing else. ~30 lines, free tier, the only
-   non-GitHub piece in the stack.
-2. **A GitHub App using the device flow**, which needs no secret in the client.
-   The user types a code on github.com. No proxy at all, slightly clumsier
-   sign-in.
+```
+passphrase ──PBKDF2(250k, SHA-256)──▶ AES-GCM key ──▶ sealed vault
+                                                       │
+roster (plaintext)      ────────────────────────────────┤
+  id, name, createdAt, updatedAt                        │
+  public: { xp, streak, tier, cleared } | null   ◀───────┘ opt-in only
+```
 
-Option 2 keeps the "GitHub and nothing else" property; option 1 is the nicer
-sign-in. Either way the work in this repo is the same:
+Signing in *is* decryption. There is no "check the password and then trust the
+client" step to bypass, because the ciphertext genuinely cannot be read without
+the key. AES-GCM authenticates, so a wrong passphrase fails to decrypt rather
+than returning garbage — that is what makes `WRONG_PASSPHRASE` a real signal.
 
-- a `js/store/github.js` adapter — the same four methods, token from OAuth
-  rather than pasted into Settings
-- an auth state in `store`, and a sign-in screen
-- `profile.id` becomes the GitHub login instead of `'local'`
+What it does not do: there is no server, so nothing stops a visitor creating an
+account while seats remain, or reading the roster's *names*. This is the right
+trade for a private group and the wrong one for a public product.
 
-Nothing in `js/views/` or `js/progress.js` changes.
+The store's contract did not change. Views still read `store.profile` and call
+mutators; `store.update()` now seals in the background after emitting, so the UI
+stays synchronous over an inherently async crypto call.
+
+### If this outgrows five people
+
+Swap the vault for OAuth. `js/store/accounts.js` is the only file that knows how
+a profile is unlocked — `signIn`, `saveProfile` and the roster merge are the
+seam. A `js/store/github.js` implementing the same calls against an OAuth token
+leaves every view and `js/progress.js` untouched. The proxy (Cloudflare Worker,
+~30 lines, holds the client secret) becomes worth its cost at that point.
 
 ## Phase 3 — leaderboard
 
@@ -113,14 +128,16 @@ Action can do the aggregation:
 The leaderboard is then a static file the site fetches like any other. It is a
 day stale, which for a training leaderboard is fine.
 
-Consent is already modelled: `profile.visibility` defaults to `'private'` and
-Settings exposes the toggle. The aggregator reads nothing from a profile that
-has not opted in, and publishes only the four fields above — never logs, never
-dates.
+Consent is already modelled and already wired: `profile.visibility` defaults to
+`'private'`, Settings exposes the toggle, and `accounts.saveProfile()` writes a
+plaintext `public: { name, xp, streak, tier, cleared }` **only** for accounts
+that opted in — everything else stays sealed. `accounts.publicBoard()` already
+returns exactly the ranked slice a leaderboard would render.
 
-The registry of which Gists to read is the one piece still to design. The
-cheapest version is a `profiles.json` in this repo that sign-up appends to via
-the API; the tidier version is a GitHub App that can enumerate installations.
+So phase 3 is now small: point a scheduled Action at the shared roster Gist,
+read the `public` entries (no passphrase needed — that is why they are in the
+clear), and commit `data/leaderboard.json`. Nothing about the encryption has to
+be unpicked to make ranking work.
 
 ## Why not just use a backend
 
