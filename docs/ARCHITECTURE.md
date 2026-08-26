@@ -148,17 +148,45 @@ bad trade. If this ever needs real-time features, per-set social feeds or more
 than a few hundred users, revisit it — the adapter seam means the migration is a
 new file in `js/store/`, not a rewrite.
 
-## Build pipeline
+## The three data files
+
+Only one of them is generated, and the split is deliberate:
+
+| File | Authored by | Changes when |
+| --- | --- | --- |
+| `data/skills.json` | `tools/build_skills.py` | the workbook changes |
+| `data/programs.json` | a coach, by hand | the programming philosophy changes |
+| `data/videos-curated.json` | a human, by hand | a link dies or a better tutorial turns up |
+
+Keeping them apart is what lets a coach retune every session without touching
+code, and lets the catalogue be regenerated without losing curation. A rebuild
+overwrites `skills.json` completely — so anything a human decided has to live in
+one of the other two, or in the tables at the top of `build_skills.py`.
 
 ```
 source/skill-tree.xlsx
-    │  tools/build_skills.py     (parses the sheet, its arrows and its geometry)
+    │  tools/build_skills.py   (sheet, drawn arrows, cell geometry)
+    │                          + videos-curated.json  (fills gaps, strips dead links)
     ▼
 data/skills.json  ──┬─▶ tools/check_data.py  ──▶ Pages deploy
-                    │      reachability, cycles,
-data/programs.json ─┘      tier monotonicity,
-  (hand-authored)          template/prescription integrity
+                    │      reachability, cycles, tier monotonicity,
+data/programs.json ─┘      template + prescription + curated-video integrity
 ```
 
 CI regenerates `data/skills.json` and fails if it differs from what is committed,
 so the generated file can never drift from the workbook it claims to come from.
+
+`tools/verify_videos.py` sits deliberately **outside** this pipeline. It needs
+network and it checks third-party links, which rot on their own schedule; a
+video going private should not be able to fail a deploy. It is a maintenance
+tool, run by hand, and `check_data.py` covers the structural half in CI instead.
+
+## The tree diagram
+
+`js/treegraph.js` is pure geometry — tier on the x axis, barycentre sweeps to
+order rows, cubic beziers for edges. It knows nothing about status or progress.
+`js/views/tree.js` colours what the layout produces.
+
+That split is why the same layout can serve one branch (15 nodes) and the whole
+catalogue (111 nodes, 105 edges) without special cases, and why hover
+highlighting is a class toggle over an existing DOM rather than a re-render.
