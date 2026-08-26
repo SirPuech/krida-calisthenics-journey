@@ -1,0 +1,464 @@
+{
+  "version": 1,
+  "editableBy": "coach",
+  "notes": [
+    "Hand-curated tutorials for skills the workbook has no video for — the legs branch mostly, plus three ring/lever transitions.",
+    "Every URL here was checked against YouTube's oEmbed endpoint, and the title and credit below are what that endpoint returned, not what a search result claimed.",
+    "scope 'skill' means the video is about that exact movement. scope 'family' means it covers the movement family and is attached to a one-leg or elevated variant that has no dedicated tutorial — the app labels these differently so the distinction is visible to the athlete.",
+    "Adding a video: put it here, run tools/build_skills.py, then tools/check_data.py. Nothing else needs touching."
+  ],
+  "families": {
+    "nordic": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+        "credit": "Simonster Strength",
+        "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+        "credit": "E3 Rehab",
+        "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls"
+      },
+      {
+        "kind": "alt",
+        "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+        "credit": "Paul Twyman",
+        "title": "Train Nordic Hamstring Curls at Home Like This"
+      }
+    ],
+    "sissy": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=4Y30vn1IIe8",
+        "credit": "Chris Gates Fitness",
+        "title": "Proper Sissy Squat Form and Technique"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=cHpDhoud8oo",
+        "credit": "Australian Strength Performance",
+        "title": "How To Sissy Squat (Beginners to Advanced Level)"
+      },
+      {
+        "kind": "alt",
+        "url": "https://www.youtube.com/watch?v=cM_RVGbOzVE",
+        "credit": "Vulcan Performance",
+        "title": "Full Sissy Squat Progression to Get Strong Knees"
+      }
+    ],
+    "shrimp": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=GslczgeVuuE",
+        "credit": "School of Calisthenics",
+        "title": "How to SHRIMP Squat [Lower Body Training]"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=85YE86ipw_w",
+        "credit": "Flow Motion Fitness",
+        "title": "Shrimp Squat Progression Guide | Beginner to Intermediate"
+      },
+      {
+        "kind": "alt",
+        "url": "https://www.youtube.com/watch?v=xfl7SDj0Gzs",
+        "credit": "Flow Motion Fitness",
+        "title": "Shrimp Squat | Tutorial & Progressions"
+      }
+    ],
+    "legext": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+        "credit": "MEAUXTION FITNESS",
+        "title": "Reverse Nordic Curl (natural leg extensions)"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+        "credit": "Strength Side",
+        "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)"
+      }
+    ],
+    "matrix": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=sbOuIfubuds",
+        "credit": "Stefano Ravarino",
+        "title": "MATRIX LEG EXTENSION | Tutorial"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+        "credit": "Strength Side",
+        "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)"
+      }
+    ],
+    "singleLegSquat": [
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=2GMAkaOV_50",
+        "credit": "School of Calisthenics",
+        "title": "SIMPLE PROGRESSIONS for all Pistol, Cossack, Shrimp, Sissy & Dragon Squats"
+      }
+    ],
+    "flToRp": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/shorts/n7t4r_d7Zy8",
+        "credit": "DeUanUIs",
+        "title": "Road to Front Lever to Reverse Planche on rings (Spinazzola II)"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=_qNRNyI3qxM",
+        "credit": "GMB Fitness (Praxis)",
+        "title": "Full Front Lever Tutorial on Gymnastic Rings"
+      }
+    ],
+    "ironCross": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=tHf5BsHuFQM",
+        "credit": "Vitaly Pavlenko",
+        "title": "IRON CROSS Tutorial (5 Easy Steps)"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=BFswWFvqhoE",
+        "credit": "Strength Project",
+        "title": "How to do the Iron Cross - Gymnastics Skill Training Tutorial"
+      },
+      {
+        "kind": "alt",
+        "url": "https://www.youtube.com/watch?v=z0iVjGzF6P0",
+        "credit": "Tyson Edwards",
+        "title": "FULL Iron Cross Workout"
+      }
+    ],
+    "planche": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+        "credit": "Andry Strong",
+        "title": "How to Do Planche - Full Guide"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+        "credit": "Vitality",
+        "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial"
+      }
+    ],
+    "dragonPress": [
+      {
+        "kind": "form",
+        "url": "https://www.youtube.com/watch?v=GwMTAsKYVnM",
+        "credit": "Vitaly Pavlenko",
+        "title": "DRAGON PRESS Tutorial (5 Steps to Learn it)"
+      },
+      {
+        "kind": "tutorial",
+        "url": "https://www.youtube.com/watch?v=Rbkrpkejc0k",
+        "credit": "Stefano Ravarino",
+        "title": "Tutorial and Tips about DRAGON PRESS"
+      },
+      {
+        "kind": "alt",
+        "url": "https://www.youtube.com/watch?v=bSGHh4J0Alk",
+        "credit": "Alan Tadzlilan",
+        "title": "Dragon Press Progression - Hard Element in Calisthenics"
+      }
+    ]
+  },
+  "skills": {
+    "hamstring-bridge": {
+      "scope": "skill",
+      "videos": [
+        {
+          "kind": "form",
+          "url": "https://www.youtube.com/watch?v=nuapk_-Q2BI",
+          "credit": "Dr. Carl Baird",
+          "title": "How To Do A Glute Bridge | Step By Step Instruction For Beginners"
+        },
+        {
+          "kind": "tutorial",
+          "url": "https://www.youtube.com/watch?v=6yeyt5mUo94",
+          "credit": "Runna",
+          "title": "Glute Bridge into Hamstring Walkout Tutorial"
+        }
+      ]
+    },
+    "squat": {
+      "scope": "skill",
+      "videos": [
+        {
+          "kind": "form",
+          "url": "https://www.youtube.com/watch?v=X0qC1k0Zi6k",
+          "credit": "Calisthenicmovement",
+          "title": "The Perfect Squat - Do it right!"
+        },
+        {
+          "kind": "tutorial",
+          "url": "https://www.youtube.com/watch?v=0KtrNQre5rQ",
+          "credit": "School of Calisthenics",
+          "title": "Fix Your Squat | Correct Bodyweight Squat Technique"
+        },
+        {
+          "kind": "alt",
+          "url": "https://www.youtube.com/watch?v=gsNoPYwWXeM",
+          "credit": "Calisthenicmovement",
+          "title": "Fix Your Squat (In Just 3-Minutes)"
+        }
+      ]
+    },
+    "pistol-squat": {
+      "scope": "skill",
+      "videos": [
+        {
+          "kind": "form",
+          "url": "https://www.youtube.com/watch?v=R1mxpLzYgxM",
+          "credit": "FitnessFAQs",
+          "title": "The Complete Pistol Squat Checklist | No Mistakes!"
+        },
+        {
+          "kind": "tutorial",
+          "url": "https://www.youtube.com/watch?v=DJ5Ukbfak7I",
+          "credit": "School of Calisthenics",
+          "title": "PISTOL Squat PROGRESSIONS + Regressions"
+        },
+        {
+          "kind": "alt",
+          "url": "https://www.youtube.com/watch?v=NMLVft7126o",
+          "credit": "Ashton Fitness",
+          "title": "How to Pistol Squat (EASIEST METHOD)"
+        }
+      ]
+    },
+    "hawaiian-squat": {
+      "scope": "skill",
+      "videos": [
+        {
+          "kind": "form",
+          "url": "https://www.youtube.com/watch?v=qnw_7_U_fJU",
+          "credit": "CrossFit Invictus",
+          "title": "Hawaiian Squats | CrossFit Invictus"
+        },
+        {
+          "kind": "alt",
+          "url": "https://www.youtube.com/watch?v=pHtNBTuOn4Q",
+          "credit": "Jenny LaBaw",
+          "title": "Hawaiian Squat"
+        }
+      ]
+    },
+    "nordic-hamstring-curl": {
+      "scope": "skill",
+      "family": "nordic"
+    },
+    "ol-nordic-hamstring-curl": {
+      "scope": "family",
+      "family": "nordic"
+    },
+    "inv-nordic-hamstring-curl": {
+      "scope": "family",
+      "family": "nordic"
+    },
+    "elev-ol-nordic-hamstring-curl": {
+      "scope": "family",
+      "family": "nordic"
+    },
+    "ol-inv-nordic-hamstring-curl": {
+      "scope": "family",
+      "family": "nordic"
+    },
+    "sissy-squat": {
+      "scope": "skill",
+      "family": "sissy"
+    },
+    "ol-sissy-squat": {
+      "scope": "family",
+      "family": "sissy"
+    },
+    "elv-ol-sissy-squat": {
+      "scope": "family",
+      "family": "sissy"
+    },
+    "shrimp-squat": {
+      "scope": "skill",
+      "family": "shrimp"
+    },
+    "elv-shrimp-squat": {
+      "scope": "family",
+      "family": "shrimp"
+    },
+    "shrimp-squat-blaster": {
+      "scope": "family",
+      "family": "shrimp"
+    },
+    "natural-leg-ext": {
+      "scope": "skill",
+      "family": "legext"
+    },
+    "ol-natural-leg-ext": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "natural-leg-press": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "ol-natural-leg-press": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "elv-ol-natural-leg-press": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "leg-ext-lever": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "ol-leg-ext-lever": {
+      "scope": "family",
+      "family": "legext"
+    },
+    "matrix-leg-ext": {
+      "scope": "skill",
+      "family": "matrix"
+    },
+    "ol-matrix-leg-ext": {
+      "scope": "family",
+      "family": "matrix"
+    },
+    "elv-matrix-leg-ext": {
+      "scope": "family",
+      "family": "matrix"
+    },
+    "elv-ol-matrix-leg-ext": {
+      "scope": "family",
+      "family": "matrix"
+    },
+    "pb-fl-to-reverse-planche": {
+      "scope": "family",
+      "family": "flToRp"
+    },
+    "fl-to-rp": {
+      "scope": "skill",
+      "family": "flToRp"
+    },
+    "victorian-cross-to-rp": {
+      "scope": "family",
+      "family": "flToRp"
+    },
+    "front-lever-pull-up": {
+      "scope": "skill",
+      "videos": [
+        {
+          "kind": "form",
+          "url": "https://www.youtube.com/watch?v=NAHHm3kdnrc",
+          "credit": "Calisthenics Milano",
+          "title": "FRONT LEVER PULL UP TUTORIAL"
+        },
+        {
+          "kind": "tutorial",
+          "url": "https://www.youtube.com/watch?v=4DZPaCOfJOI",
+          "credit": "Ashton Fitness",
+          "title": "How to Advanced Tuck Front Lever Pull Up - 3 AMAZING Tips"
+        }
+      ]
+    },
+    "dragon-press": {
+      "scope": "skill",
+      "family": "dragonPress"
+    },
+    "oa-dragon-press": {
+      "scope": "family",
+      "family": "dragonPress"
+    },
+    "bicep-planche": {
+      "scope": "family",
+      "family": "planche"
+    },
+    "oa-planche": {
+      "scope": "family",
+      "family": "planche"
+    },
+    "maltese-press": {
+      "scope": "family",
+      "family": "planche"
+    },
+    "ring-planche": {
+      "scope": "family",
+      "family": "planche"
+    },
+    "ring-planche-press": {
+      "scope": "family",
+      "family": "planche"
+    },
+    "butterfly": {
+      "scope": "family",
+      "family": "ironCross"
+    },
+    "zanetti": {
+      "scope": "family",
+      "family": "ironCross"
+    },
+    "carmona": {
+      "scope": "family",
+      "family": "ironCross"
+    },
+    "fl-to-victorian-cross": {
+      "scope": "family",
+      "family": "ironCross"
+    }
+  },
+  "deadLinks": [
+    "https://www.youtube.com/watch?v=7AdMqt8i60E",
+    "https://www.youtube.com/watch?v=E1yk6EB4AxI",
+    "https://www.youtube.com/watch?v=LHZpHEMvfos",
+    "https://youtu.be/11CyoGLEWvA?t=5",
+    "https://youtu.be/1Dw356KyYvc?t=322",
+    "https://youtu.be/2aU9vkaN-Pk",
+    "https://youtu.be/3UpGBGV5Sxo",
+    "https://youtu.be/3UpGBGV5Sxo?t=389",
+    "https://youtu.be/4FIGVlylUWw",
+    "https://youtu.be/5D5PB5VCCDU?t=15",
+    "https://youtu.be/5W9jY3Kghk8?t=25",
+    "https://youtu.be/6009QVxS4Us",
+    "https://youtu.be/6iC3dxxtFD8?t=137",
+    "https://youtu.be/7AdMqt8i60E",
+    "https://youtu.be/7AdMqt8i60E?t=188",
+    "https://youtu.be/ALctTQ9TzoA",
+    "https://youtu.be/BREPvFm4ZNA?t=5",
+    "https://youtu.be/BRG4iHBj3EU?t=244",
+    "https://youtu.be/BtKpknJbG7k?t=79",
+    "https://youtu.be/DsHRWT2-PvY",
+    "https://youtu.be/FwcjA2ZR5UA?t=102",
+    "https://youtu.be/IXmYzmhgkzo",
+    "https://youtu.be/IXmYzmhgkzo?t=392",
+    "https://youtu.be/JSIfkc_e3Sg?t=397",
+    "https://youtu.be/Pz1cZWXqUhI?t=113",
+    "https://youtu.be/RQXpYUIt9gc",
+    "https://youtu.be/RYvoAiXejkw?t=149",
+    "https://youtu.be/T9Vyl3H4njA",
+    "https://youtu.be/Wwro7ZIBFa4?t=7",
+    "https://youtu.be/YcVVxrxyVmY?t=87",
+    "https://youtu.be/cIVtPseYjiI",
+    "https://youtu.be/dzRN9KBzFS0?t=74",
+    "https://youtu.be/fMz9MnyOG1o",
+    "https://youtu.be/lHKaQx6duC0",
+    "https://youtu.be/mnmIKqx-V-Y?t=687",
+    "https://youtu.be/ns_5fl0oN4A",
+    "https://youtu.be/pNs4FUTiZAk?t=25",
+    "https://youtu.be/sDqUD_oiDY4?t=100",
+    "https://youtu.be/sDqUD_oiDY4?t=31",
+    "https://youtu.be/sHZReAwO_h0",
+    "https://youtu.be/sHZReAwO_h0?t=90",
+    "https://youtu.be/sa4vKNEWKQ0",
+    "https://youtu.be/yJx6aRUkdaE?t=195"
+  ]
+}

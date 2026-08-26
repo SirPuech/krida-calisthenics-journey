@@ -16,6 +16,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 XLSX = ROOT / "source" / "skill-tree.xlsx"
+CURATED = ROOT / "data" / "videos-curated.json"
 OUT = ROOT / "data" / "skills.json"
 
 M = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
@@ -304,6 +305,20 @@ def build():
                 items.append(v)
         flush()
 
+    # --- curated videos for skills the workbook never covered -----------------
+    curated = json.loads(CURATED.read_text()) if CURATED.exists() else {"families": {}, "skills": {}}
+    # Links tools/verify_videos.py has confirmed are gone. Dropping them here is
+    # what lets a curated replacement take over a skill the workbook "covers".
+    dead = set(curated.get("deadLinks", []))
+
+    def curated_for(skill_id):
+        entry = curated["skills"].get(skill_id)
+        if not entry:
+            return []
+        clips = entry.get("videos") or curated["families"].get(entry.get("family"), [])
+        return [{**clip, "source": "curated", "scope": entry.get("scope", "skill")}
+                for clip in clips]
+
     # --- skills --------------------------------------------------------------
     by_id, skills = {}, []
     for c in cells:
@@ -333,7 +348,9 @@ def build():
             "standard": {"sets": sets, "type": "hold" if is_hold else "reps",
                          "amount": amount, "source": "default"},
             "prereqs": [],
-            "videos": videos.get(lookup, []),
+            "videos": [{**v, "source": "workbook", "scope": "skill"}
+                       for v in videos.get(lookup, []) if v["url"] not in dead]
+                      or curated_for(sid),
             "variations": variations.get(lookup, []),
             "pos": {"row": c["row"], "col": c["col"]},
         }
@@ -420,6 +437,9 @@ def build():
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1))
 
     with_video = sum(1 for s in skills if s["videos"])
+    from_workbook = sum(1 for s in skills if any(v["source"] == "workbook" for v in s["videos"]))
+    from_curated = sum(1 for s in skills if any(v["source"] == "curated" for v in s["videos"]))
+    family_scope = sum(1 for s in skills if any(v["scope"] == "family" for v in s["videos"]))
 
     # Every skill has to be reachable from an entry skill, or it can never be
     # unlocked in the app. Walk the graph forward and report anything stranded.
@@ -436,7 +456,8 @@ def build():
                 frontier.append(child)
     orphans = [s["id"] for s in skills if s["id"] not in seen]
     print(f"skills            {len(skills)}")
-    print(f"  with videos     {with_video}")
+    print(f"  with videos     {with_video}  ({from_workbook} workbook, {from_curated} curated"
+          f"{f', {family_scope} family-scope' if family_scope else ''})")
     print(f"  with variations {sum(1 for s in skills if s['variations'])}")
     print(f"prereq edges      {from_arrows} from arrows + {from_bands} from neighbours "
           f"({dropped} arrows too ambiguous, dropped)")

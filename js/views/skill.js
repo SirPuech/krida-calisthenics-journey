@@ -5,6 +5,7 @@ import {
 } from '../progress.js';
 
 const VIDEO_LABEL = { form: 'Form', tutorial: 'Tutorial', alt: 'Alt.' };
+const isFamily = (video) => video?.scope === 'family';
 
 export default function renderSkill({ catalogue, store, profile, params, mount, rerender }) {
   const skill = catalogue.byId.get(params[0]);
@@ -44,6 +45,7 @@ export default function renderSkill({ catalogue, store, profile, params, mount, 
         <h1>${esc(skill.name)}</h1>
         ${skill.sheetName !== skill.name ? `<p class="muted mono" style="font-size:12px;margin-top:8px">${esc(skill.sheetName)}</p>` : ''}
 
+        ${isFamily(primary) ? `<p class="video-scope">${esc(t('skill.videos.familyShort'))}</p>` : ''}
         <div class="video-frame ${embed ? '' : 'is-empty'}">
           ${embed
             ? `<iframe src="${esc(embed)}" title="${esc(skill.name)}" loading="lazy" allowfullscreen
@@ -124,10 +126,14 @@ export default function renderSkill({ catalogue, store, profile, params, mount, 
           <h4 class="section-label">${esc(t('skill.videos'))}</h4>
           <div class="link-list">
             ${skill.videos.length ? skill.videos.map((v) => `
-              <div><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(VIDEO_LABEL[v.kind] || v.kind)}</a>
-                <em>${esc(v.credit || '—')}</em></div>`).join('')
+              <div>
+                <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer"
+                   title="${esc(v.title || '')}">${esc(VIDEO_LABEL[v.kind] || v.kind)}</a>
+                <em>${esc(v.credit || '—')}</em>
+              </div>`).join('')
               : `<p class="muted" style="font-size:13px">${esc(t('skill.videos.none'))}</p>`}
           </div>
+          ${isFamily(primary) ? `<p class="video-scope">${esc(t('skill.videos.family'))}</p>` : ''}
         </div>
 
         <div class="panel">

@@ -59,9 +59,11 @@ js/store/                 profile persistence
 js/views/                 one module per screen
 data/skills.json          generated skill catalogue — do not hand-edit
 data/programs.json        coach-editable splits and prescriptions — hand-edit this
+data/videos-curated.json  curated tutorials + known-dead links — hand-edit this
 source/skill-tree.xlsx    the workbook the catalogue derives from
 tools/build_skills.py     regenerates data/skills.json
 tools/check_data.py       validates the catalogue (runs in CI)
+tools/verify_videos.py    checks every video link against YouTube (run by hand)
 ```
 
 ## The skill data
@@ -83,7 +85,7 @@ Being clear about this matters, because the two are mixed in the same file:
 | Field | Source |
 | --- | --- |
 | `name`, `sheetName` | The workbook, verbatim. |
-| `videos` | The workbook's Form / Tutorial / Alternative columns, with their credits. 82 of 111 skills have links; the legs branch has none. |
+| `videos` | The workbook's Form / Tutorial / Alternative columns, plus curated additions — see below. All 111 skills have at least one working link. |
 | `variations` | The workbook's VP sheet. |
 | `branch` | Derived by name matching (`BRANCH_RULES`). |
 | `tier`, `depth` | **Derived**, from how far the skill sits from the tree's root cell on the TREE sheet. The workbook states no tiers. |
@@ -105,6 +107,44 @@ re-checks that, plus reachability and cycles, on every push.
 
 **If a prerequisite looks wrong to you, it probably is.** Put the correction in
 `TIER_OVERRIDES` or `OVERRIDES` in `tools/build_skills.py` and rebuild.
+
+## Videos
+
+The workbook covered 82 of 111 skills and left the whole legs branch empty. Worse,
+**43 of its 197 links were dead** — removed, private, or no longer embeddable —
+which nothing had ever checked.
+
+Both are fixed. Every skill now has at least one working tutorial, and all 164
+links in the catalogue resolve.
+
+`data/videos-curated.json` holds the additions. Two things matter about it:
+
+- **Every URL was verified**, not taken on trust from a search result. The
+  `credit` and `title` stored next to each link are what YouTube's oEmbed
+  endpoint actually returned for it.
+- **`scope` is honest about coverage.** `skill` means the video is about that
+  exact movement. `family` means it covers the movement family and is attached
+  to a one-leg or elevated variant with no dedicated tutorial of its own — the
+  skill page labels those *"Family tutorial — covers the movement, not this
+  exact variation"* rather than pretending otherwise. 71 of 237 attachments are
+  family-scope.
+
+`deadLinks` records URLs confirmed gone. The build strips them, which is what
+lets a curated replacement take over a skill the workbook nominally "covers".
+
+### Re-checking links
+
+Third-party links rot, so this is a manual tool rather than a CI step — a video
+going private should not fail your deploy:
+
+```bash
+python3 tools/verify_videos.py
+```
+
+It reports dead links grouped by source, names any skill left with **no** working
+video, and flags curated entries whose stored credit no longer matches the
+channel. `--write` records new failures into `deadLinks` for you; `--curated`
+checks only the hand-added ones. It never fails the build.
 
 ## The program (for a coach)
 
