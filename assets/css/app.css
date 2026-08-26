@@ -19,7 +19,10 @@
 
   --sans: Outfit, system-ui, -apple-system, "Segoe UI", sans-serif;
   --thai: Prompt, Outfit, system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Prompt closes the mono stack so Thai glyphs, which JetBrains Mono has none
+     of, land on Prompt instead of a system face. Fallback is per glyph, so
+     Latin and digits still render in JetBrains Mono. */
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Prompt, monospace;
 
   --r-sm: 7px; --r: 10px; --r-lg: 14px; --r-pill: 999px;
   --wrap: 1240px;
@@ -42,8 +45,12 @@ body {
   -webkit-font-smoothing: antialiased;
   display: flex; flex-direction: column; min-height: 100vh;
 }
+/* Most rules set type with the `font:` shorthand, which writes font-family
+   explicitly and so beats anything inherited from body. Redefining the token
+   itself is what actually moves Thai onto Prompt everywhere. */
+html[data-lang="th"] { --sans: Prompt, Outfit, system-ui, sans-serif; }
 html[data-lang="th"] body,
-html[data-lang="th"] .th { font-family: var(--thai); }
+.th { font-family: var(--thai); }
 
 a { color: var(--blue-lift); text-decoration: none; }
 a:hover { color: var(--orange); }
