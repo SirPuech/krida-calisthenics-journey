@@ -500,9 +500,34 @@ main { flex: 1; padding-block: 40px 64px; }
 }
 
 /* ---------- auth ---------- */
-body.is-signed-out .site-nav a,
-body.is-signed-out .nav-toggle { display: none; }
-body.is-signed-out .site-nav { display: flex; position: static; background: none; border: 0; padding: 0; flex-direction: row; }
+.gate-choice {
+  padding: 30px 32px; margin-bottom: 26px;
+  border: 1px solid rgba(249, 115, 22, .35); border-radius: var(--r-lg);
+  background: radial-gradient(120% 140% at 8% 0%, rgba(249, 115, 22, .12), transparent 60%), var(--onyx);
+}
+.gate-choice h2 { font: 700 24px var(--sans); }
+.gate-choice > p { font-size: 15px; color: var(--ink-2); margin-top: 10px; max-width: 62ch; }
+.gate-note { font-size: 12px; color: var(--ink-3); margin-top: 14px; max-width: 62ch; }
+
+.guest-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  padding: 11px 16px; margin-bottom: 18px; border-radius: var(--r);
+  border: 1px solid var(--line); background: var(--raise);
+  font-size: 13px; color: var(--ink-3);
+}
+.guest-bar a { margin-left: auto; font-weight: 600; }
+
+.whoami.is-guest .whoami-avatar { background: none; border: 1px dashed var(--line-2); color: var(--ink-3); }
+.whoami [hidden] { display: none; }
+.whoami a { font: 500 12px var(--sans); color: var(--ink-3); }
+.whoami a:hover { color: var(--orange); }
+
+.carry {
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
+  border-radius: var(--r-sm); border: 1px solid rgba(249, 115, 22, .4);
+  background: rgba(249, 115, 22, .07); font-size: 13px; color: var(--ink-2);
+}
+.carry input { margin-top: 2px; accent-color: var(--orange); }
 
 .whoami { display: flex; align-items: center; gap: 9px; padding-left: 6px; }
 /* [hidden] loses to display:flex without this. */

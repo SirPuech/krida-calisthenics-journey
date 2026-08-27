@@ -17,7 +17,7 @@ import renderProgram from './views/program.js';
 import renderDashboard from './views/dashboard.js';
 import renderLibrary from './views/library.js';
 import renderSettings from './views/settings.js';
-import renderSignIn, { resetSignInView } from './views/signin.js';
+import { resetSignInView } from './views/signin.js';
 import { summarise } from './progress.js';
 
 const ROUTES = [
@@ -57,24 +57,13 @@ function render({ scroll = true } = {}) {
   const mount = main.firstElementChild;
   const context = {
     catalogue, programs, store, profile: store.profile, params, mount,
+    legacyProfile, onSignedIn,
     rerender: () => render({ scroll: false }),
   };
 
-  // Everything behind the account gate. Signed out, the only screen is sign-in.
-  if (!store.signedIn) {
-    document.body.classList.add('is-signed-out');
-    markNav(null);
-    try {
-      renderSignIn({ ...context, legacyProfile, onSignedIn });
-    } catch (err) {
-      console.error('[krida] sign-in failed to render', err);
-      mount.innerHTML = `<div class="empty">${err.message}</div>`;
-    }
-    updateChrome();
-    return;
-  }
-
-  document.body.classList.remove('is-signed-out');
+  // No gate: the whole site is browsable as a guest. Accounts are opt-in from
+  // Settings, and the landing page is where that choice is offered.
+  document.body.classList.toggle('is-guest', !store.signedIn);
   markNav(route.name);
   try {
     route.view(context);
@@ -93,6 +82,11 @@ function onSignedIn() {
   render();
 }
 
+function onSignedOut() {
+  resetSignInView();
+  render();
+}
+
 function updateChrome() {
   const meta = document.getElementById('footer-meta');
   const remote = store.remoteState;
@@ -103,12 +97,14 @@ function updateChrome() {
   meta.textContent = bits.join(' · ');
 
   const who = document.getElementById('whoami');
-  who.hidden = !store.signedIn;
-  if (store.signedIn) {
-    who.querySelector('.whoami-name').textContent = store.profile.name;
-    who.querySelector('.whoami-avatar').textContent =
-      (store.profile.name || '?').charAt(0).toUpperCase();
-  }
+  const guest = !store.signedIn;
+  who.hidden = false;
+  who.classList.toggle('is-guest', guest);
+  who.querySelector('.whoami-name').textContent = guest ? t('auth.guest') : store.profile.name;
+  who.querySelector('.whoami-avatar').textContent = guest
+    ? '·' : (store.profile.name || '?').charAt(0).toUpperCase();
+  who.querySelector('#signout').hidden = guest;
+  who.querySelector('#gotoaccount').hidden = !guest;
 }
 
 function wireChrome() {
@@ -131,11 +127,9 @@ function wireChrome() {
       render({ scroll: false });
     });
   });
-  document.getElementById('signout').addEventListener('click', () => {
-    store.signOut();
-    resetSignInView();
-    location.hash = '#/';
-    render();
+  document.getElementById('signout').addEventListener('click', async () => {
+    await store.signOut();
+    onSignedOut();
   });
 }
 
@@ -146,8 +140,9 @@ async function boot() {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;
   }
-  // Phase-1 progress lives in an unsealed profile; offer to claim it as an account.
-  if (!store.signedIn && !store.listAccounts().length) {
+  // A guest's own profile is the thing an account claims, so this is only about
+  // surfacing progress left behind before accounts existed.
+  if (!store.signedIn) {
     legacyProfile = await store.legacyProfile().catch(() => null);
   }
   store.setSummaryProvider((profile) => {

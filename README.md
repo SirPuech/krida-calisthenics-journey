@@ -185,7 +185,15 @@ to English rather than rendering blank.
 It knows nothing about injuries, sleep or recovery, and the app says so on the
 program page.
 
-## Accounts
+## Guests and accounts
+
+**Nothing is behind a login.** The landing page offers *Join as guest*, and a
+guest can use the entire site — the tree, the programs, every tutorial, logging
+sets, the dashboard. A guest's progress is saved unsealed on their device.
+
+Accounts are opt-in, from **Settings → Account**. Signing up offers to carry the
+guest's progress across, so nobody starts over for having looked around first,
+and *Switch account* drops back to guest rather than to a dead end.
 
 Up to **five** people share one deployment. There is no server, so sign-in works
 like this:
@@ -214,8 +222,8 @@ attacker, and do not put anything in here you would not put in a shared note.
 The passphrase is held in `sessionStorage` while you are signed in, so a reload
 keeps you in and closing the tab signs you out.
 
-A profile from before accounts existed is offered on first load as *"claim your
-existing progress"* — pick a passphrase and it becomes your account.
+The guest profile and a profile from before accounts existed are the same kind
+of record, which is what lets either be claimed into an account without loss.
 
 ## Your progress
 

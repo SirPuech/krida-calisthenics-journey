@@ -2,7 +2,9 @@ import { t } from '../i18n.js';
 import { esc, pct, formatStandard } from '../dom.js';
 import { summarise, standardProgress, STATUS, standardFor } from '../progress.js';
 
-export default function renderHome({ catalogue, profile, mount }) {
+export default function renderHome({ catalogue, store, profile, mount, rerender }) {
+  const guest = !store.signedIn;
+  const undecided = guest && !store.guestChosen;
   const s = summarise(catalogue, profile);
   const cleared = catalogue.skills
     .filter((k) => profile.cleared[k.id])
@@ -24,6 +26,23 @@ export default function renderHome({ catalogue, profile, mount }) {
   const overall = s.total ? s.counts.cleared / s.total : 0;
 
   mount.innerHTML = `
+    ${undecided ? `
+      <section class="gate-choice">
+        <h2>${esc(t('auth.choose.title'))}</h2>
+        <p>${esc(t('auth.choose.body'))}</p>
+        <div class="row-actions">
+          <button class="btn btn-accent" data-guest>${esc(t('auth.choose.guest'))}</button>
+          <a class="btn btn-ghost" href="#/settings">${esc(t('auth.choose.account'))}</a>
+        </div>
+        <p class="gate-note">${esc(t('auth.choose.note'))}</p>
+      </section>` : ''}
+
+    ${guest && !undecided ? `
+      <div class="guest-bar">
+        <span>${esc(t('auth.guestBar'))}</span>
+        <a href="#/settings">${esc(t('auth.guestBar.cta'))}</a>
+      </div>` : ''}
+
     <section class="hero">
       <div>
         <span class="hero-badge">${esc(t('home.badge', { count: catalogue.skills.length }))}</span>
@@ -75,4 +94,9 @@ export default function renderHome({ catalogue, profile, mount }) {
         </div>`;
       }).join('')}
     </div>`;
+
+  mount.querySelector('[data-guest]')?.addEventListener('click', () => {
+    store.chooseGuest();
+    rerender();
+  });
 }

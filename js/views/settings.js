@@ -1,9 +1,12 @@
 import { t } from '../i18n.js';
 import { esc } from '../dom.js';
 import { gistAdapter } from '../store/index.js';
+import { renderAccountPanel } from './signin.js';
 import { formatDate } from '../dom.js';
 
-export default function renderSettings({ store, profile, mount, rerender }) {
+export default function renderSettings(ctx) {
+  const { store, profile, mount, rerender } = ctx;
+  const guest = !store.signedIn;
   const remote = store.remoteConfig() || {};
   const connected = Boolean(remote.token);
   const roster = store.listAccounts();
@@ -30,8 +33,10 @@ export default function renderSettings({ store, profile, mount, rerender }) {
         </form>
       </section>
 
-      <section class="panel">
+      <section class="panel" id="account-panel">
+        ${guest ? '' : `
         <h2>${esc(t('set.account'))}</h2>
+        <p>${esc(t('set.account.signedInAs', { name: profile.name }))}</p>
         <form class="stack" id="pass-form">
           <div class="field">
             <label for="pw-old">${esc(t('set.account.old'))}</label>
@@ -43,14 +48,15 @@ export default function renderSettings({ store, profile, mount, rerender }) {
           </div>
           <div class="row-actions">
             <button class="btn btn-primary btn-sm" type="submit">${esc(t('set.account.change'))}</button>
+            <button class="btn btn-ghost btn-sm" type="button" data-switch>${esc(t('set.account.switch'))}</button>
             <button class="btn btn-ghost btn-sm" type="button" data-del-account
                     style="border-color:rgba(248,113,113,.5);color:#f87171">${esc(t('set.account.delete'))}</button>
           </div>
         </form>
-        <p class="status-line" id="account-status"></p>
+        <p class="status-line" id="account-status"></p>`}
       </section>
 
-      <section class="panel">
+      <section class="panel" ${roster.length ? '' : 'hidden'}>
         <h2>${esc(t('set.roster'))}</h2>
         <p>${esc(t('set.roster.body'))}</p>
         <div class="roster-list">
@@ -103,8 +109,8 @@ export default function renderSettings({ store, profile, mount, rerender }) {
       <section class="panel">
         <h2>${esc(t('set.roadmap'))}</h2>
         <ul class="roadmap">
-          <li class="is-now"><b>${esc(t('set.roadmap.p1'))}</b>${esc(t('set.roadmap.p1b'))}</li>
-          <li><b>${esc(t('set.roadmap.p2'))}</b>${esc(t('set.roadmap.p2b'))}</li>
+          <li><b>${esc(t('set.roadmap.p1'))}</b>${esc(t('set.roadmap.p1b'))}</li>
+          <li class="is-now"><b>${esc(t('set.roadmap.p2'))}</b>${esc(t('set.roadmap.p2b'))}</li>
           <li><b>${esc(t('set.roadmap.p3'))}</b>${esc(t('set.roadmap.p3b'))}</li>
         </ul>
       </section>
@@ -117,6 +123,17 @@ export default function renderSettings({ store, profile, mount, rerender }) {
     node.textContent = message;
     node.className = `status-line ${ok ? 'is-ok' : 'is-bad'}`;
   };
+
+  if (guest) {
+    renderAccountPanel(ctx, mount.querySelector('#account-panel'));
+    wireRest();
+    return;
+  }
+
+  mount.querySelector('[data-switch]').addEventListener('click', async () => {
+    await store.signOut();
+    rerender();
+  });
 
   mount.querySelector('#pass-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -145,6 +162,9 @@ export default function renderSettings({ store, profile, mount, rerender }) {
     }
   });
 
+  wireRest();
+
+  function wireRest() {
   mount.querySelector('#profile-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -223,4 +243,5 @@ export default function renderSettings({ store, profile, mount, rerender }) {
     store.reset();
     rerender();
   });
+  }
 }

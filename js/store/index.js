@@ -16,6 +16,9 @@ const listeners = new Set();
 // reload so the app is usable, and dies with the tab so a shared machine does
 // not stay unlocked. It is never written to disk or sent anywhere.
 const SESSION_KEY = 'krida.session.v1';
+// Set once the visitor has explicitly chosen to look around without an account,
+// so the landing page stops asking.
+const GUEST_KEY = 'krida.guest.v1';
 
 /** Begin a tab-scoped session. `store` is an object literal, so this is a
  *  module-level helper rather than a private method. */
@@ -44,18 +47,40 @@ export const store = {
 
   get signedIn() { return Boolean(this.session); },
 
-  /** Restores a tab-scoped session if one is live. Never auto-creates one. */
+  /** 'account' once someone has unlocked a vault, otherwise 'guest'. */
+  get mode() { return this.session ? 'account' : 'guest'; },
+
+  /** Has the visitor dismissed the landing page's guest/account choice? */
+  get guestChosen() { return localStorage.getItem(GUEST_KEY) === '1'; },
+  chooseGuest() {
+    localStorage.setItem(GUEST_KEY, '1');
+    this.emit();
+  },
+
+  /**
+   * Restore a tab-scoped session if one is live; otherwise fall back to the
+   * guest profile so the whole site is browsable without an account.
+   *
+   * The guest profile is the same unsealed record phase 1 used, which is what
+   * lets `claimLegacy` turn a guest's progress into a real account rather than
+   * making them start over.
+   */
   async init() {
     const session = readSession();
     if (session?.accountId && session.passphrase) {
       try {
         this.profile = await accounts.signIn(session.accountId, session.passphrase);
         this.session = session;
+        if (gistAdapter.isConfigured()) this.remoteState = { status: 'idle', message: '', at: null };
+        return this.profile;
       } catch {
         sessionStorage.removeItem(SESSION_KEY);       // stale or rotated
         this.session = null;
       }
     }
+    const guest = await localAdapter.load();
+    this.profile = migrate(guest || blankProfile('Guest'));
+    if (!guest) await localAdapter.save(this.profile);
     if (gistAdapter.isConfigured()) this.remoteState = { status: 'idle', message: '', at: null };
     return this.profile;
   },
@@ -88,10 +113,12 @@ export const store = {
     return profile;
   },
 
-  signOut() {
+  /** Drop back to guest rather than to a dead end. */
+  async signOut() {
     sessionStorage.removeItem(SESSION_KEY);
     this.session = null;
-    this.profile = blankProfile();
+    const guest = await localAdapter.load();
+    this.profile = migrate(guest || blankProfile('Guest'));
     this.emit();
   },
 
@@ -116,17 +143,28 @@ export const store = {
     return raw ? migrate(raw) : null;
   },
 
-  /** Move that profile into a real account so phase-1 progress is not stranded. */
+  /**
+   * Turn the guest profile into a real account, keeping everything logged so
+   * far. Used both by a guest signing up and by anyone upgrading a profile
+   * from before accounts existed.
+   */
   async claimLegacy(name, passphrase) {
-    const legacy = await this.legacyProfile();
-    if (!legacy) throw new Error('NO_LEGACY');
+    const legacy = this.session ? null : this.profile;
+    const carried = legacy || await this.legacyProfile();
+    if (!carried) throw new Error('NO_LEGACY');
     const { id } = await accounts.createAccount(name, passphrase);
-    legacy.id = id;
-    legacy.name = name.trim();
-    startSession(this, id, passphrase, legacy);
+    carried.id = id;
+    carried.name = name.trim();
+    startSession(this, id, passphrase, carried);
     await this.persist();
     await localAdapter.clear();
-    return legacy;
+    return carried;
+  },
+
+  /** Has the guest actually done anything worth carrying into an account? */
+  guestHasProgress() {
+    if (this.session) return false;
+    return Object.keys(this.profile.cleared).length > 0 || this.profile.logs.length > 0;
   },
 
   /* ---------------- mutations ---------------- */
@@ -139,16 +177,22 @@ export const store = {
    * remoteState rather than silently dropping.
    */
   update(mutator) {
-    if (!this.session) return;
     mutator(this.profile);
     this.profile.updatedAt = new Date().toISOString();
     this.emit();
-    this.persist().catch((err) => console.error('[krida] could not seal profile', err));
-    this.queueRemotePush();
+    this.persist().catch((err) => console.error('[krida] could not save profile', err));
+    if (this.session) this.queueRemotePush();
   },
 
+  /**
+   * A guest's profile is written unsealed; an account's is sealed under its
+   * passphrase. Same call site either way, so views never branch on mode.
+   */
   async persist() {
-    if (!this.session) return;
+    if (!this.session) {
+      await localAdapter.save(this.profile);
+      return;
+    }
     const summary = this.summaryProvider ? this.summaryProvider(this.profile) : null;
     await accounts.saveProfile(
       this.session.accountId, this.profile, this.session.passphrase, summary,
@@ -156,12 +200,11 @@ export const store = {
   },
 
   replace(profile) {
-    if (!this.session) return;
     const id = this.profile.id;
     this.profile = migrate(profile);
     this.profile.id = id;
     this.emit();
-    this.persist().catch((err) => console.error('[krida] could not seal profile', err));
+    this.persist().catch((err) => console.error('[krida] could not save profile', err));
   },
 
   logSet(skillId, { sets, amount, type, date }) {
@@ -223,12 +266,11 @@ export const store = {
   },
 
   reset() {
-    if (!this.session) return;
     const { id, name } = this.profile;
     this.profile = blankProfile(name);
     this.profile.id = id;
     this.emit();
-    this.persist().catch((err) => console.error('[krida] could not seal profile', err));
+    this.persist().catch((err) => console.error('[krida] could not save profile', err));
   },
 
   /* ---------------- shared roster mirror ---------------- */

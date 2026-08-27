@@ -8,6 +8,21 @@
  */
 const STRINGS = {
   en: {
+    'unit.skill': 'skill',
+    'unit.skills': 'skills',
+    'unit.set': 'set',
+    'unit.sets': 'sets',
+    'auth.guest': 'Guest',
+    'auth.useAccount': 'Use an account',
+    'auth.guestBar': 'Browsing as a guest — progress is saved on this device only.',
+    'auth.guestBar.cta': 'Use an account',
+    'auth.guestBody': 'Guests can use the whole site; progress is saved on this device and is not encrypted. An account seals your training log with a passphrase and lets it sync between devices.',
+    'auth.choose.title': 'Start training',
+    'auth.choose.body': 'Look around without signing up — the tree, the programs and every tutorial are open. Nothing here is locked behind an account.',
+    'auth.choose.guest': 'Join as guest',
+    'auth.choose.account': 'Use an account',
+    'auth.choose.note': 'As a guest, progress stays on this device. You can turn it into an account later without losing anything.',
+    'auth.carry': 'Bring my guest progress with me — {skills} cleared, {logs} logged',
     'auth.tagline': 'Sign in to your training log.',
     'auth.signIn': 'Sign in',
     'auth.signOut': 'Sign out',
@@ -25,7 +40,7 @@ const STRINGS = {
     'auth.seats': '{seats} seats used',
     'auth.note': 'Accounts live in this browser and sync to your shared private Gist. Each profile is sealed with its own passphrase, so nobody on the roster can read anyone else\u2019s log.',
     'auth.legacy.title': 'Claim your existing progress',
-    'auth.legacy.body': 'Progress from before accounts existed was found on this device — {skills} skills cleared, {logs} sets logged. Pick a passphrase and it becomes your account.',
+    'auth.legacy.body': 'Progress from before accounts existed was found on this device — {skills} cleared, {logs} logged. Pick a passphrase and it becomes your account.',
     'auth.legacy.claim': 'Claim it',
     'auth.legacy.skip': 'Start fresh instead',
     'auth.err.passphrase': 'That passphrase does not open this account.',
@@ -46,6 +61,8 @@ const STRINGS = {
     'set.roster.body': 'Everyone signed up on this deployment. Pull from the shared Gist to see people who signed up on another device.',
     'set.roster.seats': '{used} of {max} seats used',
     'set.account.changed': 'Passphrase changed. Your vault was re-sealed with it.',
+    'set.account.signedInAs': 'Signed in as {name}. Your training log is sealed with your passphrase.',
+    'set.account.switch': 'Switch account',
     'nav.tree': 'Skill Tree',
     'nav.program': 'Program',
     'nav.dashboard': 'Progress',
@@ -181,10 +198,10 @@ const STRINGS = {
     'set.reset': 'Reset all progress',
     'set.reset.confirm': 'Erase every logged set and cleared skill? This cannot be undone.',
     'set.roadmap': 'Where this is going',
-    'set.roadmap.p1': 'Phase 1 — now',
-    'set.roadmap.p1b': 'One profile, this browser, hosted free on GitHub Pages.',
-    'set.roadmap.p2': 'Phase 2 — accounts',
-    'set.roadmap.p2b': 'Sign in with GitHub; each person gets their own profile behind the same store interface.',
+    'set.roadmap.p1': 'Phase 1 — done',
+    'set.roadmap.p1b': 'The whole site, static on GitHub Pages, free to host.',
+    'set.roadmap.p2': 'Phase 2 — now',
+    'set.roadmap.p2b': 'Browse as a guest, or take one of five seats. Each account is sealed with its own passphrase.',
     'set.roadmap.p3': 'Phase 3 — leaderboard',
     'set.roadmap.p3b': 'Opt-in ranking by XP and streak, built by a scheduled GitHub Action.',
     'set.visibility': 'Leaderboard visibility',
@@ -193,6 +210,21 @@ const STRINGS = {
   },
 
   th: {
+    'unit.skill': 'ท่า',
+    'unit.skills': 'ท่า',
+    'unit.set': 'เซ็ต',
+    'unit.sets': 'เซ็ต',
+    'auth.guest': 'ผู้เยี่ยมชม',
+    'auth.useAccount': 'ใช้บัญชี',
+    'auth.guestBar': 'กำลังใช้แบบผู้เยี่ยมชม — ข้อมูลเก็บในเครื่องนี้เท่านั้น',
+    'auth.guestBar.cta': 'ใช้บัญชี',
+    'auth.guestBody': 'ผู้เยี่ยมชมใช้ได้ทุกส่วนของเว็บ ข้อมูลเก็บในเครื่องนี้และไม่ได้เข้ารหัส บัญชีจะเข้ารหัสบันทึกการฝึกด้วยรหัสผ่านและซิงก์ข้ามเครื่องได้',
+    'auth.choose.title': 'เริ่มฝึก',
+    'auth.choose.body': 'ดูได้เลยโดยไม่ต้องสมัคร ทั้งผังทักษะ ตารางฝึก และวิดีโอทุกท่า ไม่มีส่วนไหนถูกล็อกไว้หลังบัญชี',
+    'auth.choose.guest': 'เข้าใช้แบบผู้เยี่ยมชม',
+    'auth.choose.account': 'ใช้บัญชี',
+    'auth.choose.note': 'แบบผู้เยี่ยมชม ข้อมูลจะอยู่ในเครื่องนี้ เปลี่ยนเป็นบัญชีภายหลังได้โดยไม่เสียข้อมูล',
+    'auth.carry': 'นำความคืบหน้าแบบผู้เยี่ยมชมไปด้วย — ผ่านแล้ว {skills} บันทึก {logs}',
     'auth.tagline': 'เข้าสู่ระบบเพื่อดูบันทึกการฝึกของคุณ',
     'auth.signIn': 'เข้าสู่ระบบ',
     'auth.signOut': 'ออกจากระบบ',
@@ -210,7 +242,7 @@ const STRINGS = {
     'auth.seats': 'ใช้ไป {seats} ที่นั่ง',
     'auth.note': 'บัญชีเก็บอยู่ในเบราว์เซอร์นี้และซิงก์กับ Gist ส่วนตัวที่ใช้ร่วมกัน แต่ละโปรไฟล์ถูกเข้ารหัสด้วยรหัสผ่านของตัวเอง คนอื่นในกลุ่มจึงอ่านบันทึกของคุณไม่ได้',
     'auth.legacy.title': 'นำความคืบหน้าเดิมมาใช้',
-    'auth.legacy.body': 'พบข้อมูลจากก่อนมีระบบบัญชีในเครื่องนี้ — ผ่านแล้ว {skills} ท่า บันทึก {logs} เซ็ต ตั้งรหัสผ่านแล้วข้อมูลนี้จะกลายเป็นบัญชีของคุณ',
+    'auth.legacy.body': 'พบข้อมูลจากก่อนมีระบบบัญชีในเครื่องนี้ — ผ่านแล้ว {skills} บันทึก {logs} ตั้งรหัสผ่านแล้วข้อมูลนี้จะกลายเป็นบัญชีของคุณ',
     'auth.legacy.claim': 'นำมาใช้',
     'auth.legacy.skip': 'เริ่มใหม่แทน',
     'auth.err.passphrase': 'รหัสผ่านไม่ถูกต้องสำหรับบัญชีนี้',
@@ -231,6 +263,8 @@ const STRINGS = {
     'set.roster.body': 'ทุกคนที่สมัครไว้บนเว็บนี้ ดึงจาก Gist ที่ใช้ร่วมกันเพื่อดูคนที่สมัครจากเครื่องอื่น',
     'set.roster.seats': 'ใช้ไป {used} จาก {max} ที่นั่ง',
     'set.account.changed': 'เปลี่ยนรหัสผ่านแล้ว ข้อมูลถูกเข้ารหัสใหม่ด้วยรหัสนี้',
+    'set.account.signedInAs': 'เข้าสู่ระบบเป็น {name} บันทึกการฝึกถูกเข้ารหัสด้วยรหัสผ่านของคุณ',
+    'set.account.switch': 'สลับบัญชี',
     'nav.tree': 'ผังทักษะ',
     'nav.program': 'ตารางฝึก',
     'nav.dashboard': 'ความคืบหน้า',
@@ -366,10 +400,10 @@ const STRINGS = {
     'set.reset': 'ล้างความคืบหน้าทั้งหมด',
     'set.reset.confirm': 'ลบทุกเซ็ตและทุกท่าที่ผ่านแล้ว? การกระทำนี้ย้อนกลับไม่ได้',
     'set.roadmap': 'แผนต่อไป',
-    'set.roadmap.p1': 'เฟส 1 — ตอนนี้',
-    'set.roadmap.p1b': 'โปรไฟล์เดียว ในเบราว์เซอร์นี้ โฮสต์ฟรีบน GitHub Pages',
-    'set.roadmap.p2': 'เฟส 2 — บัญชีผู้ใช้',
-    'set.roadmap.p2b': 'ล็อกอินด้วย GitHub แต่ละคนมีโปรไฟล์ของตัวเองบนโครงสร้างเดิม',
+    'set.roadmap.p1': 'เฟส 1 — เสร็จแล้ว',
+    'set.roadmap.p1b': 'ทั้งเว็บเป็นสแตติกบน GitHub Pages โฮสต์ฟรี',
+    'set.roadmap.p2': 'เฟส 2 — ตอนนี้',
+    'set.roadmap.p2b': 'ใช้แบบผู้เยี่ยมชม หรือใช้ 1 ใน 5 ที่นั่ง แต่ละบัญชีเข้ารหัสด้วยรหัสผ่านของตัวเอง',
     'set.roadmap.p3': 'เฟส 3 — กระดานผู้นำ',
     'set.roadmap.p3b': 'จัดอันดับตาม XP และวันต่อเนื่อง สร้างด้วย GitHub Action ตามเวลา',
     'set.visibility': 'การแสดงบนกระดานผู้นำ',
@@ -394,6 +428,16 @@ export function setLang(lang) {
 }
 
 export function getLang() { return current; }
+
+/**
+ * "1 skill" / "5 skills" — and in Thai, where nouns do not inflect for number,
+ * both forms are the same word. Callers name a unit, not a literal noun, so
+ * the noun itself stays in the translation table.
+ */
+export function plural(count, unit) {
+  const key = count === 1 ? `unit.${unit}` : `unit.${unit}s`;
+  return `${count} ${t(key)}`;
+}
 
 export function t(key, vars) {
   let value = STRINGS[current][key] ?? STRINGS.en[key] ?? key;
