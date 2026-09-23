@@ -19,6 +19,15 @@ export function loadGuide() {
   return fetchJson('exercise-guide.json', 'the exercise guide');
 }
 
+/** Runtime config (the auth Worker URL). Missing/blank means guest-only. */
+export async function loadConfig() {
+  try {
+    return await fetchJson('config.json', 'the config');
+  } catch {
+    return { apiBase: '' };
+  }
+}
+
 export async function loadCatalogue() {
   if (cache) return cache;
   const raw = await fetchJson('skills.json', 'the skill catalogue');

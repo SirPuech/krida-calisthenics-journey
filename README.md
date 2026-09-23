@@ -7,8 +7,9 @@ Static site, no backend. It builds from `source/skill-tree.xlsx` and deploys
 straight to GitHub Pages.
 
 **Phase 2 — what this is right now:** up to five accounts, each with its own
-profile, sealed with its own passphrase. A leaderboard is designed for but not
-built; see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+account, username + password with emailed reset, backed by a small Cloudflare
+Worker. A leaderboard is designed for but not built; see
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ---
 
@@ -53,13 +54,12 @@ js/exercise/              the Three.js exercise animator
   poses.js                  per-archetype joint keyframes + apparatus + camera
   animator.js               scene, loop, apparatus, mount/dispose
 js/i18n.js                EN / TH interface copy
-js/crypto.js              PBKDF2 + AES-GCM vault sealing (WebCrypto)
 js/store/                 profile persistence
   schema.js                 profile shape + migrations
-  accounts.js               the roster: create, sign in, seal, merge
-  local.js                  localStorage adapter (pre-accounts profiles)
-  gist.js                   optional shared-Gist adapter
-  index.js                  the facade every view talks to
+  local.js                  localStorage (guest profiles)
+  api.js                    client for the auth Worker
+  index.js                  the facade every view talks to (guest + account)
+worker/                   the Cloudflare Worker: accounts, sessions, reset email
 js/views/                 one module per screen
 data/skills.json          generated skill catalogue — do not hand-edit
 data/programs.json        coach-editable splits and prescriptions — hand-edit this
@@ -185,64 +185,58 @@ program page.
 ## Guests and accounts
 
 **Nothing is behind a login.** The landing page offers *Join as guest*, and a
-guest can use the entire site — the tree, the programs, every tutorial, logging
-sets, the dashboard. A guest's progress is saved unsealed on their device.
+guest can use the entire site — the tree, the programs, every animation, logging
+sets, the dashboard. A guest's progress is saved on their device.
 
-Accounts are opt-in, from **Settings → Account**. Signing up offers to carry the
-guest's progress across, so nobody starts over for having looked around first,
-and *Switch account* drops back to guest rather than to a dead end.
+Accounts are opt-in, from **Settings → Account**, and are **username + password**
+with **emailed password reset**. They are backed by a small Cloudflare Worker
+(`worker/`), which is the only server in the stack; deploy it and set its URL in
+`data/config.json` to switch accounts on. Until then the site runs guest-only
+and says so. See [worker/README.md](worker/README.md).
 
-Up to **five** people share one deployment. There is no server, so sign-in works
-like this:
+- **Sign up / sign in** with a username and password. Signing up offers to carry
+  the guest's progress across, so nobody starts over for having looked first.
+- **Forgot password** emails a reset link (valid one hour).
+- **The owner** — the first account created, or whoever `ADMIN_USERNAME` names —
+  can manage users from Settings: email anyone a reset link, set a password
+  directly, or remove an account.
+- Up to **five** accounts share one deployment (`SEAT_LIMIT`).
 
-- Each account has a **passphrase**, and that passphrase derives an AES-GCM key
-  via PBKDF2 (250,000 iterations, WebCrypto). The profile is **encrypted** with
-  it before it ever touches localStorage or the shared Gist.
-- Names stay in the clear — the sign-in screen needs them, and a future
-  leaderboard reads the small opted-in `public` summary without any passphrase.
-- Everything else about a person is inside the sealed vault. One member of the
-  roster **cannot** read another's training log.
+Passwords are hashed on the server (PBKDF2, per-user salt); the profile is stored
+per-user and follows you between devices. Details:
 
-**There is no password reset.** Nothing on the device can decrypt a vault
-without its passphrase — that is the point of the design, and the cost of it.
-Lose the passphrase and that account's history is gone.
+- The session token is kept in `localStorage`, so you stay signed in across
+  reloads until you sign out.
+- **There is no password recovery** — a reset sets a *new* password. The server
+  never stores anything that can reveal the old one. That is standard, and it is
+  exactly why an emailed reset can exist here when the earlier device-only model
+  could not have had one.
+- A guest's own on-device profile is what an account claims on sign-up, so
+  looking around first costs nothing.
 
 ### What this is and is not
 
-It is real encryption at rest: a stolen Gist, or someone poking at localStorage,
-gets ciphertext. It is **not** server-enforced authentication — there is no
-server to enforce anything. Anyone who can load the page can see the roster's
-*names* and create an account while seats remain. That is the right trade for a
-private training group; do not treat it as protection against a determined
-attacker, and do not put anything in here you would not put in a shared note.
+Accounts are real server-enforced auth: passwords are verified and hashed on the
+Worker, sessions are revocable server-side tokens, and one member cannot read
+another's data. It is **not** anonymous — the Worker stores each member's
+profile and email. That is the right trade for a small named group; the seat
+limit and the admin controls assume you know who your five people are.
 
-The passphrase is held in `sessionStorage` while you are signed in, so a reload
-keeps you in and closing the tab signs you out.
-
-The guest profile and a profile from before accounts existed are the same kind
-of record, which is what lets either be claimed into an account without loss.
+Guest mode remains fully local and needs no server.
 
 ## Your progress
 
-Sealed in this browser under `krida.accounts.v1`. **Settings → Export JSON**
-before you clear site data or move machines.
+An account's progress lives on the server and follows you between devices. A
+guest's lives in this browser under `krida.profile.v1`. Either way,
+**Settings → Export JSON** saves a copy before you clear site data or switch
+machines.
 
-### Optional: sync through GitHub
+## The leaderboard, later
 
-Settings → *Sync with GitHub* mirrors the whole roster to one private Gist so
-accounts follow the group between devices. **Pulling never opens anyone's
-vault** — it merges opaque entries by id, newest `updatedAt` winning, so each
-account is only ever written by the person who can decrypt it.
-
-Create a [fine-grained personal access token](https://github.com/settings/tokens?type=beta)
-whose **only** permission is *Gists: read and write*, and paste it in. It is kept
-in this browser's localStorage and sent only to `api.github.com`. Leave the gist
-id blank the first time and one is created for you.
-
-A token in localStorage is readable by anything that can run script on this
-origin. That is an acceptable trade for a small private group with a gist-only
-token; if this ever opens to strangers, move to OAuth — see
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+`profile.visibility` still defaults to `private` with a Settings toggle. With the
+Worker in place, a phase-3 leaderboard is a scheduled job that reads the opted-in
+profiles server-side and writes a `data/leaderboard.json` the site fetches — no
+change to the auth model. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Language
 

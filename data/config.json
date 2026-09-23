@@ -1,0 +1,4 @@
+{
+  "note": "Set apiBase to your deployed Worker URL to turn on accounts (e.g. https://krida-auth.<you>.workers.dev). Leave it empty and the site runs guest-only. See worker/README.md.",
+  "apiBase": ""
+}

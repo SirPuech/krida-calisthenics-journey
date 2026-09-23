@@ -1,0 +1,27 @@
+# One Worker, one environment — no demo/prod split.
+# Deploy:  cd worker && npx wrangler deploy
+name = "krida-auth"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# The KV namespace that holds users, sessions and reset tokens.
+# Create it once, then paste the id it prints here:
+#   npx wrangler kv namespace create KV
+kv_namespaces = [
+  { binding = "KV", id = "PASTE_KV_NAMESPACE_ID_HERE" },
+]
+
+[vars]
+# The public URL of the site, used to build password-reset links.
+SITE_URL = "https://sirpuech.github.io/krida-calisthenics-journey"
+# Which origin may call this Worker from a browser. Set to your Pages origin.
+ALLOW_ORIGIN = "https://sirpuech.github.io"
+# The "From" address on reset emails. Until you verify your own domain in
+# Resend, their shared sender "onboarding@resend.dev" works for testing.
+RESET_FROM = "KRIDA <onboarding@resend.dev>"
+# How many accounts may exist at once.
+SEAT_LIMIT = "5"
+
+# Secrets (set with `npx wrangler secret put NAME`, never committed):
+#   RESEND_API_KEY   — from https://resend.com (required for reset emails)
+#   ADMIN_USERNAME   — optional; if unset, the first account created is admin

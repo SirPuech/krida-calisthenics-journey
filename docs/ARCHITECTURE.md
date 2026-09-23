@@ -3,14 +3,14 @@
 ## The constraint that shapes everything
 
 The whole product runs on GitHub and nothing else: Pages serves it, Actions
-build it, and — later — Gists and a Gist-derived JSON file store the data. There
+build it. A small Cloudflare Worker holds accounts and their data. There
 is no server to pay for, patch or keep awake.
 
 That rules out a database, sessions and any server-side rendering, so the design
 question becomes: *how far can this go on static hosting before something has to
 give?* The answer is further than it looks, and the three phases below are
-staged so that the thing that eventually gives — the OAuth secret — is the last
-piece added, not the first.
+staged so the server arrives only when a requirement — emailed reset, an admin —
+actually forces it, not before.
 
 ## Phase 1 — personal, now
 
@@ -69,45 +69,44 @@ every existing profile later.
 
 ## Phase 2 — accounts (built)
 
-Five accounts share one deployment, each sealed with its own passphrase.
+Up to five username/password accounts, backed by a Cloudflare Worker
+(`worker/`). Guest mode stays entirely local; accounts are the only thing that
+needs the server.
 
-The design question was how to authenticate with no server. Real GitHub OAuth
-was the obvious answer and was rejected for this stage: the web flow needs a
-client secret a static site cannot hold, and GitHub's device-flow endpoints send
-no CORS headers, so a browser cannot call them directly either. Both roads lead
-to running a proxy — a real dependency for what is currently a private group of
-five, several of whom would need to create GitHub accounts first.
-
-So authentication is **passphrase-derived encryption** instead of a login check:
+The earlier plan tried to avoid a server by encrypting each profile under its
+own passphrase. That model shipped and then met a wall this phase's requirements
+put in front of it: **emailed password reset, and an admin who can reset other
+people's passwords.** Both are impossible under passphrase-encryption — if a
+reset could recover your data, so could anyone who triggered one; and there is
+no server to send an email or to hold an admin's authority. Those requirements
+*are* a server, so this phase adds the smallest honest one.
 
 ```
-passphrase ──PBKDF2(250k, SHA-256)──▶ AES-GCM key ──▶ sealed vault
-                                                       │
-roster (plaintext)      ────────────────────────────────┤
-  id, name, createdAt, updatedAt                        │
-  public: { xp, streak, tier, cleared } | null   ◀───────┘ opt-in only
+browser (Pages, static)                    Cloudflare Worker (free)
+  guest   → localStorage                     POST /signup /login /logout
+  account → bearer token ───────────────▶    GET  /me         PUT /profile
+            js/store/api.js                   POST /reset/request /reset/confirm
+                                              GET/POST/DELETE /admin/*
+                                                     │
+                                              Cloudflare KV  (users, sessions, resets)
+                                              Resend         (reset emails)
 ```
 
-Signing in *is* decryption. There is no "check the password and then trust the
-client" step to bypass, because the ciphertext genuinely cannot be read without
-the key. AES-GCM authenticates, so a wrong passphrase fails to decrypt rather
-than returning garbage — that is what makes `WRONG_PASSPHRASE` a real signal.
+- Passwords: PBKDF2-SHA256, 210k iterations, per-user salt, verified and hashed
+  only on the Worker. The client never sees a hash.
+- Sessions and reset tokens are random opaque strings with a KV TTL — revocable,
+  and unguessable, unlike a passphrase.
+- Reset is deliberately recovery-*less*: it sets a new password. The server
+  stores nothing that reveals the old one.
+- Admin is the first account created, or whoever `ADMIN_USERNAME` names. The
+  admin routes are gated on it server-side, not in the UI.
 
-What it does not do: there is no server, so nothing stops a visitor creating an
-account while seats remain, or reading the roster's *names*. This is the right
-trade for a private group and the wrong one for a public product.
+The store contract held again: `js/store/index.js` grew an `account` mode beside
+`guest`, both behind the same `store.profile` + mutators the views already used.
+`js/store/api.js` is the whole client; the passphrase-vault files
+(`accounts.js`, `gist.js`, `crypto.js`) were retired.
 
-The store's contract did not change. Views still read `store.profile` and call
-mutators; `store.update()` now seals in the background after emitting, so the UI
-stays synchronous over an inherently async crypto call.
-
-### If this outgrows five people
-
-Swap the vault for OAuth. `js/store/accounts.js` is the only file that knows how
-a profile is unlocked — `signIn`, `saveProfile` and the roster merge are the
-seam. A `js/store/github.js` implementing the same calls against an OAuth token
-leaves every view and `js/progress.js` untouched. The proxy (Cloudflare Worker,
-~30 lines, holds the client secret) becomes worth its cost at that point.
+One environment, one Worker, one KV namespace — no staging/production split.
 
 ## Phase 3 — leaderboard
 

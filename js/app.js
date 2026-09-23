@@ -6,7 +6,7 @@
  * there is no 404 rewrite rule to get wrong and the site works identically
  * from a user page, a project page or a local file server.
  */
-import { loadCatalogue, loadPrograms, loadGuide } from './data.js';
+import { loadCatalogue, loadPrograms, loadGuide, loadConfig } from './data.js';
 import { store } from './store/index.js';
 import { setLang, t } from './i18n.js';
 
@@ -18,7 +18,7 @@ import renderDashboard from './views/dashboard.js';
 import renderLibrary from './views/library.js';
 import renderSettings from './views/settings.js';
 import { resetSignInView } from './views/signin.js';
-import { summarise } from './progress.js';
+import renderReset from './views/reset.js';
 
 const ROUTES = [
   { pattern: /^\/?$/, name: 'home', view: renderHome },
@@ -28,6 +28,7 @@ const ROUTES = [
   { pattern: /^\/dashboard$/, name: 'dashboard', view: renderDashboard },
   { pattern: /^\/library$/, name: 'library', view: renderLibrary },
   { pattern: /^\/settings$/, name: 'settings', view: renderSettings },
+  { pattern: /^\/reset$/, name: null, view: renderReset },
 ];
 
 const main = document.querySelector('main');
@@ -35,13 +36,13 @@ let catalogue = null;
 let programs = null;
 let guide = null;
 let currentRoute = null;
-let legacyProfile = null;
 
 function parseHash() {
-  const raw = location.hash.replace(/^#/, '') || '/';
+  const full = location.hash.replace(/^#/, '') || '/';
+  const path = full.split('?')[0];        // match on the path; views read the query
   for (const route of ROUTES) {
-    const match = raw.match(route.pattern);
-    if (match) return { route, params: match.slice(1), raw };
+    const match = path.match(route.pattern);
+    if (match) return { route, params: match.slice(1), raw: full };
   }
   return { route: ROUTES[0], params: [], raw: '/' };
 }
@@ -61,7 +62,7 @@ function render({ scroll = true } = {}) {
   const mount = main.firstElementChild;
   const context = {
     catalogue, programs, guide, store, profile: store.profile, params, mount,
-    legacyProfile, onSignedIn,
+    onSignedIn,
     rerender: () => render({ scroll: false }),
     onLeave: (fn) => { leaveHook = fn; },
   };
@@ -82,8 +83,8 @@ function render({ scroll = true } = {}) {
 }
 
 function onSignedIn() {
-  legacyProfile = null;
   resetSignInView();
+  location.hash = '#/dashboard';
   render();
 }
 
@@ -94,12 +95,8 @@ function onSignedOut() {
 
 function updateChrome() {
   const meta = document.getElementById('footer-meta');
-  const remote = store.remoteState;
-  const bits = [`${catalogue?.skills.length ?? 0} skills`];
-  if (remote.status === 'ok') bits.push('gist synced');
-  else if (remote.status === 'error') bits.push('gist sync failed');
-  else if (remote.status === 'syncing') bits.push('syncing…');
-  meta.textContent = bits.join(' · ');
+  meta.textContent = `${catalogue?.skills.length ?? 0} skills`
+    + (store.signedIn ? ' · synced to your account' : '');
 
   const who = document.getElementById('whoami');
   const guest = !store.signedIn;
@@ -140,22 +137,14 @@ function wireChrome() {
 
 async function boot() {
   try {
+    const config = await loadConfig();
     [catalogue, programs, guide] = await Promise.all([
-      loadCatalogue(), loadPrograms(), loadGuide(), store.init(),
+      loadCatalogue(), loadPrograms(), loadGuide(), store.init(config.apiBase),
     ]);
   } catch (err) {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;
   }
-  // A guest's own profile is the thing an account claims, so this is only about
-  // surfacing progress left behind before accounts existed.
-  if (!store.signedIn) {
-    legacyProfile = await store.legacyProfile().catch(() => null);
-  }
-  store.setSummaryProvider((profile) => {
-    const s = summarise(catalogue, profile);
-    return { xp: s.xp, streak: s.streak, tier: s.tier, cleared: s.counts.cleared };
-  });
   setLang(store.profile.lang || 'en');
   wireChrome();
   window.addEventListener('hashchange', () => render());

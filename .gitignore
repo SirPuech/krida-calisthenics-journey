@@ -2,3 +2,7 @@
 Thumbs.db
 *.log
 .claude/
+
+# Cloudflare Worker
+worker/node_modules/
+worker/.wrangler/

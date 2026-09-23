@@ -1,107 +1,111 @@
 import { t, plural } from '../i18n.js';
-import { esc, formatDate } from '../dom.js';
-import { cryptoAvailable } from '../crypto.js';
+import { esc } from '../dom.js';
 
 /**
- * The signed-out half of the account UI.
- *
- * Not a page any more — the site is browsable as a guest, so this renders
- * inside Settings, where choosing an account now lives.
+ * The signed-out account panel, shown inside Settings. Username + password sign
+ * in, account creation (optionally carrying the guest's progress), and a
+ * forgot-password request. Accounts only appear when a backend is configured.
  */
 const ERRORS = {
-  WRONG_PASSPHRASE: 'auth.err.passphrase',
-  PASSPHRASE_TOO_SHORT: 'auth.err.short',
-  NAME_TAKEN: 'auth.err.taken',
-  NAME_REQUIRED: 'auth.err.name',
-  ROSTER_FULL: 'auth.err.full',
-  NO_SUCH_ACCOUNT: 'auth.err.missing',
-  NO_CRYPTO: 'auth.err.crypto',
+  BAD_CREDENTIALS: 'auth.err.credentials',
+  WEAK_PASSWORD: 'auth.err.weak',
+  BAD_USERNAME: 'auth.err.username',
+  BAD_EMAIL: 'auth.err.email',
+  USERNAME_TAKEN: 'auth.err.userTaken',
+  EMAIL_TAKEN: 'auth.err.emailTaken',
+  SEATS_FULL: 'auth.err.full',
+  NETWORK: 'auth.err.network',
+  BAD_TOKEN: 'auth.err.token',
 };
+const msg = (err) => t(ERRORS[err.code || err.message] || 'auth.err.generic');
 
-const message = (err) => t(ERRORS[err.message] || 'auth.err.generic');
+let mode = null;   // 'login' | 'create' | 'forgot'
 
-let mode = null;
-let pendingId = null;
-
-export function resetSignInView() { mode = null; pendingId = null; }
+export function resetSignInView() { mode = null; }
 
 export function renderAccountPanel(ctx, host) {
-  const { store, rerender, onSignedIn } = ctx;
-  const accounts = store.listAccounts();
-  const full = store.isFull();
-  // A guest with progress is offered the carry-over; so is a leftover phase-1
-  // profile when the guest slate is clean.
-  const carryable = store.guestHasProgress() ? store.profile : ctx.legacyProfile;
+  const { store, onSignedIn } = ctx;
 
-  if (!mode) mode = accounts.length ? 'list' : 'create';
-  if (mode === 'list' && !accounts.length) mode = 'create';
-  if (mode === 'create' && full && accounts.length) mode = 'list';
+  if (!store.accountsAvailable) {
+    host.innerHTML = `
+      <h2>${esc(t('set.account'))}</h2>
+      <p>${esc(t('auth.noBackend'))}</p>
+      <p class="muted" style="font-size:12px;margin-top:10px">${esc(t('auth.noBackend.how'))}</p>`;
+    return;
+  }
+
+  if (!mode) mode = 'login';
+  const carry = store.guestHasProgress() ? store.profile : null;
 
   host.innerHTML = `
     <h2>${esc(t('set.account'))}</h2>
     <p>${esc(t('auth.guestBody'))}</p>
 
-    ${!cryptoAvailable() ? `<div class="notice" style="margin-top:14px">${esc(t('auth.err.crypto'))}</div>` : ''}
-
     <div class="auth-tabs" style="margin-top:16px;border-radius:var(--r-sm)">
-      <button data-mode="list" class="${mode === 'list' ? 'is-on' : ''}" ${accounts.length ? '' : 'disabled'}>
-        ${esc(t('auth.signIn'))}
-      </button>
-      <button data-mode="create" class="${mode === 'create' ? 'is-on' : ''}" ${full ? 'disabled' : ''}>
-        ${esc(t('auth.create'))}
-      </button>
-      <span class="auth-seats mono">${esc(t('auth.seats', { seats: `${accounts.length} / ${store.maxAccounts}` }))}</span>
+      <button data-mode="login" class="${mode === 'login' ? 'is-on' : ''}">${esc(t('auth.signIn'))}</button>
+      <button data-mode="create" class="${mode === 'create' ? 'is-on' : ''}">${esc(t('auth.create'))}</button>
     </div>
 
-    ${mode === 'list' ? `
-      <div class="account-list">
-        ${accounts.map((a) => `
-          <button class="account ${a.id === pendingId ? 'is-open' : ''}" data-account="${esc(a.id)}">
-            <span class="account-avatar">${esc((a.name || '?').charAt(0).toUpperCase())}</span>
-            <span class="account-who">
-              <b>${esc(a.name)}</b>
-              <small>${esc(t('auth.since'))} ${esc(formatDate(a.createdAt))}</small>
-            </span>
-          </button>
-          ${a.id === pendingId ? `
-            <form class="auth-unlock stack" data-signin="${esc(a.id)}">
-              <div class="field">
-                <label for="pp-${esc(a.id)}">${esc(t('auth.passphrase'))}</label>
-                <input id="pp-${esc(a.id)}" name="passphrase" type="password"
-                       autocomplete="current-password" required>
-              </div>
-              <div class="row-actions">
-                <button class="btn btn-primary btn-sm" type="submit">${esc(t('auth.unlock'))}</button>
-              </div>
-            </form>` : ''}
-        `).join('')}
-      </div>` : ''}
+    ${mode === 'login' ? `
+      <form id="login-form" class="stack" style="margin-top:16px">
+        <div class="field">
+          <label for="li-user">${esc(t('auth.username'))}</label>
+          <input id="li-user" name="username" type="text" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="li-pass">${esc(t('auth.password'))}</label>
+          <input id="li-pass" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <div class="row-actions">
+          <button class="btn btn-primary btn-sm" type="submit">${esc(t('auth.signIn'))}</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-mode="forgot">${esc(t('auth.forgot'))}</button>
+        </div>
+      </form>` : ''}
 
-    ${mode === 'create' ? (full ? `<div class="notice" style="margin-top:14px">${esc(t('auth.err.full', { max: store.maxAccounts }))}</div>` : `
+    ${mode === 'create' ? `
       <form id="create-form" class="stack" style="margin-top:16px">
-        ${carryable ? `
+        ${carry ? `
           <label class="carry">
             <input type="checkbox" name="carry" checked>
             <span>${esc(t('auth.carry', {
-              skills: plural(Object.keys(carryable.cleared).length, 'skill'),
-              logs: plural(carryable.logs.length, 'set'),
+              skills: plural(Object.keys(carry.cleared).length, 'skill'),
+              logs: plural(carry.logs.length, 'set'),
             }))}</span>
           </label>` : ''}
         <div class="field">
-          <label for="cr-name">${esc(t('auth.name'))}</label>
-          <input id="cr-name" name="name" type="text" maxlength="40" required autocomplete="nickname"
-                 value="${esc(carryable && carryable.name !== 'Guest' ? carryable.name : '')}">
+          <label for="cr-user">${esc(t('auth.username'))}</label>
+          <input id="cr-user" name="username" type="text" autocomplete="username"
+                 minlength="3" maxlength="32" required>
+          <small>${esc(t('auth.username.hint'))}</small>
         </div>
         <div class="field">
-          <label for="cr-pass">${esc(t('auth.passphrase'))}</label>
-          <input id="cr-pass" name="passphrase" type="password" minlength="8"
-                 autocomplete="new-password" required>
-          <small>${esc(t('auth.passphrase.hint'))}</small>
+          <label for="cr-email">${esc(t('auth.email'))}</label>
+          <input id="cr-email" name="email" type="email" autocomplete="email" required>
+          <small>${esc(t('auth.email.hint'))}</small>
+        </div>
+        <div class="field">
+          <label for="cr-pass">${esc(t('auth.password'))}</label>
+          <input id="cr-pass" name="password" type="password" autocomplete="new-password"
+                 minlength="8" required>
+          <small>${esc(t('auth.password.hint'))}</small>
         </div>
         <div class="row-actions">
           <button class="btn btn-accent btn-sm" type="submit">${esc(t('auth.create.go'))}</button>
         </div>
-      </form>`) : ''}
+      </form>` : ''}
+
+    ${mode === 'forgot' ? `
+      <form id="forgot-form" class="stack" style="margin-top:16px">
+        <p style="font-size:13px;color:var(--ink-2)">${esc(t('auth.forgot.body'))}</p>
+        <div class="field">
+          <label for="fg-id">${esc(t('auth.forgot.id'))}</label>
+          <input id="fg-id" name="identifier" type="text" autocomplete="email" required>
+        </div>
+        <div class="row-actions">
+          <button class="btn btn-primary btn-sm" type="submit">${esc(t('auth.forgot.send'))}</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-mode="login">${esc(t('auth.back'))}</button>
+        </div>
+      </form>` : ''}
 
     <p class="status-line" id="auth-status"></p>`;
 
@@ -112,38 +116,39 @@ export function renderAccountPanel(ctx, host) {
   };
 
   host.querySelectorAll('[data-mode]').forEach((btn) => {
-    btn.addEventListener('click', () => { mode = btn.dataset.mode; pendingId = null; rerender(); });
+    btn.addEventListener('click', () => { mode = btn.dataset.mode; ctx.rerender(); });
   });
 
-  host.querySelectorAll('[data-account]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      pendingId = pendingId === btn.dataset.account ? null : btn.dataset.account;
-      rerender();
-    });
-  });
-
-  host.querySelector('[data-signin]')?.addEventListener('submit', async (e) => {
+  host.querySelector('#login-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    say(t('auth.unlocking'), true);
+    const f = new FormData(e.target);
+    say(t('auth.working'), true);
     try {
-      await store.signIn(e.target.dataset.signin, new FormData(e.target).get('passphrase'));
+      await store.login(f.get('username'), f.get('password'));
       resetSignInView();
       onSignedIn();
-    } catch (err) { say(message(err)); }
+    } catch (err) { say(msg(err)); }
   });
 
   host.querySelector('#create-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    say(t('auth.creating'), true);
+    const f = new FormData(e.target);
+    say(t('auth.working'), true);
     try {
-      if (form.get('carry') && carryable) {
-        await store.claimLegacy(form.get('name'), form.get('passphrase'));
-      } else {
-        await store.createAccount(form.get('name'), form.get('passphrase'));
-      }
+      await store.signup(f.get('username'), f.get('email'), f.get('password'), Boolean(f.get('carry')));
       resetSignInView();
       onSignedIn();
-    } catch (err) { say(message(err)); }
+    } catch (err) { say(msg(err)); }
+  });
+
+  host.querySelector('#forgot-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    say(t('auth.working'), true);
+    try {
+      await store.requestReset(f.get('identifier'));
+      // Always the same reply, so this cannot be used to probe who has an account.
+      say(t('auth.forgot.sent'), true);
+    } catch (err) { say(msg(err)); }
   });
 }
