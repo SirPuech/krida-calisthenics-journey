@@ -25,11 +25,12 @@ jobs:
           python-version: '3.12'
       - name: Validate the skill catalogue
         run: python3 tools/check_data.py
-      - name: Confirm data/skills.json still matches the workbook
+      - name: Confirm generated data still matches its source
         run: |
           python3 tools/build_skills.py
-          git diff --exit-code -- data/skills.json \
-            || { echo "::error::data/skills.json is stale — run tools/build_skills.py and commit the result."; exit 1; }
+          python3 tools/build_guide.py
+          git diff --exit-code -- data/skills.json data/exercise-guide.json \
+            || { echo "::error::generated data is stale — run tools/build_skills.py and tools/build_guide.py and commit the result."; exit 1; }
 
   deploy:
     needs: check
