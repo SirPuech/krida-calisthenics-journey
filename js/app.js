@@ -6,7 +6,7 @@
  * there is no 404 rewrite rule to get wrong and the site works identically
  * from a user page, a project page or a local file server.
  */
-import { loadCatalogue, loadPrograms } from './data.js';
+import { loadCatalogue, loadPrograms, loadGuide } from './data.js';
 import { store } from './store/index.js';
 import { setLang, t } from './i18n.js';
 
@@ -33,6 +33,7 @@ const ROUTES = [
 const main = document.querySelector('main');
 let catalogue = null;
 let programs = null;
+let guide = null;
 let currentRoute = null;
 let legacyProfile = null;
 
@@ -51,14 +52,18 @@ function markNav(name) {
   });
 }
 
+let leaveHook = null;
+
 function render({ scroll = true } = {}) {
+  if (leaveHook) { try { leaveHook(); } catch (e) { /* ignore */ } leaveHook = null; }
   const { route, params, raw } = parseHash();
   main.innerHTML = '<div class="wrap"></div>';
   const mount = main.firstElementChild;
   const context = {
-    catalogue, programs, store, profile: store.profile, params, mount,
+    catalogue, programs, guide, store, profile: store.profile, params, mount,
     legacyProfile, onSignedIn,
     rerender: () => render({ scroll: false }),
+    onLeave: (fn) => { leaveHook = fn; },
   };
 
   // No gate: the whole site is browsable as a guest. Accounts are opt-in from
@@ -135,7 +140,9 @@ function wireChrome() {
 
 async function boot() {
   try {
-    [catalogue, programs] = await Promise.all([loadCatalogue(), loadPrograms(), store.init()]);
+    [catalogue, programs, guide] = await Promise.all([
+      loadCatalogue(), loadPrograms(), loadGuide(), store.init(),
+    ]);
   } catch (err) {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;

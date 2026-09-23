@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regenerate data/skills.json from source/skill-tree.xlsx.
 
-The workbook is the single source of truth for skill names, video credits and
+The workbook is the single source of truth for skill names and
 progression variations. Everything this script derives (branch, tier, prereqs,
 rep standards) is written into the JSON so it can be hand-corrected there —
 re-running this script overwrites those corrections, so edit the workbook or
@@ -16,7 +16,6 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 XLSX = ROOT / "source" / "skill-tree.xlsx"
-CURATED = ROOT / "data" / "videos-curated.json"
 OUT = ROOT / "data" / "skills.json"
 
 M = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
@@ -39,7 +38,7 @@ ROOT_NAME = "__root__"
 NON_SKILL = ("Legend", "Warning", "When clicking", "Unlock Path",
              "Unlocked Skills", "Legendary Skills", "Calisthenics/Gym")
 
-# TREE sheet shorthand -> the full name used on the video sheet.
+# TREE sheet shorthand -> the full name used on the detail sheets.
 ALIASES = {
     "Psuedo PU": "Psuedo Push-Up",
     "OA Pull-Up": "OA PU (One Arm; Pull-Up)",
@@ -263,26 +262,8 @@ def build():
     book = Book(XLSX)
     cells = tree_cells(book)
 
-    # --- videos, keyed by canonical name -------------------------------------
-    videos, variations = {}, {}
-    LABELS = ["form", "tutorial", "alt"]
-    for row in book.rows("Sheet2")[1:]:
-        if len(row) < 3 or not row[2]["v"]:
-            continue
-        key = canon(row[2]["v"])
-        vids = []
-        for i, kind in zip((3, 4, 5), LABELS):
-            if i >= len(row):
-                continue
-            cell = row[i]
-            if not cell["href"] or "/" * 5 in cell["v"]:
-                continue
-            credit = re.search(r"\(([^)]*)\)", cell["v"])
-            vids.append({"kind": kind, "url": cell["href"],
-                         "credit": credit.group(1).strip() if credit else ""})
-        videos[key] = vids
-
     # --- variations: each VP column is one skill's progression ladder ---------
+    variations = {}
     vp = book.rows("VP")
     width = max(len(r) for r in vp)
     for col in range(width):
@@ -304,20 +285,6 @@ def build():
             else:
                 items.append(v)
         flush()
-
-    # --- curated videos for skills the workbook never covered -----------------
-    curated = json.loads(CURATED.read_text()) if CURATED.exists() else {"families": {}, "skills": {}}
-    # Links tools/verify_videos.py has confirmed are gone. Dropping them here is
-    # what lets a curated replacement take over a skill the workbook "covers".
-    dead = set(curated.get("deadLinks", []))
-
-    def curated_for(skill_id):
-        entry = curated["skills"].get(skill_id)
-        if not entry:
-            return []
-        clips = entry.get("videos") or curated["families"].get(entry.get("family"), [])
-        return [{**clip, "source": "curated", "scope": entry.get("scope", "skill")}
-                for clip in clips]
 
     # --- skills --------------------------------------------------------------
     by_id, skills = {}, []
@@ -348,9 +315,6 @@ def build():
             "standard": {"sets": sets, "type": "hold" if is_hold else "reps",
                          "amount": amount, "source": "default"},
             "prereqs": [],
-            "videos": [{**v, "source": "workbook", "scope": "skill"}
-                       for v in videos.get(lookup, []) if v["url"] not in dead]
-                      or curated_for(sid),
             "variations": variations.get(lookup, []),
             "pos": {"row": c["row"], "col": c["col"]},
         }
@@ -426,7 +390,7 @@ def build():
         "branches": [{"id": b, "label": BRANCH_LABELS[b]} for b, _ in BRANCH_RULES],
         "tiers": [{"tier": t, "name": TIER_NAMES[t], "xp": TIER_XP[t]} for t in (1, 2, 3, 4)],
         "notes": [
-            "Skill names, video credits and variations come straight from the workbook.",
+            "Skill names and variations come straight from the workbook.",
             "branch / tier / prereqs are derived: tier from distance to the root column, "
             "prereqs from the arrows drawn on the TREE sheet with a nearest-neighbour fallback.",
             "standard.source == 'default' means the rep target is a placeholder, not sheet data.",
@@ -435,11 +399,6 @@ def build():
     }
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1))
-
-    with_video = sum(1 for s in skills if s["videos"])
-    from_workbook = sum(1 for s in skills if any(v["source"] == "workbook" for v in s["videos"]))
-    from_curated = sum(1 for s in skills if any(v["source"] == "curated" for v in s["videos"]))
-    family_scope = sum(1 for s in skills if any(v["scope"] == "family" for v in s["videos"]))
 
     # Every skill has to be reachable from an entry skill, or it can never be
     # unlocked in the app. Walk the graph forward and report anything stranded.
@@ -456,8 +415,6 @@ def build():
                 frontier.append(child)
     orphans = [s["id"] for s in skills if s["id"] not in seen]
     print(f"skills            {len(skills)}")
-    print(f"  with videos     {with_video}  ({from_workbook} workbook, {from_curated} curated"
-          f"{f', {family_scope} family-scope' if family_scope else ''})")
     print(f"  with variations {sum(1 for s in skills if s['variations'])}")
     print(f"prereq edges      {from_arrows} from arrows + {from_bands} from neighbours "
           f"({dropped} arrows too ambiguous, dropped)")

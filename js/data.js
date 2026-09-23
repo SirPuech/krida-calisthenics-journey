@@ -14,6 +14,11 @@ export function loadPrograms() {
   return fetchJson('programs.json', 'the program templates');
 }
 
+/** Per-skill animation archetype + how-to instructions. */
+export function loadGuide() {
+  return fetchJson('exercise-guide.json', 'the exercise guide');
+}
+
 export async function loadCatalogue() {
   if (cache) return cache;
   const raw = await fetchJson('skills.json', 'the skill catalogue');

@@ -156,7 +156,7 @@ Only one of them is generated, and the split is deliberate:
 | --- | --- | --- |
 | `data/skills.json` | `tools/build_skills.py` | the workbook changes |
 | `data/programs.json` | a coach, by hand | the programming philosophy changes |
-| `data/videos-curated.json` | a human, by hand | a link dies or a better tutorial turns up |
+| `data/exercise-guide.json` | `tools/build_guide.py` | the archetype rules or how-to cues change |
 
 Keeping them apart is what lets a coach retune every session without touching
 code, and lets the catalogue be regenerated without losing curation. A rebuild
@@ -166,20 +166,21 @@ one of the other two, or in the tables at the top of `build_skills.py`.
 ```
 source/skill-tree.xlsx
     │  tools/build_skills.py   (sheet, drawn arrows, cell geometry)
-    │                          + videos-curated.json  (fills gaps, strips dead links)
     ▼
-data/skills.json  ──┬─▶ tools/check_data.py  ──▶ Pages deploy
-                    │      reachability, cycles, tier monotonicity,
-data/programs.json ─┘      template + prescription + curated-video integrity
+data/skills.json  ──┬─▶ tools/build_guide.py  ──▶ data/exercise-guide.json
+                    │                              (archetype + how-to per skill)
+                    ├─▶ tools/check_data.py  ──▶ Pages deploy
+data/programs.json ─┘      reachability, cycles, tier monotonicity,
+                           template + prescription + guide integrity
 ```
 
 CI regenerates `data/skills.json` and fails if it differs from what is committed,
 so the generated file can never drift from the workbook it claims to come from.
 
-`tools/verify_videos.py` sits deliberately **outside** this pipeline. It needs
-network and it checks third-party links, which rot on their own schedule; a
-video going private should not be able to fail a deploy. It is a maintenance
-tool, run by hand, and `check_data.py` covers the structural half in CI instead.
+The exercise animations carry no external dependency: the figure and its poses
+are code (`js/exercise/`), and `exercise-guide.json` is generated and checked in
+CI like the catalogue. There are no third-party links to rot, which is why the
+old video pipeline — and the by-hand link checker it needed — was removed.
 
 ## The tree diagram
 

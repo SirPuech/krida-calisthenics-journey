@@ -65,7 +65,7 @@ export default function renderLibrary({ catalogue, profile, mount, rerender }) {
           <div class="trow thead">
             <span>${esc(t('lib.col.skill'))}</span><span>${esc(t('lib.col.branch'))}</span>
             <span>${esc(t('lib.col.tier'))}</span><span>${esc(t('lib.col.prereq'))}</span>
-            <span>${esc(t('lib.col.video'))}</span>
+            <span>${esc(t('lib.col.state'))}</span>
           </div>
           ${rows.length ? rows.map((k) => {
             const status = statuses.get(k.id);
@@ -73,13 +73,15 @@ export default function renderLibrary({ catalogue, profile, mount, rerender }) {
             const colour = status === STATUS.CLEARED ? 'color:var(--orange)'
               : status === STATUS.ACTIVE ? 'color:var(--blue-lift)' : '';
             const prereq = k.prereqs.map((p) => catalogue.byId.get(p)?.name).filter(Boolean).join(' · ') || '—';
+            const stateTag = status === STATUS.CLEARED ? t('lib.state.done')
+              : status === STATUS.ACTIVE ? t('lib.state.now')
+              : status === STATUS.AVAILABLE ? t('lib.state.open') : t('lib.state.locked');
             return `<a class="trow ${locked ? 'is-locked' : ''}" href="#/skill/${esc(k.id)}">
               <span>${esc(k.name)}</span>
               <span class="dim">${esc(k.branchLabel)}</span>
               <span class="tag" style="${colour}">T${k.tier}</span>
               <span class="dim">${esc(prereq)}</span>
-              <span class="tag" style="${colour}">${k.videos.length
-                ? esc(t('lib.links', { n: k.videos.length })) : esc(t('lib.noLinks'))}</span>
+              <span class="tag" style="${colour}">${esc(stateTag)}</span>
             </a>`;
           }).join('') : `<div class="empty" style="border:0">${esc(t('lib.empty'))}</div>`}
         </div>

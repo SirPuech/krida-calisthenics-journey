@@ -1,7 +1,7 @@
 # KRIDA · Calisthenics Journey
 
 A skill-tree progression guide for calisthenics: 111 skills, four tiers, six
-branches, each node gated behind a prerequisite, a form video and a rep standard.
+branches, each node gated behind a prerequisite, a 3D form animation and a rep standard.
 
 Static site, no backend. It builds from `source/skill-tree.xlsx` and deploys
 straight to GitHub Pages.
@@ -48,6 +48,10 @@ js/app.js                 bootstrap + hash router
 js/data.js                loads the JSON data files, builds the lookups
 js/progress.js            unlock engine: status, XP, streak, badges (pure functions)
 js/coach.js               session builder — resolves programs.json against your unlocks
+js/exercise/              the Three.js exercise animator
+  figure.js                 low-poly humanoid rig
+  poses.js                  per-archetype joint keyframes + apparatus + camera
+  animator.js               scene, loop, apparatus, mount/dispose
 js/i18n.js                EN / TH interface copy
 js/crypto.js              PBKDF2 + AES-GCM vault sealing (WebCrypto)
 js/store/                 profile persistence
@@ -59,11 +63,12 @@ js/store/                 profile persistence
 js/views/                 one module per screen
 data/skills.json          generated skill catalogue — do not hand-edit
 data/programs.json        coach-editable splits and prescriptions — hand-edit this
-data/videos-curated.json  curated tutorials + known-dead links — hand-edit this
+data/exercise-guide.json  generated: animation archetype + how-to per skill
 source/skill-tree.xlsx    the workbook the catalogue derives from
 tools/build_skills.py     regenerates data/skills.json
-tools/check_data.py       validates the catalogue (runs in CI)
-tools/verify_videos.py    checks every video link against YouTube (run by hand)
+tools/build_guide.py      regenerates data/exercise-guide.json
+tools/check_data.py       validates the catalogue + guide (runs in CI)
+exercise-lab.html         dev harness: renders any archetype for tuning poses
 ```
 
 ## The skill data
@@ -85,7 +90,7 @@ Being clear about this matters, because the two are mixed in the same file:
 | Field | Source |
 | --- | --- |
 | `name`, `sheetName` | The workbook, verbatim. |
-| `videos` | The workbook's Form / Tutorial / Alternative columns, plus curated additions — see below. All 111 skills have at least one working link. |
+| how-to / animation | Not in `skills.json` — see `data/exercise-guide.json` and **Exercise animations** below. |
 | `variations` | The workbook's VP sheet. |
 | `branch` | Derived by name matching (`BRANCH_RULES`). |
 | `tier`, `depth` | **Derived**, from how far the skill sits from the tree's root cell on the TREE sheet. The workbook states no tiers. |
@@ -108,45 +113,37 @@ re-checks that, plus reachability and cycles, on every push.
 **If a prerequisite looks wrong to you, it probably is.** Put the correction in
 `TIER_OVERRIDES` or `OVERRIDES` in `tools/build_skills.py` and rebuild.
 
-## Videos
+## Exercise animations
 
-The workbook covered 82 of 111 skills and left the whole legs branch empty. Worse,
-**43 of its 197 links were dead** — removed, private, or no longer embeddable —
-which nothing had ever checked.
+Every skill's page shows a **Three.js animation** of the movement — a rigged
+low-poly figure that performs the rep or holds the position, on the right
+apparatus (bar, rings, parallettes, floor, wall) and framed from the angle that
+reads best — alongside a written **how-to**: setup, numbered steps, a key cue,
+and the common mistake.
 
-Both are fixed. Every skill now has at least one working tutorial, and all 164
-links in the catalogue resolve.
+There are no videos. The workbook's links covered only 82 of 111 skills and 43
+of them were already dead; the animations cover all 111 and never rot.
 
-`data/videos-curated.json` holds the additions. Two things matter about it:
-
-- **Every URL was verified**, not taken on trust from a search result. The
-  `credit` and `title` stored next to each link are what YouTube's oEmbed
-  endpoint actually returned for it.
-- **`scope` is honest about coverage.** `skill` means the video is about that
-  exact movement. `family` means it covers the movement family and is attached
-  to a one-leg or elevated variant with no dedicated tutorial of its own — the
-  skill page labels those *"Family tutorial — covers the movement, not this
-  exact variation"* rather than pretending otherwise. 71 of 237 attachments are
-  family-scope.
-
-`deadLinks` records URLs confirmed gone. The build strips them, which is what
-lets a curated replacement take over a skill the workbook nominally "covers".
-
-### Re-checking links
-
-Third-party links rot, so this is a manual tool rather than a CI step — a video
-going private should not fail your deploy:
+`data/exercise-guide.json` maps each skill to one of ~19 movement **archetypes**
+plus its instruction text. It is generated:
 
 ```bash
-python3 tools/verify_videos.py
+python3 tools/build_guide.py && python3 tools/check_data.py
 ```
 
-It reports dead links grouped by source, names any skill left with **no** working
-video, and flags curated entries whose stored credit no longer matches the
-channel. `--write` records new failures into `deadLinks` for you; `--curated`
-checks only the hand-added ones. It never fails the build.
+The archetype rules and the coaching cues live in `tools/build_guide.py`; the
+last step of each skill's instructions (the target and prerequisites) is pulled
+from the skill's own data. To retune a movement's animation, edit its pose
+keyframes in `js/exercise/poses.js` and preview them in `exercise-lab.html`
+(open it and pick an archetype, or "Show all" for a grid). Because each archetype
+is shared by a family of skills, one pose fix improves every skill that uses it.
 
-## The program (for a coach)
+Three.js loads on demand from a CDN the first time an animation mounts, so pages
+that never open a skill stay light. Each animation disposes its WebGL context on
+navigation, so browsing skill after skill never exhausts the browser's context
+limit.
+
+## The program (for a coach)## The program (for a coach)
 
 `data/programs.json` is the one file a calisthenics coach can retune the whole
 app from. Nothing generates it — edit it directly and the change is live on the
@@ -255,7 +252,6 @@ the workbook has no Thai column — adding a `nameTh` per skill in
 
 ## Credit
 
-Skill names, progressions and every video link come from
-*The Calisthenics Skill Tree* workbook in `source/`. Videos are embedded from
-their original creators — Calisthenicmovement, FitnessFAQs, Artem Morozov,
-Calimnastic and others, credited on each skill page.
+Skill names and progressions come from *The Calisthenics Skill Tree* workbook in
+`source/`. The exercise animations are generated in-house (`js/exercise/`), so
+there are no third-party embeds to credit or maintain.

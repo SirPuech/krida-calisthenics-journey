@@ -1,0 +1,347 @@
+#!/usr/bin/env python3
+"""Generate data/exercise-guide.json from data/skills.json.
+
+For every skill this assigns:
+  - an animation archetype (which Three.js movement the figure plays),
+  - the apparatus and camera framing that archetype needs,
+  - step-by-step "how to do it" instructions, and
+  - the target pulled from the skill's own rep/hold standard.
+
+The archetype rules and the written coaching cues live here, so the whole guide
+is regenerated deterministically and hand-tuned from this one file — the same
+pattern as tools/build_skills.py. Edit here, run this, then check_data.py.
+
+    python3 tools/build_guide.py
+"""
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SKILLS = ROOT / "data" / "skills.json"
+OUT = ROOT / "data" / "exercise-guide.json"
+
+# --- archetypes -----------------------------------------------------------
+# Each archetype drives one Three.js animation. `motion` is 'reps' (the figure
+# cycles) or 'hold' (it settles into the position with a slow tension breath).
+# `apparatus` and `view` tell the animator what to draw and where to look from.
+ARCHETYPES = {
+    "pushup": {
+        "label": "Push-up", "apparatus": "floor", "view": "side", "motion": "reps",
+        "setup": "Hands under the shoulders, body in one straight line from heels to head, core and glutes tight.",
+        "steps": [
+            "Lower under control until the chest is a fist off the floor, elbows tracking back at roughly 45°.",
+            "Keep the line from heels to head rigid — the hips do not sag or pike.",
+            "Press back to full lockout and repeat.",
+        ],
+        "cue": "Elbows back, not flared. Squeeze the glutes so the hips never lead.",
+        "mistake": "Sagging hips or elbows flaring straight out to the sides.",
+    },
+    "pseudo": {
+        "label": "Pseudo push-up", "apparatus": "parallettes", "view": "side", "motion": "reps",
+        "setup": "Hands at hip level, fingers turned out, shoulders leaning forward past the wrists.",
+        "steps": [
+            "Keep the arms straight and lean the shoulders further ahead of the hands to load them.",
+            "Lower a few inches while holding that forward lean, then press the floor away.",
+            "The further forward the lean, the closer this gets to a planche.",
+        ],
+        "cue": "Protract the shoulders — round the upper back and push the floor down.",
+        "mistake": "Letting the shoulders drift back behind the wrists and losing the lean.",
+    },
+    "planche": {
+        "label": "Planche", "apparatus": "parallettes", "view": "side", "motion": "hold",
+        "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
+        "steps": [
+            "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
+            "Hold the body parallel to the ground — arms locked, shoulders protracted, glutes tight.",
+            "Hips and heels stay level with the shoulders in one flat line.",
+        ],
+        "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
+        "mistake": "Bending the arms or letting the hips pike up above the line.",
+    },
+    "dip": {
+        "label": "Dip", "apparatus": "parallettes", "view": "side", "motion": "reps",
+        "setup": "Supported on straight arms, shoulders down, slight forward lean of the torso.",
+        "steps": [
+            "Lower until the shoulders drop just below the elbows, elbows tracking back.",
+            "Keep the torso leaned slightly forward and the shoulders away from the ears.",
+            "Press back to a strong lockout at the top.",
+        ],
+        "cue": "Shoulders down and back — never shrug up toward the ears.",
+        "mistake": "Shrugging at the bottom or flaring the elbows wide.",
+    },
+    "pullup": {
+        "label": "Pull-up", "apparatus": "bar", "view": "front", "motion": "reps",
+        "setup": "Dead hang from the bar, shoulders active, core braced, legs still.",
+        "steps": [
+            "Pull the elbows down and back, driving the chest toward the bar.",
+            "Bring the chin over the bar without kipping or swinging.",
+            "Lower all the way to a full dead hang and repeat.",
+        ],
+        "cue": "Start by pulling the shoulder blades down before the arms bend.",
+        "mistake": "Kicking the legs to kip, or stopping short of a full hang.",
+    },
+    "muscleup": {
+        "label": "Muscle-up", "apparatus": "bar", "view": "front", "motion": "reps",
+        "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
+        "steps": [
+            "Pull explosively, bringing the chest high and leaning it over the bar.",
+            "Roll the wrists over the top and transition the elbows up as the chest clears.",
+            "Press out of the dip to a full support, then lower under control.",
+        ],
+        "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
+        "mistake": "Pulling only to the chin and having nothing left for the transition.",
+    },
+    "lever": {
+        "label": "Front / back lever", "apparatus": "bar", "view": "side", "motion": "hold",
+        "setup": "Hang from the bar with straight arms and a hollow, tight body.",
+        "steps": [
+            "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
+            "Hold the whole body in one rigid line, parallel to the floor.",
+            "Keep the shoulders depressed and the lats engaged the entire hold.",
+        ],
+        "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
+        "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+    },
+    "handstand": {
+        "label": "Handstand", "apparatus": "floor", "view": "front", "motion": "hold",
+        "setup": "Hands shoulder-width, fingers spread, arms locked overhead.",
+        "steps": [
+            "Stack the hips over the shoulders and the shoulders over the hands.",
+            "Push the floor away hard, ribs tucked and glutes tight in one straight line.",
+            "Balance with small pressure changes through the fingertips, not the whole hand.",
+        ],
+        "cue": "Push tall through the shoulders and grip the floor with the fingertips.",
+        "mistake": "Banana back — ribs flared and hips arched behind the hands.",
+    },
+    "hspu": {
+        "label": "Handstand push-up", "apparatus": "wall", "view": "front", "motion": "reps",
+        "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
+        "steps": [
+            "Lower under control until the head is just above the floor.",
+            "Keep the elbows tracking slightly forward, body stacked and tight.",
+            "Press back to a full lockout overhead.",
+        ],
+        "cue": "Lower slowly — control the descent rather than dropping into it.",
+        "mistake": "Arching the back to press instead of driving straight up.",
+    },
+    "squat": {
+        "label": "Squat", "apparatus": "floor", "view": "side", "motion": "reps",
+        "setup": "Stand tall, feet about shoulder-width, chest up and core braced.",
+        "steps": [
+            "Sit the hips back and down, knees tracking over the toes.",
+            "Descend to at least parallel while keeping the heels planted and chest tall.",
+            "Drive through the whole foot to stand back up.",
+        ],
+        "cue": "Knees follow the toes, weight through the heels and mid-foot.",
+        "mistake": "Knees caving in or the heels lifting off the floor.",
+    },
+    "pistol": {
+        "label": "Single-leg squat", "apparatus": "floor", "view": "side", "motion": "reps",
+        "setup": "Stand on one leg, the other extended in front, arms out for balance.",
+        "steps": [
+            "Sit down slowly on the working leg, keeping the free leg off the floor.",
+            "Descend as far as control allows, heel down and chest up.",
+            "Drive back up through the working heel without touching the free foot down.",
+        ],
+        "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
+        "mistake": "Collapsing at the bottom or the standing heel popping up.",
+    },
+    "nordic": {
+        "label": "Nordic curl", "apparatus": "floor", "view": "side", "motion": "reps",
+        "setup": "Kneel with the ankles anchored, body upright, hips extended.",
+        "steps": [
+            "Keep a straight line from knees to head and lower forward slowly.",
+            "Resist with the hamstrings the whole way down — fight the fall.",
+            "Pull yourself back up, or push off lightly and repeat.",
+        ],
+        "cue": "Hips stay open — do not bend at the waist to make it easier.",
+        "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+    },
+    "legext": {
+        "label": "Reverse leg extension", "apparatus": "floor", "view": "side", "motion": "reps",
+        "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
+        "steps": [
+            "Lean straight back from the knees, keeping the hips open.",
+            "Let the quads control the descent as far as you can hold.",
+            "Contract the quads to pull back upright.",
+        ],
+        "cue": "One straight line from knee to shoulder — no hinging at the hips.",
+        "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+    },
+    "lsit": {
+        "label": "L-sit", "apparatus": "parallettes", "view": "side", "motion": "hold",
+        "setup": "Support on straight arms, shoulders pressed down away from the ears.",
+        "steps": [
+            "Press down hard to lift the hips clear of the floor.",
+            "Raise straight legs to horizontal, toes pointed.",
+            "Hold the L — shoulders depressed, thighs squeezed, no leaning back.",
+        ],
+        "cue": "Push the ground down and lift the legs by the hip flexors, arms locked.",
+        "mistake": "Shrugging the shoulders or bending the knees to hold the height.",
+    },
+    "dragonflag": {
+        "label": "Dragon flag", "apparatus": "bench", "view": "side", "motion": "reps",
+        "setup": "Lie back holding a support behind the head, shoulders pinned down.",
+        "steps": [
+            "Drive the whole body up until only the shoulders rest on the surface.",
+            "Lower in one rigid line — no bend at the hips — as slowly as you can.",
+            "Stop just short of the floor and drive back up.",
+        ],
+        "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
+        "mistake": "Piking at the hips so the legs drop first.",
+    },
+    "plank": {
+        "label": "Plank", "apparatus": "floor", "view": "side", "motion": "hold",
+        "setup": "Forearms or hands down, body in one straight line, core braced.",
+        "steps": [
+            "Set the elbows under the shoulders and the body in a straight line.",
+            "Brace the core and squeeze the glutes so the hips stay level.",
+            "Hold — breathing steadily — without letting the hips sag or rise.",
+        ],
+        "cue": "Pull the belly in and tuck the ribs. Flat back from heels to head.",
+        "mistake": "Hips sagging toward the floor or piking up into a tent.",
+    },
+    "rings_support": {
+        "label": "Rings support", "apparatus": "rings", "view": "front", "motion": "hold",
+        "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
+        "steps": [
+            "Press down and turn the rings out to about 45°.",
+            "Hold the arms locked and the shoulders down, body tight and tall.",
+            "Keep the rings from drifting — steady them with active straight arms.",
+        ],
+        "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
+        "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+    },
+    "rings_cross": {
+        "label": "Iron cross", "apparatus": "rings", "view": "front", "motion": "hold",
+        "setup": "Hang between the rings, arms straight out to the sides.",
+        "steps": [
+            "Press the arms straight out to the sides until the body hangs level with them.",
+            "Hold the arms locked and horizontal, chest up, body vertical.",
+            "Resist the rings pulling apart — squeeze them down toward the hips.",
+        ],
+        "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
+        "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+    },
+    "rings_dip": {
+        "label": "Ring dip", "apparatus": "rings", "view": "front", "motion": "reps",
+        "setup": "Support on the rings, arms straight, rings turned out, body tight.",
+        "steps": [
+            "Lower under control, keeping the rings close to the body.",
+            "Descend until the shoulders drop below the elbows without losing tension.",
+            "Press back up and turn the rings out at the top.",
+        ],
+        "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
+        "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+    },
+}
+
+# --- classification -------------------------------------------------------
+# First matching rule wins. (test) is a predicate over the skill dict.
+def has(*words):
+    def test(name):
+        n = name.lower()
+        return any(w in n for w in words)
+    return test
+
+RULES = [
+    ("rings_cross", lambda s: s["branch"] == "rings" and has("cross", "maltese", "victorian", "azarian", "van gelder", "zanetti", "carmona", "planche")(s["name"])),
+    ("rings_dip",   lambda s: s["branch"] == "rings" and s["standard"]["type"] == "reps" and has("dip", "mu", "muscle", "push", "pelikan")(s["name"])),
+    ("rings_support", lambda s: s["branch"] == "rings"),
+    ("hspu",        lambda s: s["branch"] == "handstand" and has("push", "press", "pike")(s["name"])),
+    ("handstand",   lambda s: s["branch"] == "handstand"),
+    ("dragonflag",  lambda s: has("dragon")(s["name"])),
+    ("lsit",        lambda s: s["branch"] == "core" and has("sit", "manna")(s["name"])),
+    ("plank",       lambda s: s["branch"] == "core" and has("plank")(s["name"])),
+    ("dragonflag",  lambda s: s["branch"] == "core"),
+    ("lever",       lambda s: s["branch"] == "pull" and s["standard"]["type"] == "hold"),
+    ("muscleup",    lambda s: s["branch"] == "pull" and has("mu", "muscle", "hefesto")(s["name"])),
+    ("pullup",      lambda s: s["branch"] == "pull"),
+    ("nordic",      lambda s: s["branch"] == "legs" and has("nordic", "hamstring", "curl")(s["name"])),
+    ("legext",      lambda s: s["branch"] == "legs" and has("leg ext", "leg press", "matrix", "sissy", "natural")(s["name"])),
+    ("pistol",      lambda s: s["branch"] == "legs" and has("pistol", "shrimp", "hawaiian", "single", "ol ", "oa ")(s["name"])),
+    ("squat",       lambda s: s["branch"] == "legs"),
+    ("planche",     lambda s: s["branch"] == "push" and s["standard"]["type"] == "hold"),
+    ("pseudo",      lambda s: s["branch"] == "push" and has("pseudo", "planche")(s["name"])),
+    ("dip",         lambda s: s["branch"] == "push" and has("dip")(s["name"])),
+    ("pushup",      lambda s: s["branch"] == "push"),
+]
+
+# A few skills read better under a hand-picked archetype than the rules give.
+OVERRIDES = {
+    "l-sit": "lsit", "v-sit": "lsit", "manna": "lsit", "tuck-sit": "lsit",
+    "planche-lean": "pseudo", "plank": "plank",
+    "back-lever": "lever", "front-lever": "lever",
+}
+
+
+def classify(skill):
+    if skill["id"] in OVERRIDES:
+        return OVERRIDES[skill["id"]]
+    for name, test in RULES:
+        if test(skill):
+            return name
+    return "pushup"
+
+
+def target_line(skill):
+    std = skill["standard"]
+    if std["type"] == "hold":
+        return f"Target: hold {std['sets']} × {std['amount']}s with clean form."
+    return f"Target: {std['sets']} sets of {std['amount']} controlled reps."
+
+
+def build():
+    data = json.loads(SKILLS.read_text())
+    by_id = {s["id"]: s for s in data["skills"]}
+    guide = {}
+    dist = {}
+
+    for skill in data["skills"]:
+        arch_name = classify(skill)
+        arch = ARCHETYPES[arch_name]
+        dist[arch_name] = dist.get(arch_name, 0) + 1
+
+        prereqs = [by_id[p]["name"] for p in skill["prereqs"] if p in by_id]
+        steps = list(arch["steps"])
+        # A skill-specific closing line: the target, and what it opens toward.
+        closing = target_line(skill)
+        if prereqs:
+            closing += f" Requires: {', '.join(prereqs)}."
+        steps.append(closing)
+
+        guide[skill["id"]] = {
+            "archetype": arch_name,
+            "apparatus": arch["apparatus"],
+            "view": arch["view"],
+            "motion": arch["motion"],
+            "setup": arch["setup"],
+            "steps": steps,
+            "cue": arch["cue"],
+            "mistake": arch["mistake"],
+        }
+
+    payload = {
+        "version": 1,
+        "generatedFrom": "skills.json",
+        "notes": [
+            "Generated by tools/build_guide.py — edit the archetype tables there, not this file.",
+            "archetype selects the Three.js animation; apparatus/view/motion drive how it is drawn and framed.",
+            "steps/cue/mistake are archetype coaching text; the last step is skill-specific (target + prerequisites).",
+        ],
+        "archetypes": {k: {"label": v["label"], "apparatus": v["apparatus"],
+                           "view": v["view"], "motion": v["motion"]}
+                       for k, v in ARCHETYPES.items()},
+        "skills": guide,
+    }
+    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1))
+
+    print(f"guide for {len(guide)} skills -> {OUT.relative_to(ROOT)}")
+    for name in sorted(dist, key=lambda k: -dist[k]):
+        print(f"  {name:14s} {dist[name]}")
+
+
+if __name__ == "__main__":
+    sys.exit(build())

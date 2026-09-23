@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "skills.json"
 PROGRAMS = ROOT / "data" / "programs.json"
-CURATED = ROOT / "data" / "videos-curated.json"
+GUIDE = ROOT / "data" / "exercise-guide.json"
 
 DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
@@ -84,36 +84,29 @@ def check_programs(branch_ids, tier_numbers):
     return problems, payload
 
 
-def check_curated(skill_ids):
-    """Validate data/videos-curated.json — the other file a human hand-edits."""
-    if not CURATED.exists():
+def check_guide(skill_ids):
+    """Validate data/exercise-guide.json — the generated animation + how-to file."""
+    if not GUIDE.exists():
         return []
-    payload = json.loads(CURATED.read_text())
+    payload = json.loads(GUIDE.read_text())
     problems = []
-    families = payload.get("families", {})
-    dead = set(payload.get("deadLinks", []))
+    archetypes = set(payload.get("archetypes", {}))
 
-    for name, clips in families.items():
-        for clip in clips:
-            for field in ("kind", "url", "credit"):
-                if not clip.get(field):
-                    problems.append(f"families.{name}: a clip has no {field!r}")
-            if clip.get("url") in dead:
-                problems.append(f"families.{name}: {clip['url']} is in deadLinks")
+    covered = set(payload.get("skills", {}))
+    missing = skill_ids - covered
+    for skill_id in sorted(missing):
+        problems.append(f"exercise-guide: no entry for {skill_id!r}")
 
     for skill_id, entry in payload.get("skills", {}).items():
         if skill_id not in skill_ids:
-            problems.append(f"videos-curated: {skill_id!r} is not a skill")
-        if entry.get("scope") not in ("skill", "family"):
-            problems.append(f"videos-curated[{skill_id}]: scope must be skill or family")
-        family = entry.get("family")
-        if family and family not in families:
-            problems.append(f"videos-curated[{skill_id}]: unknown family {family!r}")
-        if not family and not entry.get("videos"):
-            problems.append(f"videos-curated[{skill_id}]: neither videos nor family")
-        for clip in entry.get("videos", []):
-            if clip.get("url") in dead:
-                problems.append(f"videos-curated[{skill_id}]: {clip['url']} is in deadLinks")
+            problems.append(f"exercise-guide: {skill_id!r} is not a skill")
+        if entry.get("archetype") not in archetypes:
+            problems.append(f"exercise-guide[{skill_id}]: unknown archetype {entry.get('archetype')!r}")
+        for field in ("setup", "cue", "mistake"):
+            if not entry.get(field):
+                problems.append(f"exercise-guide[{skill_id}]: missing {field!r}")
+        if not entry.get("steps"):
+            problems.append(f"exercise-guide[{skill_id}]: no steps")
 
     return problems
 
@@ -191,19 +184,8 @@ def main():
 
     program_problems, programs = check_programs(branch_ids, tier_numbers)
     problems.extend(program_problems)
-    problems.extend(check_curated(set(by_id)))
+    problems.extend(check_guide(set(by_id)))
 
-    # Every skill should reach the athlete with at least one video.
-    without_video = [s["id"] for s in skills if not s["videos"]]
-    dead = set(json.loads(CURATED.read_text()).get("deadLinks", [])) if CURATED.exists() else set()
-    for skill in skills:
-        for video in skill["videos"]:
-            if video["url"] in dead:
-                problems.append(f"{skill['id']}: ships a link recorded as dead — {video['url']}")
-            if video.get("scope") not in ("skill", "family"):
-                problems.append(f"{skill['id']}: video has no scope")
-            if video.get("source") not in ("workbook", "curated"):
-                problems.append(f"{skill['id']}: video has no source")
 
     if problems:
         print(f"FAIL — {len(problems)} problem(s):")
@@ -215,10 +197,9 @@ def main():
           f"{sum(1 for s in skills if not s['prereqs'])} entry points, no cycles.")
     print(f"OK — {len(programs['templates'])} program templates, "
           f"{len(programs['blocks'])} blocks, {len(programs['focus'])} focus types.")
-    counted = sum(len(s["videos"]) for s in skills)
-    family = sum(1 for s in skills for v in s["videos"] if v["scope"] == "family")
-    print(f"OK — {counted} video attachments, {family} family-scope, "
-          f"{len(without_video)} skill(s) with none.")
+    guide = json.loads(GUIDE.read_text()) if GUIDE.exists() else {"skills": {}, "archetypes": {}}
+    print(f"OK — exercise guide covers {len(guide['skills'])} skills "
+          f"across {len(guide['archetypes'])} animation archetypes.")
     return 0
 
 
