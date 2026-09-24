@@ -16,7 +16,7 @@
 
 const SESSION_TTL = 60 * 60 * 24 * 30;   // 30 days
 const RESET_TTL = 60 * 60;               // 1 hour
-const PBKDF2_ITERATIONS = 210_000;
+const PBKDF2_ITERATIONS = 100_000;   // Cloudflare Workers caps PBKDF2 at 100k
 
 // ---- small helpers -------------------------------------------------------
 const enc = new TextEncoder();

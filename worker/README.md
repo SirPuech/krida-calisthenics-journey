@@ -22,7 +22,7 @@ One Worker, one environment. No separate staging and production.
 | `POST /api/admin/set-password` | admin | set a member's password directly |
 | `DELETE /api/admin/user` | admin | remove a member |
 
-Passwords are PBKDF2-SHA256 (210k iterations) with a per-user salt. Sessions and
+Passwords are PBKDF2-SHA256 (100k iterations, the Workers cap) with a per-user salt. Sessions and
 reset tokens are random opaque strings with a TTL, stored server-side, so they
 are revocable and never guessable. Data lives in one Cloudflare KV namespace.
 

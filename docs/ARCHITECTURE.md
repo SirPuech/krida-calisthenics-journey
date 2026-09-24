@@ -92,7 +92,7 @@ browser (Pages, static)                    Cloudflare Worker (free)
                                               Resend         (reset emails)
 ```
 
-- Passwords: PBKDF2-SHA256, 210k iterations, per-user salt, verified and hashed
+- Passwords: PBKDF2-SHA256, 100k iterations (the Workers maximum), per-user salt, verified and hashed
   only on the Worker. The client never sees a hash.
 - Sessions and reset tokens are random opaque strings with a KV TTL — revocable,
   and unguessable, unlike a passphrase.
