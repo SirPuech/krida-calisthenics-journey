@@ -122,12 +122,71 @@
    "motion": "reps"
   }
  },
+ "muscleLabels": {
+  "chest": {
+   "en": "Chest",
+   "th": "อก"
+  },
+  "shoulders": {
+   "en": "Shoulders",
+   "th": "ไหล่"
+  },
+  "triceps": {
+   "en": "Triceps",
+   "th": "หลังแขน"
+  },
+  "biceps": {
+   "en": "Biceps",
+   "th": "หน้าแขน"
+  },
+  "forearms": {
+   "en": "Forearms",
+   "th": "แขนท่อนล่าง"
+  },
+  "abs": {
+   "en": "Core",
+   "th": "หน้าท้อง"
+  },
+  "lats": {
+   "en": "Lats",
+   "th": "ปีกหลัง"
+  },
+  "traps": {
+   "en": "Traps",
+   "th": "บ่า"
+  },
+  "quads": {
+   "en": "Quads",
+   "th": "ต้นขาหน้า"
+  },
+  "hamstrings": {
+   "en": "Hamstrings",
+   "th": "ต้นขาหลัง"
+  },
+  "glutes": {
+   "en": "Glutes",
+   "th": "ก้น"
+  },
+  "calves": {
+   "en": "Calves",
+   "th": "น่อง"
+  }
+ },
  "skills": {
   "plank": {
    "archetype": "plank",
    "apparatus": "floor",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "glutes"
+    ]
+   },
    "setup": "Forearms or hands down, body in one straight line, core braced.",
    "steps": [
     "Set the elbows under the shoulders and the body in a straight line.",
@@ -136,13 +195,32 @@
     "Target: hold 3 × 20s with clean form."
    ],
    "cue": "Pull the belly in and tuck the ribs. Flat back from heels to head.",
-   "mistake": "Hips sagging toward the floor or piking up into a tent."
+   "mistake": "Hips sagging toward the floor or piking up into a tent.",
+   "setupTh": "วางแขนหรือมือลง ลำตัวเป็นเส้นตรง เกร็งแกนกลาง",
+   "stepsTh": [
+    "วางศอกใต้ไหล่และลำตัวเป็นเส้นตรง",
+    "เกร็งแกนกลางและก้นให้สะโพกอยู่ระดับเดียว",
+    "ค้างไว้ หายใจสม่ำเสมอ สะโพกไม่ตกและไม่ยก",
+    "เป้าหมาย: ค้าง 3 × 20 วินาที ด้วยฟอร์มที่ดี"
+   ],
+   "cueTh": "ดึงหน้าท้องเข้าและเก็บซี่โครง หลังเรียบจากส้นถึงศีรษะ",
+   "mistakeTh": "สะโพกตกลงพื้น หรือยกโด่งเป็นภูเขา"
   },
   "tuck-sit": {
    "archetype": "lsit",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "quads",
+     "triceps",
+     "shoulders"
+    ]
+   },
    "setup": "Support on straight arms, shoulders pressed down away from the ears.",
    "steps": [
     "Press down hard to lift the hips clear of the floor.",
@@ -151,13 +229,32 @@
     "Target: hold 3 × 20s with clean form."
    ],
    "cue": "Push the ground down and lift the legs by the hip flexors, arms locked.",
-   "mistake": "Shrugging the shoulders or bending the knees to hold the height."
+   "mistake": "Shrugging the shoulders or bending the knees to hold the height.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด กดไหล่ลงห่างจากหู",
+   "stepsTh": [
+    "กดพื้นลงแรง ๆ เพื่อยกสะโพกพ้นพื้น",
+    "ยกขาตรงขึ้นให้ขนานพื้น ปลายเท้าชี้",
+    "ค้างท่า L ไหล่กดลง เกร็งต้นขา ไม่เอนหลัง",
+    "เป้าหมาย: ค้าง 3 × 20 วินาที ด้วยฟอร์มที่ดี"
+   ],
+   "cueTh": "ดันพื้นลงและยกขาด้วยกล้ามสะโพก แขนล็อก",
+   "mistakeTh": "ยกไหล่ หรืองอเข่าเพื่อค้างความสูง"
   },
   "dragon-flag": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -166,13 +263,33 @@
     "Target: 3 sets of 12 controlled reps. Requires: Plank."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Plank ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "wall-hs": {
    "archetype": "handstand",
    "apparatus": "floor",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hands shoulder-width, fingers spread, arms locked overhead.",
    "steps": [
     "Stack the hips over the shoulders and the shoulders over the hands.",
@@ -181,13 +298,32 @@
     "Target: hold 3 × 20s with clean form."
    ],
    "cue": "Push tall through the shoulders and grip the floor with the fingertips.",
-   "mistake": "Banana back — ribs flared and hips arched behind the hands."
+   "mistake": "Banana back — ribs flared and hips arched behind the hands.",
+   "setupTh": "มือกว้างเท่าหัวไหล่ กางนิ้ว แขนล็อกเหนือศีรษะ",
+   "stepsTh": [
+    "จัดสะโพกให้อยู่เหนือไหล่ และไหล่อยู่เหนือมือ",
+    "ดันพื้นออกแรง ๆ เก็บซี่โครง เกร็งก้นเป็นเส้นตรง",
+    "ทรงตัวด้วยการกดปลายนิ้วเล็ก ๆ ไม่ใช่ทั้งฝ่ามือ",
+    "เป้าหมาย: ค้าง 3 × 20 วินาที ด้วยฟอร์มที่ดี"
+   ],
+   "cueTh": "ดันตัวสูงผ่านไหล่และเกาะพื้นด้วยปลายนิ้ว",
+   "mistakeTh": "หลังแอ่นกล้วย — ซี่โครงบานและสะโพกแอ่นหลังมือ"
   },
   "hamstring-bridge": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -196,13 +332,32 @@
     "Target: 3 sets of 12 controlled reps."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "nordic-hamstring-curl": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -211,13 +366,32 @@
     "Target: 3 sets of 12 controlled reps. Requires: Hamstring Bridge."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Hamstring Bridge ก่อน"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "squat": {
    "archetype": "squat",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves"
+    ]
+   },
    "setup": "Stand tall, feet about shoulder-width, chest up and core braced.",
    "steps": [
     "Sit the hips back and down, knees tracking over the toes.",
@@ -226,13 +400,33 @@
     "Target: 3 sets of 12 controlled reps."
    ],
    "cue": "Knees follow the toes, weight through the heels and mid-foot.",
-   "mistake": "Knees caving in or the heels lifting off the floor."
+   "mistake": "Knees caving in or the heels lifting off the floor.",
+   "setupTh": "ยืนตัวตรง เท้ากว้างประมาณหัวไหล่ อกตั้ง เกร็งแกนกลาง",
+   "stepsTh": [
+    "ดันสะโพกไปด้านหลังและลง เข่าไปตามแนวปลายเท้า",
+    "ลงอย่างน้อยให้ต้นขาขนานพื้น ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านทั้งฝ่าเท้าเพื่อยืนขึ้น",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ"
+   ],
+   "cueTh": "เข่าตามปลายเท้า ลงน้ำหนักที่ส้นและกลางเท้า",
+   "mistakeTh": "เข่าหุบเข้า หรือส้นเท้ายกจากพื้น"
   },
   "pull-up": {
    "archetype": "pullup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps"
+    ],
+    "secondary": [
+     "forearms",
+     "abs",
+     "shoulders"
+    ]
+   },
    "setup": "Dead hang from the bar, shoulders active, core braced, legs still.",
    "steps": [
     "Pull the elbows down and back, driving the chest toward the bar.",
@@ -241,13 +435,32 @@
     "Target: 3 sets of 12 controlled reps."
    ],
    "cue": "Start by pulling the shoulder blades down before the arms bend.",
-   "mistake": "Kicking the legs to kip, or stopping short of a full hang."
+   "mistake": "Kicking the legs to kip, or stopping short of a full hang.",
+   "setupTh": "ห้อยตัวจากบาร์ ไหล่ตื่นตัว เกร็งแกนกลาง ขานิ่ง",
+   "stepsTh": [
+    "ดึงศอกลงและไปด้านหลัง ดันอกเข้าหาบาร์",
+    "ดึงคางขึ้นเหนือบาร์โดยไม่เหวี่ยงหรือโยกตัว",
+    "ลงจนสุดถึงห้อยเต็มที่ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ"
+   ],
+   "cueTh": "เริ่มด้วยการดึงสะบักลงก่อนงอแขน",
+   "mistakeTh": "เตะขาเพื่อโยกตัว หรือลงไม่สุด"
   },
   "push-up": {
    "archetype": "pushup",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "chest",
+     "triceps",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Hands under the shoulders, body in one straight line from heels to head, core and glutes tight.",
    "steps": [
     "Lower under control until the chest is a fist off the floor, elbows tracking back at roughly 45°.",
@@ -256,13 +469,32 @@
     "Target: 3 sets of 12 controlled reps."
    ],
    "cue": "Elbows back, not flared. Squeeze the glutes so the hips never lead.",
-   "mistake": "Sagging hips or elbows flaring straight out to the sides."
+   "mistake": "Sagging hips or elbows flaring straight out to the sides.",
+   "setupTh": "มืออยู่ใต้หัวไหล่ ลำตัวเป็นเส้นตรงจากส้นเท้าถึงศีรษะ เกร็งแกนกลางและก้น",
+   "stepsTh": [
+    "ลงช้า ๆ จนอกห่างพื้นประมาณหนึ่งกำปั้น ศอกชี้ไปด้านหลังราว 45 องศา",
+    "รักษาเส้นตรงจากส้นเท้าถึงศีรษะให้มั่นคง สะโพกไม่ตกและไม่ยกขึ้น",
+    "ดันขึ้นจนแขนเหยียดสุด แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ"
+   ],
+   "cueTh": "ศอกเก็บไปด้านหลัง ไม่กางออก เกร็งก้นเพื่อไม่ให้สะโพกนำ",
+   "mistakeTh": "สะโพกตก หรือศอกกางออกด้านข้าง"
   },
   "dip": {
    "archetype": "dip",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Supported on straight arms, shoulders down, slight forward lean of the torso.",
    "steps": [
     "Lower until the shoulders drop just below the elbows, elbows tracking back.",
@@ -271,13 +503,33 @@
     "Target: 3 sets of 12 controlled reps. Requires: Push-Up."
    ],
    "cue": "Shoulders down and back — never shrug up toward the ears.",
-   "mistake": "Shrugging at the bottom or flaring the elbows wide."
+   "mistake": "Shrugging at the bottom or flaring the elbows wide.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด ไหล่กดลง ลำตัวโน้มไปข้างหน้าเล็กน้อย",
+   "stepsTh": [
+    "ลงจนไหล่ต่ำกว่าศอกเล็กน้อย ศอกชี้ไปด้านหลัง",
+    "คงลำตัวโน้มหน้าเล็กน้อยและไหล่ห่างจากหู",
+    "ดันขึ้นจนล็อกแขนที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Push-Up ก่อน"
+   ],
+   "cueTh": "ไหล่กดลงและถอยหลัง อย่ายกไหล่ขึ้นหาหู",
+   "mistakeTh": "ยกไหล่ตอนล่างสุด หรือกางศอกออกกว้าง"
   },
   "ring-turn-out": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -286,13 +538,33 @@
     "Target: 3 sets of 12 controlled reps."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "ring-push-up": {
    "archetype": "rings_dip",
    "apparatus": "rings",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on the rings, arms straight, rings turned out, body tight.",
    "steps": [
     "Lower under control, keeping the rings close to the body.",
@@ -301,13 +573,33 @@
     "Target: 3 sets of 12 controlled reps. Requires: Ring Turn Out."
    ],
    "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
-   "mistake": "Letting the rings drift wide, which throws the shoulders forward."
+   "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+   "setupTh": "ค้ำตัวบนห่วง แขนเหยียด หมุนห่วงออก ลำตัวเกร็ง",
+   "stepsTh": [
+    "ลงช้า ๆ โดยเก็บห่วงชิดลำตัว",
+    "ลงจนไหล่ต่ำกว่าศอกโดยไม่เสียการเกร็ง",
+    "ดันขึ้นและหมุนห่วงออกที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Turn Out ก่อน"
+   ],
+   "cueTh": "เก็บห่วงชิดซี่โครงตลอดการลง",
+   "mistakeTh": "ปล่อยห่วงกางออกจนไหล่ทิ้งไปข้างหน้า"
   },
   "ring-pu": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -316,13 +608,33 @@
     "Target: 3 sets of 12 controlled reps. Requires: Ring Turn Out."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Turn Out ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "ring-dip": {
    "archetype": "rings_dip",
    "apparatus": "rings",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on the rings, arms straight, rings turned out, body tight.",
    "steps": [
     "Lower under control, keeping the rings close to the body.",
@@ -331,13 +643,32 @@
     "Target: 3 sets of 12 controlled reps. Requires: Ring Turn Out."
    ],
    "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
-   "mistake": "Letting the rings drift wide, which throws the shoulders forward."
+   "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+   "setupTh": "ค้ำตัวบนห่วง แขนเหยียด หมุนห่วงออก ลำตัวเกร็ง",
+   "stepsTh": [
+    "ลงช้า ๆ โดยเก็บห่วงชิดลำตัว",
+    "ลงจนไหล่ต่ำกว่าศอกโดยไม่เสียการเกร็ง",
+    "ดันขึ้นและหมุนห่วงออกที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Turn Out ก่อน"
+   ],
+   "cueTh": "เก็บห่วงชิดซี่โครงตลอดการลง",
+   "mistakeTh": "ปล่อยห่วงกางออกจนไหล่ทิ้งไปข้างหน้า"
   },
   "l-sit": {
    "archetype": "lsit",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "quads",
+     "triceps",
+     "shoulders"
+    ]
+   },
    "setup": "Support on straight arms, shoulders pressed down away from the ears.",
    "steps": [
     "Press down hard to lift the hips clear of the floor.",
@@ -346,13 +677,32 @@
     "Target: hold 3 × 15s with clean form. Requires: Tuck-Sit."
    ],
    "cue": "Push the ground down and lift the legs by the hip flexors, arms locked.",
-   "mistake": "Shrugging the shoulders or bending the knees to hold the height."
+   "mistake": "Shrugging the shoulders or bending the knees to hold the height.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด กดไหล่ลงห่างจากหู",
+   "stepsTh": [
+    "กดพื้นลงแรง ๆ เพื่อยกสะโพกพ้นพื้น",
+    "ยกขาตรงขึ้นให้ขนานพื้น ปลายเท้าชี้",
+    "ค้างท่า L ไหล่กดลง เกร็งต้นขา ไม่เอนหลัง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Tuck-Sit ก่อน"
+   ],
+   "cueTh": "ดันพื้นลงและยกขาด้วยกล้ามสะโพก แขนล็อก",
+   "mistakeTh": "ยกไหล่ หรืองอเข่าเพื่อค้างความสูง"
   },
   "oa-dragon-flag": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -361,13 +711,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Dragon-Flag."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Dragon-Flag ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "dragon-press": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -376,13 +745,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: OA Dragon Flag."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OA Dragon Flag ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "hs": {
    "archetype": "handstand",
    "apparatus": "floor",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hands shoulder-width, fingers spread, arms locked overhead.",
    "steps": [
     "Stack the hips over the shoulders and the shoulders over the hands.",
@@ -391,13 +780,32 @@
     "Target: hold 3 × 15s with clean form. Requires: Wall HS."
    ],
    "cue": "Push tall through the shoulders and grip the floor with the fingertips.",
-   "mistake": "Banana back — ribs flared and hips arched behind the hands."
+   "mistake": "Banana back — ribs flared and hips arched behind the hands.",
+   "setupTh": "มือกว้างเท่าหัวไหล่ กางนิ้ว แขนล็อกเหนือศีรษะ",
+   "stepsTh": [
+    "จัดสะโพกให้อยู่เหนือไหล่ และไหล่อยู่เหนือมือ",
+    "ดันพื้นออกแรง ๆ เก็บซี่โครง เกร็งก้นเป็นเส้นตรง",
+    "ทรงตัวด้วยการกดปลายนิ้วเล็ก ๆ ไม่ใช่ทั้งฝ่ามือ",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Wall HS ก่อน"
+   ],
+   "cueTh": "ดันตัวสูงผ่านไหล่และเกาะพื้นด้วยปลายนิ้ว",
+   "mistakeTh": "หลังแอ่นกล้วย — ซี่โครงบานและสะโพกแอ่นหลังมือ"
   },
   "ol-nordic-hamstring-curl": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -406,13 +814,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Nordic Hamstring Curl."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Nordic Hamstring Curl ก่อน"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "pistol-squat": {
    "archetype": "pistol",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Stand on one leg, the other extended in front, arms out for balance.",
    "steps": [
     "Sit down slowly on the working leg, keeping the free leg off the floor.",
@@ -421,13 +849,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Squat."
    ],
    "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
-   "mistake": "Collapsing at the bottom or the standing heel popping up."
+   "mistake": "Collapsing at the bottom or the standing heel popping up.",
+   "setupTh": "ยืนขาเดียว อีกขาเหยียดไปด้านหน้า กางแขนช่วยทรงตัว",
+   "stepsTh": [
+    "นั่งลงช้า ๆ บนขาที่ยืน ขาอีกข้างลอยไม่แตะพื้น",
+    "ลงเท่าที่ควบคุมได้ ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านส้นเท้าโดยไม่วางขาอีกข้างลง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Squat ก่อน"
+   ],
+   "cueTh": "ทำช้า ๆ การควบคุมสำคัญกว่าความลึก ส้นเท้าติดพื้นตลอด",
+   "mistakeTh": "ทรุดตอนล่างสุด หรือส้นเท้าที่ยืนยกขึ้น"
   },
   "inv-nordic-hamstring-curl": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -436,13 +883,30 @@
     "Target: hold 3 × 15s with clean form. Requires: OL Nordic Hamstring Curl."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OL Nordic Hamstring Curl ก่อน"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "natural-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -451,13 +915,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Squat."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Squat ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "back-lever": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -466,13 +950,34 @@
     "Target: hold 3 × 20s with clean form. Requires: Pull-Up."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 20 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Pull-Up ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "bar-mu": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -481,13 +986,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Pull-Up."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Pull-Up ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "oa-push-up": {
    "archetype": "pushup",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "chest",
+     "triceps",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Hands under the shoulders, body in one straight line from heels to head, core and glutes tight.",
    "steps": [
     "Lower under control until the chest is a fist off the floor, elbows tracking back at roughly 45°.",
@@ -496,13 +1020,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Dip."
    ],
    "cue": "Elbows back, not flared. Squeeze the glutes so the hips never lead.",
-   "mistake": "Sagging hips or elbows flaring straight out to the sides."
+   "mistake": "Sagging hips or elbows flaring straight out to the sides.",
+   "setupTh": "มืออยู่ใต้หัวไหล่ ลำตัวเป็นเส้นตรงจากส้นเท้าถึงศีรษะ เกร็งแกนกลางและก้น",
+   "stepsTh": [
+    "ลงช้า ๆ จนอกห่างพื้นประมาณหนึ่งกำปั้น ศอกชี้ไปด้านหลังราว 45 องศา",
+    "รักษาเส้นตรงจากส้นเท้าถึงศีรษะให้มั่นคง สะโพกไม่ตกและไม่ยกขึ้น",
+    "ดันขึ้นจนแขนเหยียดสุด แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Dip ก่อน"
+   ],
+   "cueTh": "ศอกเก็บไปด้านหลัง ไม่กางออก เกร็งก้นเพื่อไม่ให้สะโพกนำ",
+   "mistakeTh": "สะโพกตก หรือศอกกางออกด้านข้าง"
   },
   "imp-dip": {
    "archetype": "dip",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Supported on straight arms, shoulders down, slight forward lean of the torso.",
    "steps": [
     "Lower until the shoulders drop just below the elbows, elbows tracking back.",
@@ -511,13 +1054,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Dip."
    ],
    "cue": "Shoulders down and back — never shrug up toward the ears.",
-   "mistake": "Shrugging at the bottom or flaring the elbows wide."
+   "mistake": "Shrugging at the bottom or flaring the elbows wide.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด ไหล่กดลง ลำตัวโน้มไปข้างหน้าเล็กน้อย",
+   "stepsTh": [
+    "ลงจนไหล่ต่ำกว่าศอกเล็กน้อย ศอกชี้ไปด้านหลัง",
+    "คงลำตัวโน้มหน้าเล็กน้อยและไหล่ห่างจากหู",
+    "ดันขึ้นจนล็อกแขนที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Dip ก่อน"
+   ],
+   "cueTh": "ไหล่กดลงและถอยหลัง อย่ายกไหล่ขึ้นหาหู",
+   "mistakeTh": "ยกไหล่ตอนล่างสุด หรือกางศอกออกกว้าง"
   },
   "planche-lean": {
    "archetype": "pseudo",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "triceps",
+     "abs"
+    ]
+   },
    "setup": "Hands at hip level, fingers turned out, shoulders leaning forward past the wrists.",
    "steps": [
     "Keep the arms straight and lean the shoulders further ahead of the hands to load them.",
@@ -526,13 +1088,32 @@
     "Target: hold 3 × 15s with clean form. Requires: Dip."
    ],
    "cue": "Protract the shoulders — round the upper back and push the floor down.",
-   "mistake": "Letting the shoulders drift back behind the wrists and losing the lean."
+   "mistake": "Letting the shoulders drift back behind the wrists and losing the lean.",
+   "setupTh": "มืออยู่ระดับสะโพก ปลายนิ้วหันออก ไหล่โน้มไปข้างหน้าเลยข้อมือ",
+   "stepsTh": [
+    "เหยียดแขนตรงและโน้มไหล่ไปข้างหน้าให้เลยมือเพื่อลงน้ำหนัก",
+    "ลงเล็กน้อยโดยคงการโน้มไหล่ไว้ แล้วดันพื้นออก",
+    "ยิ่งโน้มไปข้างหน้ามาก ยิ่งใกล้ท่าแพลนช์",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Dip ก่อน"
+   ],
+   "cueTh": "ดันสะบักออก (โก่งหลังบน) แล้วดันพื้นลง",
+   "mistakeTh": "ปล่อยให้ไหล่ถอยกลับมาหลังข้อมือจนเสียการโน้ม"
   },
   "morozov": {
    "archetype": "pushup",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "chest",
+     "triceps",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Hands under the shoulders, body in one straight line from heels to head, core and glutes tight.",
    "steps": [
     "Lower under control until the chest is a fist off the floor, elbows tracking back at roughly 45°.",
@@ -541,13 +1122,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Imp. Dip."
    ],
    "cue": "Elbows back, not flared. Squeeze the glutes so the hips never lead.",
-   "mistake": "Sagging hips or elbows flaring straight out to the sides."
+   "mistake": "Sagging hips or elbows flaring straight out to the sides.",
+   "setupTh": "มืออยู่ใต้หัวไหล่ ลำตัวเป็นเส้นตรงจากส้นเท้าถึงศีรษะ เกร็งแกนกลางและก้น",
+   "stepsTh": [
+    "ลงช้า ๆ จนอกห่างพื้นประมาณหนึ่งกำปั้น ศอกชี้ไปด้านหลังราว 45 องศา",
+    "รักษาเส้นตรงจากส้นเท้าถึงศีรษะให้มั่นคง สะโพกไม่ตกและไม่ยกขึ้น",
+    "ดันขึ้นจนแขนเหยียดสุด แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Imp. Dip ก่อน"
+   ],
+   "cueTh": "ศอกเก็บไปด้านหลัง ไม่กางออก เกร็งก้นเพื่อไม่ให้สะโพกนำ",
+   "mistakeTh": "สะโพกตก หรือศอกกางออกด้านข้าง"
   },
   "oa-dip": {
    "archetype": "dip",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Supported on straight arms, shoulders down, slight forward lean of the torso.",
    "steps": [
     "Lower until the shoulders drop just below the elbows, elbows tracking back.",
@@ -556,13 +1156,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Imp. Dip, Dip."
    ],
    "cue": "Shoulders down and back — never shrug up toward the ears.",
-   "mistake": "Shrugging at the bottom or flaring the elbows wide."
+   "mistake": "Shrugging at the bottom or flaring the elbows wide.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด ไหล่กดลง ลำตัวโน้มไปข้างหน้าเล็กน้อย",
+   "stepsTh": [
+    "ลงจนไหล่ต่ำกว่าศอกเล็กน้อย ศอกชี้ไปด้านหลัง",
+    "คงลำตัวโน้มหน้าเล็กน้อยและไหล่ห่างจากหู",
+    "ดันขึ้นจนล็อกแขนที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Imp. Dip, Dip ก่อน"
+   ],
+   "cueTh": "ไหล่กดลงและถอยหลัง อย่ายกไหล่ขึ้นหาหู",
+   "mistakeTh": "ยกไหล่ตอนล่างสุด หรือกางศอกออกกว้าง"
   },
   "ring-flies": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -571,13 +1191,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Ring Push-Up."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Push-Up ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "ring-mu": {
    "archetype": "rings_dip",
    "apparatus": "rings",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on the rings, arms straight, rings turned out, body tight.",
    "steps": [
     "Lower under control, keeping the rings close to the body.",
@@ -586,13 +1226,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Ring Turn Out."
    ],
    "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
-   "mistake": "Letting the rings drift wide, which throws the shoulders forward."
+   "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+   "setupTh": "ค้ำตัวบนห่วง แขนเหยียด หมุนห่วงออก ลำตัวเกร็ง",
+   "stepsTh": [
+    "ลงช้า ๆ โดยเก็บห่วงชิดลำตัว",
+    "ลงจนไหล่ต่ำกว่าศอกโดยไม่เสียการเกร็ง",
+    "ดันขึ้นและหมุนห่วงออกที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Turn Out ก่อน"
+   ],
+   "cueTh": "เก็บห่วงชิดซี่โครงตลอดการลง",
+   "mistakeTh": "ปล่อยห่วงกางออกจนไหล่ทิ้งไปข้างหน้า"
   },
   "ring-hs": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -601,13 +1261,33 @@
     "Target: hold 3 × 15s with clean form. Requires: Ring Dip."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Ring Dip ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "straight-arm-ring-flies": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -616,13 +1296,32 @@
     "Target: 3 sets of 8 controlled reps. Requires: Ring Flies."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Flies ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "v-sit": {
    "archetype": "lsit",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "quads",
+     "triceps",
+     "shoulders"
+    ]
+   },
    "setup": "Support on straight arms, shoulders pressed down away from the ears.",
    "steps": [
     "Press down hard to lift the hips clear of the floor.",
@@ -631,13 +1330,32 @@
     "Target: hold 3 × 15s with clean form. Requires: L-Sit."
    ],
    "cue": "Push the ground down and lift the legs by the hip flexors, arms locked.",
-   "mistake": "Shrugging the shoulders or bending the knees to hold the height."
+   "mistake": "Shrugging the shoulders or bending the knees to hold the height.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด กดไหล่ลงห่างจากหู",
+   "stepsTh": [
+    "กดพื้นลงแรง ๆ เพื่อยกสะโพกพ้นพื้น",
+    "ยกขาตรงขึ้นให้ขนานพื้น ปลายเท้าชี้",
+    "ค้างท่า L ไหล่กดลง เกร็งต้นขา ไม่เอนหลัง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: L-Sit ก่อน"
+   ],
+   "cueTh": "ดันพื้นลงและยกขาด้วยกล้ามสะโพก แขนล็อก",
+   "mistakeTh": "ยกไหล่ หรืองอเข่าเพื่อค้างความสูง"
   },
   "oa-dragon-press": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -646,13 +1364,32 @@
     "Target: 3 sets of 5 controlled reps. Requires: Dragon Press."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Dragon Press ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "reverse-planche": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -661,13 +1398,32 @@
     "Target: hold 3 × 10s with clean form. Requires: V-Sit."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: V-Sit ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "pb-fl-to-reverse-planche": {
    "archetype": "dragonflag",
    "apparatus": "bench",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "lats",
+     "glutes",
+     "shoulders"
+    ]
+   },
    "setup": "Lie back holding a support behind the head, shoulders pinned down.",
    "steps": [
     "Drive the whole body up until only the shoulders rest on the surface.",
@@ -676,13 +1432,32 @@
     "Target: hold 3 × 10s with clean form. Requires: Reverse Planche."
    ],
    "cue": "The body is one plank pivoting at the shoulders. Keep it dead straight.",
-   "mistake": "Piking at the hips so the legs drop first."
+   "mistake": "Piking at the hips so the legs drop first.",
+   "setupTh": "นอนหงายจับที่ยึดไว้เหนือศีรษะ กดไหล่ติดพื้น",
+   "stepsTh": [
+    "ยกทั้งตัวขึ้นจนเหลือแค่ไหล่แตะพื้น",
+    "ลงเป็นเส้นตรงเดียว ไม่งอสะโพก ช้าที่สุดเท่าที่ทำได้",
+    "หยุดก่อนถึงพื้นแล้วยกกลับขึ้น",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Reverse Planche ก่อน"
+   ],
+   "cueTh": "ลำตัวเป็นแผ่นเดียวหมุนที่ไหล่ เกร็งให้ตรงตลอด",
+   "mistakeTh": "งอสะโพกจนขาตกลงก่อน"
   },
   "hs-push-up": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -691,13 +1466,32 @@
     "Target: hold 3 × 10s with clean form. Requires: OA Hefesto."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA Hefesto ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "hs-pike-press": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -706,13 +1500,33 @@
     "Target: hold 3 × 10s with clean form. Requires: HS Push-Up."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: HS Push-Up ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "oa-hs": {
    "archetype": "handstand",
    "apparatus": "floor",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hands shoulder-width, fingers spread, arms locked overhead.",
    "steps": [
     "Stack the hips over the shoulders and the shoulders over the hands.",
@@ -721,13 +1535,32 @@
     "Target: hold 3 × 10s with clean form. Requires: OL Natural Leg Ext.."
    ],
    "cue": "Push tall through the shoulders and grip the floor with the fingertips.",
-   "mistake": "Banana back — ribs flared and hips arched behind the hands."
+   "mistake": "Banana back — ribs flared and hips arched behind the hands.",
+   "setupTh": "มือกว้างเท่าหัวไหล่ กางนิ้ว แขนล็อกเหนือศีรษะ",
+   "stepsTh": [
+    "จัดสะโพกให้อยู่เหนือไหล่ และไหล่อยู่เหนือมือ",
+    "ดันพื้นออกแรง ๆ เก็บซี่โครง เกร็งก้นเป็นเส้นตรง",
+    "ทรงตัวด้วยการกดปลายนิ้วเล็ก ๆ ไม่ใช่ทั้งฝ่ามือ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OL Natural Leg Ext. ก่อน"
+   ],
+   "cueTh": "ดันตัวสูงผ่านไหล่และเกาะพื้นด้วยปลายนิ้ว",
+   "mistakeTh": "หลังแอ่นกล้วย — ซี่โครงบานและสะโพกแอ่นหลังมือ"
   },
   "imp-tigerbend-hs-push-up": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -736,13 +1569,32 @@
     "Target: hold 3 × 10s with clean form. Requires: OA HS."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA HS ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "oa-hs-press": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -751,13 +1603,32 @@
     "Target: hold 3 × 10s with clean form. Requires: OA HS."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA HS ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "elev-ol-nordic-hamstring-curl": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -766,13 +1637,30 @@
     "Target: 3 sets of 5 controlled reps. Requires: Inv. Nordic Hamstring Curl."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Inv. Nordic Hamstring Curl ก่อน"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "sissy-squat": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -781,13 +1669,30 @@
     "Target: 3 sets of 5 controlled reps. Requires: Pistol Squat."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Pistol Squat ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "ol-natural-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -796,13 +1701,33 @@
     "Target: 3 sets of 5 controlled reps. Requires: Natural Leg Ext.."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Natural Leg Ext. ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "hawaiian-squat": {
    "archetype": "pistol",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Stand on one leg, the other extended in front, arms out for balance.",
    "steps": [
     "Sit down slowly on the working leg, keeping the free leg off the floor.",
@@ -811,13 +1736,30 @@
     "Target: 3 sets of 5 controlled reps. Requires: Sissy Squat."
    ],
    "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
-   "mistake": "Collapsing at the bottom or the standing heel popping up."
+   "mistake": "Collapsing at the bottom or the standing heel popping up.",
+   "setupTh": "ยืนขาเดียว อีกขาเหยียดไปด้านหน้า กางแขนช่วยทรงตัว",
+   "stepsTh": [
+    "นั่งลงช้า ๆ บนขาที่ยืน ขาอีกข้างลอยไม่แตะพื้น",
+    "ลงเท่าที่ควบคุมได้ ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านส้นเท้าโดยไม่วางขาอีกข้างลง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Sissy Squat ก่อน"
+   ],
+   "cueTh": "ทำช้า ๆ การควบคุมสำคัญกว่าความลึก ส้นเท้าติดพื้นตลอด",
+   "mistakeTh": "ทรุดตอนล่างสุด หรือส้นเท้าที่ยืนยกขึ้น"
   },
   "leg-ext-lever": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -826,13 +1768,33 @@
     "Target: hold 3 × 10s with clean form. Requires: OL Natural Leg Ext.."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OL Natural Leg Ext. ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "shrimp-squat": {
    "archetype": "pistol",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Stand on one leg, the other extended in front, arms out for balance.",
    "steps": [
     "Sit down slowly on the working leg, keeping the free leg off the floor.",
@@ -841,13 +1803,30 @@
     "Target: 3 sets of 5 controlled reps. Requires: Sissy Squat."
    ],
    "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
-   "mistake": "Collapsing at the bottom or the standing heel popping up."
+   "mistake": "Collapsing at the bottom or the standing heel popping up.",
+   "setupTh": "ยืนขาเดียว อีกขาเหยียดไปด้านหน้า กางแขนช่วยทรงตัว",
+   "stepsTh": [
+    "นั่งลงช้า ๆ บนขาที่ยืน ขาอีกข้างลอยไม่แตะพื้น",
+    "ลงเท่าที่ควบคุมได้ ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านส้นเท้าโดยไม่วางขาอีกข้างลง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Sissy Squat ก่อน"
+   ],
+   "cueTh": "ทำช้า ๆ การควบคุมสำคัญกว่าความลึก ส้นเท้าติดพื้นตลอด",
+   "mistakeTh": "ทรุดตอนล่างสุด หรือส้นเท้าที่ยืนยกขึ้น"
   },
   "matrix-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -856,13 +1835,32 @@
     "Target: 3 sets of 5 controlled reps. Requires: Leg Ext. Lever."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Leg Ext. Lever ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "ol-inv-nordic-hamstring-curl": {
    "archetype": "nordic",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "hamstrings"
+    ],
+    "secondary": [
+     "glutes",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Kneel with the ankles anchored, body upright, hips extended.",
    "steps": [
     "Keep a straight line from knees to head and lower forward slowly.",
@@ -871,13 +1869,30 @@
     "Target: hold 3 × 10s with clean form. Requires: Inv. Nordic Hamstring Curl."
    ],
    "cue": "Hips stay open — do not bend at the waist to make it easier.",
-   "mistake": "Breaking at the hips instead of holding the knee-to-head line."
+   "mistake": "Breaking at the hips instead of holding the knee-to-head line.",
+   "setupTh": "คุกเข่าโดยล็อกข้อเท้าไว้ ลำตัวตั้งตรง สะโพกเหยียด",
+   "stepsTh": [
+    "รักษาเส้นตรงจากเข่าถึงศีรษะ แล้วลงไปข้างหน้าช้า ๆ",
+    "ต้านด้วยกล้ามต้นขาหลังตลอดทาง สู้กับแรงล้ม",
+    "ดึงตัวกลับขึ้น หรือดันพื้นเบา ๆ แล้วทำซ้ำ",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Inv. Nordic Hamstring Curl ก่อน"
+   ],
+   "cueTh": "สะโพกเปิดค้างไว้ อย่างอเอวเพื่อให้ง่ายขึ้น",
+   "mistakeTh": "งอที่สะโพกแทนที่จะคงเส้นเข่าถึงศีรษะ"
   },
   "ol-sissy-squat": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -886,13 +1901,34 @@
     "Target: 3 sets of 5 controlled reps. Requires: Tuck-Sit."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Tuck-Sit ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "hefesto": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -901,13 +1937,33 @@
     "Target: 3 sets of 12 controlled reps. Requires: Back Lever."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 12 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Back Lever ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "back-lever-pu": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -916,13 +1972,33 @@
     "Target: hold 3 × 15s with clean form. Requires: Hefesto."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Hefesto ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "front-lever": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -931,13 +2007,34 @@
     "Target: hold 3 × 15s with clean form. Requires: Bar MU."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Bar MU ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "oa-hefesto": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -946,13 +2043,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Hefesto."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Hefesto ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "oa-front-lever": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -961,13 +2078,33 @@
     "Target: hold 3 × 15s with clean form. Requires: Front Lever."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Front Lever ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "oa-chin-up": {
    "archetype": "pullup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps"
+    ],
+    "secondary": [
+     "forearms",
+     "abs",
+     "shoulders"
+    ]
+   },
    "setup": "Dead hang from the bar, shoulders active, core braced, legs still.",
    "steps": [
     "Pull the elbows down and back, driving the chest toward the bar.",
@@ -976,13 +2113,33 @@
     "Target: 3 sets of 8 controlled reps. Requires: Front Lever."
    ],
    "cue": "Start by pulling the shoulder blades down before the arms bend.",
-   "mistake": "Kicking the legs to kip, or stopping short of a full hang."
+   "mistake": "Kicking the legs to kip, or stopping short of a full hang.",
+   "setupTh": "ห้อยตัวจากบาร์ ไหล่ตื่นตัว เกร็งแกนกลาง ขานิ่ง",
+   "stepsTh": [
+    "ดึงศอกลงและไปด้านหลัง ดันอกเข้าหาบาร์",
+    "ดึงคางขึ้นเหนือบาร์โดยไม่เหวี่ยงหรือโยกตัว",
+    "ลงจนสุดถึงห้อยเต็มที่ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 8 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Front Lever ก่อน"
+   ],
+   "cueTh": "เริ่มด้วยการดึงสะบักลงก่อนงอแขน",
+   "mistakeTh": "เตะขาเพื่อโยกตัว หรือลงไม่สุด"
   },
   "oa-front-lever-pu": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -991,13 +2148,33 @@
     "Target: hold 3 × 10s with clean form. Requires: OA Front Lever."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA Front Lever ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "oa-bl": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -1006,13 +2183,33 @@
     "Target: hold 3 × 10s with clean form. Requires: Back Lever PU."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Back Lever PU ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "front-lever-pull": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -1021,13 +2218,34 @@
     "Target: hold 3 × 10s with clean form. Requires: OA Front Lever."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA Front Lever ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "hefesto-from-bl": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -1036,13 +2254,33 @@
     "Target: 3 sets of 5 controlled reps. Requires: OA Hefesto."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OA Hefesto ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "oa-bl-pu": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -1051,13 +2289,34 @@
     "Target: hold 3 × 10s with clean form. Requires: OA BL."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA BL ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "oa-hefesto-from-bl": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -1066,13 +2325,33 @@
     "Target: 3 sets of 5 controlled reps. Requires: Hefesto From BL."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Hefesto From BL ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "front-lever-pull-up": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -1081,13 +2360,32 @@
     "Target: hold 3 × 10s with clean form. Requires: Front Lever Pull."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Front Lever Pull ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "pseudo-push-up": {
    "archetype": "pseudo",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "triceps",
+     "abs"
+    ]
+   },
    "setup": "Hands at hip level, fingers turned out, shoulders leaning forward past the wrists.",
    "steps": [
     "Keep the arms straight and lean the shoulders further ahead of the hands to load them.",
@@ -1096,13 +2394,33 @@
     "Target: 3 sets of 5 controlled reps. Requires: OA Dip."
    ],
    "cue": "Protract the shoulders — round the upper back and push the floor down.",
-   "mistake": "Letting the shoulders drift back behind the wrists and losing the lean."
+   "mistake": "Letting the shoulders drift back behind the wrists and losing the lean.",
+   "setupTh": "มืออยู่ระดับสะโพก ปลายนิ้วหันออก ไหล่โน้มไปข้างหน้าเลยข้อมือ",
+   "stepsTh": [
+    "เหยียดแขนตรงและโน้มไหล่ไปข้างหน้าให้เลยมือเพื่อลงน้ำหนัก",
+    "ลงเล็กน้อยโดยคงการโน้มไหล่ไว้ แล้วดันพื้นออก",
+    "ยิ่งโน้มไปข้างหน้ามาก ยิ่งใกล้ท่าแพลนช์",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OA Dip ก่อน"
+   ],
+   "cueTh": "ดันสะบักออก (โก่งหลังบน) แล้วดันพื้นลง",
+   "mistakeTh": "ปล่อยให้ไหล่ถอยกลับมาหลังข้อมือจนเสียการโน้ม"
   },
   "bicep-planche": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1111,13 +2429,33 @@
     "Target: hold 3 × 10s with clean form. Requires: Pseudo Push-Up."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Pseudo Push-Up ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "oa-bicep-planche": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1126,13 +2464,33 @@
     "Target: hold 3 × 10s with clean form. Requires: OA Dragon Press."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA Dragon Press ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "bulgarian-dip": {
    "archetype": "rings_dip",
    "apparatus": "rings",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on the rings, arms straight, rings turned out, body tight.",
    "steps": [
     "Lower under control, keeping the rings close to the body.",
@@ -1141,13 +2499,34 @@
     "Target: 3 sets of 5 controlled reps. Requires: Ring MU."
    ],
    "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
-   "mistake": "Letting the rings drift wide, which throws the shoulders forward."
+   "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+   "setupTh": "ค้ำตัวบนห่วง แขนเหยียด หมุนห่วงออก ลำตัวเกร็ง",
+   "stepsTh": [
+    "ลงช้า ๆ โดยเก็บห่วงชิดลำตัว",
+    "ลงจนไหล่ต่ำกว่าศอกโดยไม่เสียการเกร็ง",
+    "ดันขึ้นและหมุนห่วงออกที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring MU ก่อน"
+   ],
+   "cueTh": "เก็บห่วงชิดซี่โครงตลอดการลง",
+   "mistakeTh": "ปล่อยห่วงกางออกจนไหล่ทิ้งไปข้างหน้า"
   },
   "ring-planche": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1156,13 +2535,33 @@
     "Target: hold 3 × 10s with clean form. Requires: Morozov."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Morozov ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "wide-ring-mu": {
    "archetype": "rings_dip",
    "apparatus": "rings",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "triceps",
+     "chest",
+     "shoulders"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on the rings, arms straight, rings turned out, body tight.",
    "steps": [
     "Lower under control, keeping the rings close to the body.",
@@ -1171,13 +2570,34 @@
     "Target: 3 sets of 5 controlled reps. Requires: Bar MU."
    ],
    "cue": "Keep the rings pulled in tight to the ribs the whole descent.",
-   "mistake": "Letting the rings drift wide, which throws the shoulders forward."
+   "mistake": "Letting the rings drift wide, which throws the shoulders forward.",
+   "setupTh": "ค้ำตัวบนห่วง แขนเหยียด หมุนห่วงออก ลำตัวเกร็ง",
+   "stepsTh": [
+    "ลงช้า ๆ โดยเก็บห่วงชิดลำตัว",
+    "ลงจนไหล่ต่ำกว่าศอกโดยไม่เสียการเกร็ง",
+    "ดันขึ้นและหมุนห่วงออกที่ด้านบน",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 5 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Bar MU ก่อน"
+   ],
+   "cueTh": "เก็บห่วงชิดซี่โครงตลอดการลง",
+   "mistakeTh": "ปล่อยห่วงกางออกจนไหล่ทิ้งไปข้างหน้า"
   },
   "pb-victorian": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1186,13 +2606,34 @@
     "Target: hold 3 × 10s with clean form. Requires: Wide Ring MU."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Wide Ring MU ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "ring-maltese": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1201,13 +2642,34 @@
     "Target: hold 3 × 10s with clean form. Requires: Ring HS, Ring Planche."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Ring HS, Ring Planche ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "ring-planche-press": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1216,13 +2678,34 @@
     "Target: hold 3 × 10s with clean form. Requires: Planche Lean."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Planche Lean ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "ring-victorian-cross": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1231,13 +2714,32 @@
     "Target: hold 3 × 10s with clean form. Requires: Ring Planche Press."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Ring Planche Press ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "manna": {
    "archetype": "lsit",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "abs"
+    ],
+    "secondary": [
+     "quads",
+     "triceps",
+     "shoulders"
+    ]
+   },
    "setup": "Support on straight arms, shoulders pressed down away from the ears.",
    "steps": [
     "Press down hard to lift the hips clear of the floor.",
@@ -1246,13 +2748,32 @@
     "Target: hold 3 × 15s with clean form. Requires: Dragon-Flag."
    ],
    "cue": "Push the ground down and lift the legs by the hip flexors, arms locked.",
-   "mistake": "Shrugging the shoulders or bending the knees to hold the height."
+   "mistake": "Shrugging the shoulders or bending the knees to hold the height.",
+   "setupTh": "ค้ำตัวบนแขนเหยียด กดไหล่ลงห่างจากหู",
+   "stepsTh": [
+    "กดพื้นลงแรง ๆ เพื่อยกสะโพกพ้นพื้น",
+    "ยกขาตรงขึ้นให้ขนานพื้น ปลายเท้าชี้",
+    "ค้างท่า L ไหล่กดลง เกร็งต้นขา ไม่เอนหลัง",
+    "เป้าหมาย: ค้าง 3 × 15 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Dragon-Flag ก่อน"
+   ],
+   "cueTh": "ดันพื้นลงและยกขาด้วยกล้ามสะโพก แขนล็อก",
+   "mistakeTh": "ยกไหล่ หรืองอเข่าเพื่อค้างความสูง"
   },
   "planche-press": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -1261,13 +2782,32 @@
     "Target: hold 3 × 5s with clean form. Requires: Imp. Tigerbend HS Push-Up."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Imp. Tigerbend HS Push-Up ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "maltese-press": {
    "archetype": "hspu",
    "apparatus": "wall",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "traps",
+     "abs"
+    ]
+   },
    "setup": "Handstand against the wall, hands slightly wider than the shoulders.",
    "steps": [
     "Lower under control until the head is just above the floor.",
@@ -1276,13 +2816,30 @@
     "Target: hold 3 × 5s with clean form. Requires: Planche Press."
    ],
    "cue": "Lower slowly — control the descent rather than dropping into it.",
-   "mistake": "Arching the back to press instead of driving straight up."
+   "mistake": "Arching the back to press instead of driving straight up.",
+   "setupTh": "ตั้งมือพิงกำแพง มือกว้างกว่าหัวไหล่เล็กน้อย",
+   "stepsTh": [
+    "ลงช้า ๆ จนศีรษะเกือบแตะพื้น",
+    "ศอกชี้ไปข้างหน้าเล็กน้อย ลำตัวเรียงตรงและเกร็ง",
+    "ดันขึ้นจนล็อกแขนเหนือศีรษะ",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Planche Press ก่อน"
+   ],
+   "cueTh": "ลงช้า ๆ ควบคุมจังหวะลง ไม่ปล่อยตก",
+   "mistakeTh": "แอ่นหลังเพื่อดันแทนที่จะดันตรงขึ้น"
   },
   "ol-leg-ext-lever": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1291,13 +2848,33 @@
     "Target: hold 3 × 5s with clean form. Requires: OL Sissy Squat."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OL Sissy Squat ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "elv-shrimp-squat": {
    "archetype": "pistol",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Stand on one leg, the other extended in front, arms out for balance.",
    "steps": [
     "Sit down slowly on the working leg, keeping the free leg off the floor.",
@@ -1306,13 +2883,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Sissy Squat."
    ],
    "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
-   "mistake": "Collapsing at the bottom or the standing heel popping up."
+   "mistake": "Collapsing at the bottom or the standing heel popping up.",
+   "setupTh": "ยืนขาเดียว อีกขาเหยียดไปด้านหน้า กางแขนช่วยทรงตัว",
+   "stepsTh": [
+    "นั่งลงช้า ๆ บนขาที่ยืน ขาอีกข้างลอยไม่แตะพื้น",
+    "ลงเท่าที่ควบคุมได้ ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านส้นเท้าโดยไม่วางขาอีกข้างลง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Sissy Squat ก่อน"
+   ],
+   "cueTh": "ทำช้า ๆ การควบคุมสำคัญกว่าความลึก ส้นเท้าติดพื้นตลอด",
+   "mistakeTh": "ทรุดตอนล่างสุด หรือส้นเท้าที่ยืนยกขึ้น"
   },
   "natural-leg-press": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1321,13 +2915,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Leg Ext. Lever."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Leg Ext. Lever ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "elv-ol-sissy-squat": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1336,13 +2947,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Leg Ext. Lever."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Leg Ext. Lever ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "ol-matrix-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1351,13 +2979,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: Natural Leg Press."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Natural Leg Press ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "ol-natural-leg-press": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1366,13 +3011,33 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Matrix Leg Ext.."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Matrix Leg Ext. ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "shrimp-squat-blaster": {
    "archetype": "pistol",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads",
+     "glutes"
+    ],
+    "secondary": [
+     "hamstrings",
+     "calves",
+     "abs"
+    ]
+   },
    "setup": "Stand on one leg, the other extended in front, arms out for balance.",
    "steps": [
     "Sit down slowly on the working leg, keeping the free leg off the floor.",
@@ -1381,13 +3046,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: Elv. OL Sissy Squat."
    ],
    "cue": "Go slow — control beats depth. Keep the standing heel glued down.",
-   "mistake": "Collapsing at the bottom or the standing heel popping up."
+   "mistake": "Collapsing at the bottom or the standing heel popping up.",
+   "setupTh": "ยืนขาเดียว อีกขาเหยียดไปด้านหน้า กางแขนช่วยทรงตัว",
+   "stepsTh": [
+    "นั่งลงช้า ๆ บนขาที่ยืน ขาอีกข้างลอยไม่แตะพื้น",
+    "ลงเท่าที่ควบคุมได้ ส้นเท้าติดพื้น อกตั้ง",
+    "ดันขึ้นผ่านส้นเท้าโดยไม่วางขาอีกข้างลง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Elv. OL Sissy Squat ก่อน"
+   ],
+   "cueTh": "ทำช้า ๆ การควบคุมสำคัญกว่าความลึก ส้นเท้าติดพื้นตลอด",
+   "mistakeTh": "ทรุดตอนล่างสุด หรือส้นเท้าที่ยืนยกขึ้น"
   },
   "elv-matrix-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1396,13 +3078,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Natural Leg Press."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Natural Leg Press ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "elv-ol-natural-leg-press": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1411,13 +3110,30 @@
     "Target: 3 sets of 3 controlled reps. Requires: OL Natural Leg Press."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OL Natural Leg Press ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "elv-ol-matrix-leg-ext": {
    "archetype": "legext",
    "apparatus": "floor",
    "view": "side",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "quads"
+    ],
+    "secondary": [
+     "abs"
+    ]
+   },
    "setup": "Kneel upright, hips extended, core braced, arms across the chest.",
    "steps": [
     "Lean straight back from the knees, keeping the hips open.",
@@ -1426,13 +3142,33 @@
     "Target: 3 sets of 3 controlled reps. Requires: Elv. OL Natural Leg Press."
    ],
    "cue": "One straight line from knee to shoulder — no hinging at the hips.",
-   "mistake": "Sitting back onto the heels instead of leaning the whole body."
+   "mistake": "Sitting back onto the heels instead of leaning the whole body.",
+   "setupTh": "คุกเข่าตัวตรง สะโพกเหยียด เกร็งแกนกลาง แขนไขว้อก",
+   "stepsTh": [
+    "เอนตัวตรงไปด้านหลังจากเข่า สะโพกเปิดค้างไว้",
+    "ให้กล้ามต้นขาหน้าควบคุมการลงเท่าที่ค้างได้",
+    "เกร็งต้นขาหน้าดึงตัวกลับขึ้นมาตั้ง",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Elv. OL Natural Leg Press ก่อน"
+   ],
+   "cueTh": "เป็นเส้นตรงจากเข่าถึงไหล่ ไม่งอที่สะโพก",
+   "mistakeTh": "นั่งถอยไปบนส้นเท้าแทนที่จะเอนทั้งตัว"
   },
   "pelikan": {
    "archetype": "lever",
    "apparatus": "bar",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "lats",
+     "abs"
+    ],
+    "secondary": [
+     "shoulders",
+     "forearms",
+     "glutes"
+    ]
+   },
    "setup": "Hang from the bar with straight arms and a hollow, tight body.",
    "steps": [
     "Pull the bar toward the hips with straight arms and lift the body to horizontal.",
@@ -1441,13 +3177,33 @@
     "Target: hold 3 × 10s with clean form. Requires: Hefesto From BL."
    ],
    "cue": "Straight arms, straight body. Squeeze everything and pull the bar to the waist.",
-   "mistake": "Bending at the hips or letting the arms bend to cheat the line."
+   "mistake": "Bending at the hips or letting the arms bend to cheat the line.",
+   "setupTh": "ห้อยจากบาร์ด้วยแขนตรงและลำตัวเกร็งกลวง",
+   "stepsTh": [
+    "ดึงบาร์เข้าหาสะโพกด้วยแขนตรง ยกลำตัวขึ้นให้ขนานพื้น",
+    "ค้างทั้งตัวเป็นเส้นตรงเดียวขนานกับพื้น",
+    "กดไหล่ลงและเกร็งปีกหลังตลอดการค้าง",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Hefesto From BL ก่อน"
+   ],
+   "cueTh": "แขนตรง ลำตัวตรง เกร็งทุกส่วนและดึงบาร์เข้าหาเอว",
+   "mistakeTh": "งอสะโพก หรือปล่อยงอแขนเพื่อโกงเส้น"
   },
   "oa-pu": {
    "archetype": "pullup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps"
+    ],
+    "secondary": [
+     "forearms",
+     "abs",
+     "shoulders"
+    ]
+   },
    "setup": "Dead hang from the bar, shoulders active, core braced, legs still.",
    "steps": [
     "Pull the elbows down and back, driving the chest toward the bar.",
@@ -1456,13 +3212,34 @@
     "Target: 3 sets of 3 controlled reps. Requires: Front Lever Pull-Up."
    ],
    "cue": "Start by pulling the shoulder blades down before the arms bend.",
-   "mistake": "Kicking the legs to kip, or stopping short of a full hang."
+   "mistake": "Kicking the legs to kip, or stopping short of a full hang.",
+   "setupTh": "ห้อยตัวจากบาร์ ไหล่ตื่นตัว เกร็งแกนกลาง ขานิ่ง",
+   "stepsTh": [
+    "ดึงศอกลงและไปด้านหลัง ดันอกเข้าหาบาร์",
+    "ดึงคางขึ้นเหนือบาร์โดยไม่เหวี่ยงหรือโยกตัว",
+    "ลงจนสุดถึงห้อยเต็มที่ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Front Lever Pull-Up ก่อน"
+   ],
+   "cueTh": "เริ่มด้วยการดึงสะบักลงก่อนงอแขน",
+   "mistakeTh": "เตะขาเพื่อโยกตัว หรือลงไม่สุด"
   },
   "oa-mu-no-armpit": {
    "archetype": "muscleup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps",
+     "triceps",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Hang from the bar with a slightly false grip, wrists over the top.",
    "steps": [
     "Pull explosively, bringing the chest high and leaning it over the bar.",
@@ -1471,13 +3248,33 @@
     "Target: 3 sets of 3 controlled reps. Requires: OA PU."
    ],
    "cue": "Pull to the sternum, then turn the wrists over fast — the transition is a roll, not a jump.",
-   "mistake": "Pulling only to the chin and having nothing left for the transition."
+   "mistake": "Pulling only to the chin and having nothing left for the transition.",
+   "setupTh": "ห้อยจากบาร์ด้วยกริปเหลื่อมเล็กน้อย ข้อมืออยู่เหนือบาร์",
+   "stepsTh": [
+    "ดึงอย่างระเบิดพลัง ดันอกขึ้นสูงและโน้มข้ามบาร์",
+    "พลิกข้อมือข้ามด้านบนและเปลี่ยนศอกขึ้นเมื่ออกพ้นบาร์",
+    "ดันขึ้นจากท่าดิปจนค้ำตัวเต็ม แล้วลงช้า ๆ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: OA PU ก่อน"
+   ],
+   "cueTh": "ดึงถึงกลางอก แล้วพลิกข้อมือเร็ว — ช่วงเปลี่ยนคือการพลิก ไม่ใช่กระโดด",
+   "mistakeTh": "ดึงแค่ถึงคางจนไม่มีแรงเหลือสำหรับช่วงเปลี่ยน"
   },
   "fl-to-rp": {
    "archetype": "pullup",
    "apparatus": "bar",
    "view": "front",
    "motion": "reps",
+   "muscles": {
+    "primary": [
+     "lats",
+     "biceps"
+    ],
+    "secondary": [
+     "forearms",
+     "abs",
+     "shoulders"
+    ]
+   },
    "setup": "Dead hang from the bar, shoulders active, core braced, legs still.",
    "steps": [
     "Pull the elbows down and back, driving the chest toward the bar.",
@@ -1486,13 +3283,33 @@
     "Target: 3 sets of 3 controlled reps. Requires: Victorian Cross to RP."
    ],
    "cue": "Start by pulling the shoulder blades down before the arms bend.",
-   "mistake": "Kicking the legs to kip, or stopping short of a full hang."
+   "mistake": "Kicking the legs to kip, or stopping short of a full hang.",
+   "setupTh": "ห้อยตัวจากบาร์ ไหล่ตื่นตัว เกร็งแกนกลาง ขานิ่ง",
+   "stepsTh": [
+    "ดึงศอกลงและไปด้านหลัง ดันอกเข้าหาบาร์",
+    "ดึงคางขึ้นเหนือบาร์โดยไม่เหวี่ยงหรือโยกตัว",
+    "ลงจนสุดถึงห้อยเต็มที่ แล้วทำซ้ำ",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Victorian Cross to RP ก่อน"
+   ],
+   "cueTh": "เริ่มด้วยการดึงสะบักลงก่อนงอแขน",
+   "mistakeTh": "เตะขาเพื่อโยกตัว หรือลงไม่สุด"
   },
   "planche": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1501,13 +3318,33 @@
     "Target: hold 3 × 5s with clean form. Requires: Pseudo Push-Up."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Pseudo Push-Up ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "planche-push-up": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1516,13 +3353,33 @@
     "Target: hold 3 × 5s with clean form. Requires: Bicep Planche."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Bicep Planche ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "oa-planche": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1531,13 +3388,33 @@
     "Target: hold 3 × 5s with clean form. Requires: Planche."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Planche ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "maltese": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1546,13 +3423,33 @@
     "Target: hold 3 × 5s with clean form. Requires: Planche Push-Up."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Planche Push-Up ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "oa-planche-push-up": {
    "archetype": "planche",
    "apparatus": "parallettes",
    "view": "side",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "shoulders",
+     "chest"
+    ],
+    "secondary": [
+     "abs",
+     "triceps",
+     "forearms"
+    ]
+   },
    "setup": "Straight arms, shoulders leaned well forward, body horizontal and hollow.",
    "steps": [
     "Lean until the shoulders are far ahead of the hands and the feet leave the floor.",
@@ -1561,13 +3458,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Maltese."
    ],
    "cue": "Arms stay dead straight. The lean, not the arms, carries the hold.",
-   "mistake": "Bending the arms or letting the hips pike up above the line."
+   "mistake": "Bending the arms or letting the hips pike up above the line.",
+   "setupTh": "แขนเหยียดตรง ไหล่โน้มไปข้างหน้ามาก ลำตัวขนานพื้นและเกร็งกลวง",
+   "stepsTh": [
+    "โน้มจนไหล่อยู่หน้ามือมากและเท้าลอยจากพื้น",
+    "ค้างลำตัวขนานพื้น แขนล็อก ดันสะบัก เกร็งก้น",
+    "สะโพกและส้นเท้าอยู่ระดับเดียวกับไหล่เป็นเส้นตรง",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Maltese ก่อน"
+   ],
+   "cueTh": "แขนต้องตรงตลอด ใช้การโน้มไม่ใช่แขนในการค้าง",
+   "mistakeTh": "งอแขน หรือปล่อยสะโพกยกขึ้นเหนือเส้น"
   },
   "iron-cross": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1576,13 +3494,33 @@
     "Target: hold 3 × 10s with clean form. Requires: Bulgarian Dip."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Bulgarian Dip ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "butterfly": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -1591,13 +3529,34 @@
     "Target: hold 3 × 10s with clean form. Requires: Bulgarian Dip."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Bulgarian Dip ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "inverted-iron-cross": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1606,13 +3565,34 @@
     "Target: hold 3 × 10s with clean form. Requires: Iron Cross."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 10 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Iron Cross ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "iron-cross-press": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1621,13 +3601,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Inverted Iron Cross."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Inverted Iron Cross ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "van-gelder": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1636,13 +3637,34 @@
     "Target: 3 sets of 3 controlled reps. Requires: Ring Victorian Cross."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Ring Victorian Cross ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "floor-victorian": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1651,13 +3673,33 @@
     "Target: hold 3 × 5s with clean form. Requires: PB Victorian."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: PB Victorian ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "inv-butterfly": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -1666,13 +3708,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Inverted Iron Cross."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Inverted Iron Cross ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "azarian-to-planche-maltese": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1681,13 +3744,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Van Gelder."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Van Gelder ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "maltese-to-inv-ic": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1696,13 +3780,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Morozov."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Morozov ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "azarian-to-ic": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1711,13 +3816,33 @@
     "Target: 3 sets of 3 controlled reps. Requires: Iron Cross Press."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Iron Cross Press ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "butterfly-to-inv-ic": {
    "archetype": "rings_support",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "shoulders",
+     "triceps"
+    ],
+    "secondary": [
+     "abs",
+     "forearms"
+    ]
+   },
    "setup": "Support on top of the rings, arms straight, rings turned slightly out.",
    "steps": [
     "Press down and turn the rings out to about 45°.",
@@ -1726,13 +3851,34 @@
     "Target: hold 3 × 5s with clean form. Requires: Azarian to IC."
    ],
    "cue": "Turn the rings out and lock the elbows. Fight the wobble with the whole arm.",
-   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug."
+   "mistake": "Bent arms or letting the rings turn back in and the shoulders shrug.",
+   "setupTh": "ค้ำตัวเหนือห่วง แขนเหยียด หมุนห่วงออกเล็กน้อย",
+   "stepsTh": [
+    "กดลงและหมุนห่วงออกราว 45 องศา",
+    "ค้างแขนล็อกและไหล่กดลง ลำตัวเกร็งและตั้งตรง",
+    "ประคองไม่ให้ห่วงส่าย ด้วยแขนตรงที่ตื่นตัว",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Azarian to IC ก่อน"
+   ],
+   "cueTh": "หมุนห่วงออกและล็อกศอก สู้กับการส่ายด้วยทั้งแขน",
+   "mistakeTh": "งอแขน หรือปล่อยห่วงหมุนเข้าและยกไหล่"
   },
   "zanetti": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1741,13 +3887,34 @@
     "Target: 3 sets of 3 controlled reps. Requires: Azarian to Planche/Maltese."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Azarian to Planche/Maltese ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "fl-to-victorian-cross": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1756,13 +3923,34 @@
     "Target: hold 3 × 5s with clean form. Requires: OA Planche."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: OA Planche ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "carmona": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1771,13 +3959,34 @@
     "Target: 3 sets of 3 controlled reps. Requires: Zanetti."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: 3 เซ็ต เซ็ตละ 3 ครั้ง อย่างมีคุณภาพ ต้องผ่าน: Zanetti ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   },
   "victorian-cross-to-rp": {
    "archetype": "rings_cross",
    "apparatus": "rings",
    "view": "front",
    "motion": "hold",
+   "muscles": {
+    "primary": [
+     "chest",
+     "lats",
+     "shoulders"
+    ],
+    "secondary": [
+     "biceps",
+     "forearms",
+     "abs"
+    ]
+   },
    "setup": "Hang between the rings, arms straight out to the sides.",
    "steps": [
     "Press the arms straight out to the sides until the body hangs level with them.",
@@ -1786,7 +3995,16 @@
     "Target: hold 3 × 5s with clean form. Requires: Carmona."
    ],
    "cue": "Straight arms driven down and in. Everything is locked and pulling toward the midline.",
-   "mistake": "Bending the arms or dropping the chest to shorten the lever."
+   "mistake": "Bending the arms or dropping the chest to shorten the lever.",
+   "setupTh": "ห้อยระหว่างห่วง แขนกางตรงออกด้านข้าง",
+   "stepsTh": [
+    "ดันแขนตรงออกด้านข้างจนลำตัวห้อยระดับเดียวกับแขน",
+    "ค้างแขนล็อกและขนานพื้น อกตั้ง ลำตัวตั้งตรง",
+    "ต้านแรงที่ดึงห่วงแยกออก บีบห่วงลงเข้าหาสะโพก",
+    "เป้าหมาย: ค้าง 3 × 5 วินาที ด้วยฟอร์มที่ดี ต้องผ่าน: Carmona ก่อน"
+   ],
+   "cueTh": "แขนตรงกดลงและเข้าใน ทุกส่วนล็อกและดึงเข้าหากลางลำตัว",
+   "mistakeTh": "งอแขน หรือทิ้งอกลงเพื่อย่นระยะคาน"
   }
  }
 }

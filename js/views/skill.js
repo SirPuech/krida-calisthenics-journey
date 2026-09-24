@@ -23,6 +23,12 @@ export default function renderSkill(ctx) {
   const opens = catalogue.unlockedBy(skill.id);
   const how = guide?.skills?.[skill.id];
   const archLabel = how ? (guide.archetypes[how.archetype]?.label || how.archetype) : '';
+  const th = getLang() === 'th';
+  const L = (obj, field) => (th && obj?.[field + 'Th']) ? obj[field + 'Th'] : obj?.[field];
+  const muscleName = (id) => {
+    const m = guide?.muscleLabels?.[id];
+    return m ? (th ? m.th : m.en) : id;
+  };
   const unit = std.type === 'hold' ? t('skill.log.secs') : t('skill.log.reps');
   const isCleared = status === STATUS.CLEARED;
   const custom = Boolean(profile.standards?.[skill.id]);
@@ -50,9 +56,17 @@ export default function renderSkill(ctx) {
             <button type="button" class="demo-play" id="demo-play" aria-pressed="true">
               <span class="demo-ico">❚❚</span><span id="demo-play-label">${esc(t('skill.pause'))}</span>
             </button>
+            <span class="demo-hint">${esc(t('skill.rotateHint'))}</span>
             <span class="demo-tag mono">${esc(t('skill.demo'))} · ${esc(archLabel)}</span>
           </figcaption>
         </figure>
+
+        ${how ? `
+          <div class="muscles">
+            <span class="muscles-label">${esc(t('skill.muscles'))}</span>
+            ${(how.muscles?.primary || []).map((m) => `<span class="m-chip is-primary">${esc(muscleName(m))}</span>`).join('')}
+            ${(how.muscles?.secondary || []).map((m) => `<span class="m-chip is-secondary">${esc(muscleName(m))}</span>`).join('')}
+          </div>` : ''}
 
         <div class="metrics">
           <div class="metric"><span>${esc(t('skill.standard'))}</span><b>${esc(formatStandard(std))}</b></div>
@@ -84,15 +98,15 @@ export default function renderSkill(ctx) {
         ${how ? `
           <div class="panel howto">
             <h4 class="section-label">${esc(t('skill.howto'))}</h4>
-            <p class="howto-setup">${esc(how.setup)}</p>
+            <p class="howto-setup">${esc(L(how, 'setup'))}</p>
             <ol class="howto-steps">
-              ${how.steps.map((step) => `<li>${esc(step)}</li>`).join('')}
+              ${(th ? how.stepsTh : how.steps).map((step) => `<li>${esc(step)}</li>`).join('')}
             </ol>
             <div class="howto-note is-cue">
-              <span>${esc(t('skill.cue'))}</span>${esc(how.cue)}
+              <span>${esc(t('skill.cue'))}</span>${esc(L(how, 'cue'))}
             </div>
             <div class="howto-note is-mistake">
-              <span>${esc(t('skill.mistake'))}</span>${esc(how.mistake)}
+              <span>${esc(t('skill.mistake'))}</span>${esc(L(how, 'mistake'))}
             </div>
           </div>` : ''}
 
@@ -150,7 +164,7 @@ export default function renderSkill(ctx) {
     const stage = mount.querySelector('#demo-stage');
     let animator = null;
     let disposed = false;
-    mountAnimator(stage, how.archetype).then((a) => {
+    mountAnimator(stage, how.archetype, { muscles: how.muscles }).then((a) => {
       if (disposed) { a.dispose(); return; }   // navigated away mid-load
       animator = a;
     }).catch((err) => {

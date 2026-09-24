@@ -121,13 +121,50 @@ export async function mountAnimator(container, archetype, opts = {}) {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   container.appendChild(renderer.domElement);
+  renderer.domElement.style.cursor = 'grab';
+  renderer.domElement.style.touchAction = 'none';
+
+  // Drag to orbit, wheel to zoom. Kept lightweight — no external controls dep.
+  let dragging = false; let lastX = 0; let lastY = 0;
+  const onDown = (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; renderer.domElement.style.cursor = 'grabbing'; e.preventDefault(); };
+  const onMove = (e) => {
+    if (!dragging) return;
+    orbit.azimuth -= (e.clientX - lastX) * 0.01;
+    orbit.polar -= (e.clientY - lastY) * 0.01;
+    lastX = e.clientX; lastY = e.clientY;
+    updateCamera();
+  };
+  const onUp = () => { dragging = false; renderer.domElement.style.cursor = 'grab'; };
+  const onWheel = (e) => { orbit.radius = Math.max(1.6, Math.min(9, orbit.radius + e.deltaY * 0.003)); updateCamera(); e.preventDefault(); };
+  renderer.domElement.addEventListener('pointerdown', onDown);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp);
+  renderer.domElement.addEventListener('wheel', onWheel, { passive: false });
 
   const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
-  const applyCamera = (s) => {
-    camera.position.set(...s.camera.eye);
-    camera.lookAt(...s.camera.look);
+
+  // Orbit state in spherical coords around a look target. The archetype's eye
+  // seeds it; dragging changes azimuth/polar, the wheel changes radius.
+  const orbit = { target: new THREE.Vector3(), radius: 4, azimuth: 0, polar: 1.2 };
+  const applyCamera = (spec) => {
+    orbit.target.set(...spec.camera.look);
+    const e = new THREE.Vector3(...spec.camera.eye).sub(orbit.target);
+    orbit.radius = e.length();
+    orbit.azimuth = Math.atan2(e.x, e.z);
+    orbit.polar = Math.acos(Math.max(-1, Math.min(1, e.y / orbit.radius)));
+  };
+  const updateCamera = () => {
+    orbit.polar = Math.max(0.25, Math.min(Math.PI - 0.15, orbit.polar));
+    const sinP = Math.sin(orbit.polar);
+    camera.position.set(
+      orbit.target.x + orbit.radius * sinP * Math.sin(orbit.azimuth),
+      orbit.target.y + orbit.radius * Math.cos(orbit.polar),
+      orbit.target.z + orbit.radius * sinP * Math.cos(orbit.azimuth),
+    );
+    camera.lookAt(orbit.target);
   };
   applyCamera(spec);
+  updateCamera();
 
   scene.add(new THREE.HemisphereLight(0xbcd0ff, 0x0b1220, 0.9));
   const key = new THREE.DirectionalLight(0xffffff, 1.5);
@@ -158,6 +195,7 @@ export async function mountAnimator(container, archetype, opts = {}) {
 
   const figure = buildFigure(THREE);
   scene.add(figure.root);
+  if (opts.muscles) figure.setActiveMuscles(opts.muscles);
   // Snap to the opening pose immediately so the first frame is not the T-rig.
   applyPose(figure, spec.motion === 'hold' ? spec.hold : spec.frames[0].pose, 1);
 
@@ -202,12 +240,14 @@ export async function mountAnimator(container, archetype, opts = {}) {
   window.addEventListener('resize', onResize);
 
   return {
+    setMuscles(muscles) { figure.setActiveMuscles(muscles || {}); },
     setArchetype(next) {
       current = poseFor(next);
       scene.remove(apparatus);
       apparatus = buildApparatus(THREE, current.apparatus, current.apparatusOpts);
       scene.add(apparatus);
       applyCamera(current);
+      updateCamera();
       phase = 0;
     },
     pause() { running = false; },
@@ -217,6 +257,8 @@ export async function mountAnimator(container, archetype, opts = {}) {
     dispose() {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
       renderer.dispose();
       scene.traverse((o) => {
         if (o.geometry) o.geometry.dispose();

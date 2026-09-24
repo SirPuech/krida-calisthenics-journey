@@ -102,11 +102,18 @@ def check_guide(skill_ids):
             problems.append(f"exercise-guide: {skill_id!r} is not a skill")
         if entry.get("archetype") not in archetypes:
             problems.append(f"exercise-guide[{skill_id}]: unknown archetype {entry.get('archetype')!r}")
-        for field in ("setup", "cue", "mistake"):
+        for field in ("setup", "cue", "mistake", "setupTh", "cueTh", "mistakeTh"):
             if not entry.get(field):
                 problems.append(f"exercise-guide[{skill_id}]: missing {field!r}")
-        if not entry.get("steps"):
-            problems.append(f"exercise-guide[{skill_id}]: no steps")
+        if not entry.get("steps") or not entry.get("stepsTh"):
+            problems.append(f"exercise-guide[{skill_id}]: missing steps")
+        m = entry.get("muscles") or {}
+        if not m.get("primary"):
+            problems.append(f"exercise-guide[{skill_id}]: no primary muscles")
+        labels = payload.get("muscleLabels", {})
+        for grp in (m.get("primary", []) + m.get("secondary", [])):
+            if grp not in labels:
+                problems.append(f"exercise-guide[{skill_id}]: muscle {grp!r} has no label")
 
     return problems
 

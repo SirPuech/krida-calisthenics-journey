@@ -314,6 +314,13 @@ main { flex: 1; padding-block: 40px 64px; }
 .demo-play:hover { border-color: var(--ink-3); }
 .demo-ico { color: var(--orange); font-size: 11px; letter-spacing: -1px; }
 .demo-tag { margin-left: auto; font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
+.demo-hint { font-size: 11px; color: var(--ink-3); }
+
+.muscles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+.muscles-label { font: 700 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-right: 2px; }
+.m-chip { padding: 4px 10px; border-radius: var(--r-pill); font: 600 12px var(--sans); }
+.m-chip.is-primary { background: rgba(239, 59, 47, .16); border: 1px solid rgba(239, 59, 47, .55); color: #ff7a6e; }
+.m-chip.is-secondary { background: rgba(246, 162, 75, .12); border: 1px solid rgba(246, 162, 75, .4); color: var(--orange); }
 
 .howto-setup { font-size: 14px; line-height: 1.6; color: var(--ink); margin-top: 12px; }
 .howto-steps {
