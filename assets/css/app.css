@@ -293,28 +293,16 @@ main { flex: 1; padding-block: 40px 64px; }
 .crumbs .sep { color: var(--orange); }
 .skill-layout { display: grid; grid-template-columns: 1.35fr 1fr; gap: 34px; align-items: start; }
 .skill-layout h1 { font: 800 clamp(30px, 4vw, 44px) var(--sans); margin-top: 16px; letter-spacing: -.03em; }
-.demo { margin: 24px 0 0; }
-.demo-stage {
-  border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16 / 10;
-  border: 1px solid var(--line); border-bottom: 0;
-  background: radial-gradient(120% 120% at 50% 0%, #12203a, #0b1220 70%);
+.video-frame { margin-top: 24px; border-radius: 12px; border: 1px solid var(--line); overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-frame.is-empty {
+  display: grid; place-items: center; text-align: center; padding: 20px;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 12px, transparent 12px 24px);
 }
-.demo-stage canvas { display: block; width: 100%; height: 100%; }
-.demo-stage.is-fallback { display: grid; place-items: center; text-align: center; padding: 20px; }
-.demo-stage.is-fallback span { color: var(--ink-3); font-size: 13px; }
-.demo-bar {
-  display: flex; align-items: center; gap: 12px; padding: 10px 14px;
-  border: 1px solid var(--line); border-radius: 0 0 12px 12px; background: var(--onyx);
+.video-scope {
+  font-size: 12px; line-height: 1.55; color: var(--ink-3);
+  margin-top: 10px; padding-left: 10px; border-left: 2px solid rgba(249, 115, 22, .45);
 }
-.demo-play {
-  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-  padding: 7px 14px; border-radius: var(--r-sm); border: 1px solid var(--line-2);
-  background: none; color: var(--ink); font: 600 13px var(--sans);
-}
-.demo-play:hover { border-color: var(--ink-3); }
-.demo-ico { color: var(--orange); font-size: 11px; letter-spacing: -1px; }
-.demo-tag { margin-left: auto; font-size: 11px; color: var(--ink-3); letter-spacing: .04em; }
-.demo-hint { font-size: 11px; color: var(--ink-3); }
 
 .muscles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
 .muscles-label { font: 700 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-right: 2px; }

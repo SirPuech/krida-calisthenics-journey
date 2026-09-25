@@ -54,7 +54,7 @@
   }
  ],
  "notes": [
-  "Skill names and variations come straight from the workbook.",
+  "Skill names, video credits and variations come straight from the workbook.",
   "branch / tier / prereqs are derived: tier from distance to the root column, prereqs from the arrows drawn on the TREE sheet with a nearest-neighbour fallback.",
   "standard.source == 'default' means the rep target is a placeholder, not sheet data."
  ],
@@ -76,6 +76,29 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/F-nQ_KJgfCY?t=22",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/F-nQ_KJgfCY",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/CvjgEoZ2a88",
+     "credit": "Calimnastic",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Elbow Plank",
     "Side Plank",
@@ -104,6 +127,15 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/eRDcHCSlyo4",
+     "credit": "Nicolas Kabbani",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 19,
@@ -128,6 +160,29 @@
    },
    "prereqs": [
     "plank"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/pvz7k5gO-DE?t=221",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/pvz7k5gO-DE",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=jtNDhT0fWQg",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Tuck",
@@ -163,6 +218,29 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/QlvhMCV_ImM?t=41",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/H2KSIMwNOfA",
+     "credit": "Tom Merrick",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/QlvhMCV_ImM",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 17,
@@ -186,6 +264,24 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=nuapk_-Q2BI",
+     "credit": "Dr. Carl Baird",
+     "title": "How To Do A Glute Bridge | Step By Step Instruction For Beginners",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=6yeyt5mUo94",
+     "credit": "Runna",
+     "title": "Glute Bridge into Hamstring Walkout Tutorial",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 21,
@@ -211,6 +307,32 @@
    "prereqs": [
     "hamstring-bridge"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+     "credit": "Simonster Strength",
+     "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+     "credit": "E3 Rehab",
+     "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+     "credit": "Paul Twyman",
+     "title": "Train Nordic Hamstring Curls at Home Like This",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 21,
@@ -234,6 +356,32 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=X0qC1k0Zi6k",
+     "credit": "Calisthenicmovement",
+     "title": "The Perfect Squat - Do it right!",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=0KtrNQre5rQ",
+     "credit": "School of Calisthenics",
+     "title": "Fix Your Squat | Correct Bodyweight Squat Technique",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=gsNoPYwWXeM",
+     "credit": "Calisthenicmovement",
+     "title": "Fix Your Squat (In Just 3-Minutes)",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 17,
@@ -257,6 +405,29 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/XB_7En-zf_M?t=51",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=XB_7En-zf_M",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 23,
@@ -280,6 +451,29 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/IODxDxX7oi4",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/-WXc4E-zcao",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/IODxDxX7oi4",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Diamond Push-Up",
     "Tiger Band Push-Up",
@@ -321,6 +515,29 @@
    "prereqs": [
     "push-up"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/2z8JmcrW-As?t=30",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/2z8JmcrW-As",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/T1L4smOP0L8",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 25,
@@ -344,6 +561,29 @@
     "source": "default"
    },
    "prereqs": [],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/i4uew2bAU3E",
+     "credit": "Dusty Hyland",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/31HMRQisaFU",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/phmRwn-sosI?t=15",
+     "credit": "GMB Fitness",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Rings Support Hold (Extended)",
     "Regular Rings Support Hold",
@@ -376,6 +616,29 @@
    "prereqs": [
     "ring-turn-out"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/dSRY2IHqOsI?t=10",
+     "credit": "Tykato Fitness",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rUGZwSa9WUc",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=sE0pjie3Pqo",
+     "credit": "RedDeltaProject",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Archer Ring Push-Up",
     "Wide Ring Push-Up",
@@ -405,6 +668,22 @@
    "prereqs": [
     "ring-turn-out"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/ESF3YdVt5RM?t=8",
+     "credit": "Taylor Beech",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=IKOeF0VFSq8",
+     "credit": "GMB Fitness",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Switch Grip Ring PU",
     "L-Sit Ring PU"
@@ -432,6 +711,29 @@
    },
    "prereqs": [
     "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/Kr5Uuuy5DAI?t=106",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/Kr5Uuuy5DAI?t=60",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/jCtSXZk9nko",
+     "credit": "Dan Jeong",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "OA Assisted Ring Dip",
@@ -461,6 +763,29 @@
    "prereqs": [
     "tuck-sit"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/cu0fHp8HCDo",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/IUZJoSP66HI",
+     "credit": "Antranik",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/playlist?list=PLHh3zEi0_nqcN4bGB77WJhG0g-EbRf8Li",
+     "credit": "Calimnastic",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 18,
@@ -486,6 +811,15 @@
    "prereqs": [
     "dragon-flag"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hTo_CvJCGw0?t=75",
+     "credit": "Pilous",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 21,
@@ -510,6 +844,32 @@
    },
    "prereqs": [
     "oa-dragon-flag"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=GwMTAsKYVnM",
+     "credit": "Vitaly Pavlenko",
+     "title": "DRAGON PRESS Tutorial (5 Steps to Learn it)",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=Rbkrpkejc0k",
+     "credit": "Stefano Ravarino",
+     "title": "Tutorial and Tips about DRAGON PRESS",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=bSGHh4J0Alk",
+     "credit": "Alan Tadzlilan",
+     "title": "Dragon Press Progression - Hard Element in Calisthenics",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Tuck",
@@ -541,6 +901,29 @@
    },
    "prereqs": [
     "wall-hs"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/h680H2ft4yA?t=273",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/NkzbyRAoQ8c",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=jlIa8fgk7D0",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Parallettes HS",
@@ -577,6 +960,32 @@
    "prereqs": [
     "nordic-hamstring-curl"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+     "credit": "Simonster Strength",
+     "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+     "credit": "E3 Rehab",
+     "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+     "credit": "Paul Twyman",
+     "title": "Train Nordic Hamstring Curls at Home Like This",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 21,
@@ -601,6 +1010,32 @@
    },
    "prereqs": [
     "squat"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=R1mxpLzYgxM",
+     "credit": "FitnessFAQs",
+     "title": "The Complete Pistol Squat Checklist | No Mistakes!",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=DJ5Ukbfak7I",
+     "credit": "School of Calisthenics",
+     "title": "PISTOL Squat PROGRESSIONS + Regressions",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=NMLVft7126o",
+     "credit": "Ashton Fitness",
+     "title": "How to Pistol Squat (EASIEST METHOD)",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -627,6 +1062,32 @@
    "prereqs": [
     "ol-nordic-hamstring-curl"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+     "credit": "Simonster Strength",
+     "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+     "credit": "E3 Rehab",
+     "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+     "credit": "Paul Twyman",
+     "title": "Train Nordic Hamstring Curls at Home Like This",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 19,
@@ -652,6 +1113,24 @@
    "prereqs": [
     "squat"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 13,
@@ -676,6 +1155,29 @@
    },
    "prereqs": [
     "pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/HXaG8mJmSnU?t=131",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/PFALmtU6J6U",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/iYeUmEhKjeE",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Close Grip Back Lever",
@@ -708,6 +1210,29 @@
    },
    "prereqs": [
     "pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/PNrYETmkw-I?t=69",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3SduiaXqAT4?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/p7q0UhxPdLY?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "Thenx",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Close Grip MU",
@@ -748,6 +1273,29 @@
    "prereqs": [
     "dip"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/r8MhfU4Qs2g?t=431",
+     "credit": "Arthem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/KIEAbfk4cQU",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=edoINNsVu8Q",
+     "credit": "Austin Dunham",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 24,
@@ -772,6 +1320,29 @@
    },
    "prereqs": [
     "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/rbzJvb0Y9Uk?t=320",
+     "credit": "Pilous",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rbzJvb0Y9Uk",
+     "credit": "Pilous",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/LTqzzJOjGfc",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Lean Imp. Dip",
@@ -807,6 +1378,15 @@
    "prereqs": [
     "dip"
    ],
+   "videos": [
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/ACCElohmii0",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Planche Lean Cranks",
     "Elbow Planche Lean",
@@ -837,6 +1417,29 @@
    "prereqs": [
     "imp-dip"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/ZQzQRaQ0Lb0?t=119",
+     "credit": "Arthem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/rbzJvb0Y9Uk",
+     "credit": "Pilous",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/LTqzzJOjGfc",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 29,
@@ -862,6 +1465,22 @@
    "prereqs": [
     "imp-dip",
     "dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/8lu2c3E3NSc?t=20",
+     "credit": "Raffaele Petito",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/bAI0XtahBOg?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "KASS Calisthenics",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Assisted OA Dip",
@@ -891,6 +1510,29 @@
    "prereqs": [
     "ring-push-up"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/1eqKau93EPw?t=29",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=1eqKau93EPw",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/TRZhw7t7Qgo?t=357",
+     "credit": "Thenx",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Incline Ring Flies",
     "Decline Ring Flies"
@@ -918,6 +1560,29 @@
    },
    "prereqs": [
     "ring-turn-out"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/vpPjY4BtJuI",
+     "credit": "Fitness FAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/vpPjY4BtJuI",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=0t_rhEgz-7I",
+     "credit": "Troy Nevrela",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Slow Ring MU",
@@ -952,6 +1617,29 @@
    "prereqs": [
     "ring-dip"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/BTAsmZAOLVU?t=7",
+     "credit": "Jared Rodriguez",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/MxQjAcIG7k4",
+     "credit": "Fitness On The Run",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=UU2gnuYZYcE",
+     "credit": "ringsking",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Ring Straps Assisted HS",
     "Shoulder Ring HS",
@@ -981,6 +1669,29 @@
    "prereqs": [
     "ring-flies"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/JhToSOOqYdI?t=15",
+     "credit": "Metal bodies",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/JhToSOOqYdI",
+     "credit": "Metal bodies",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/iVDKfv5Tlms?t=3",
+     "credit": "CrossFit",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Incline Straight Arm Ring Flies",
     "Decline Straight Arm Ring Flies"
@@ -1009,6 +1720,29 @@
    "prereqs": [
     "l-sit"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/4c5U7acR9Y0?t=65",
+     "credit": "Gymnastics Bodies",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/P83rvEDFTjg",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=emyOfFK2S8o",
+     "credit": "SaturnoMovement",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 17,
@@ -1033,6 +1767,32 @@
    },
    "prereqs": [
     "dragon-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=GwMTAsKYVnM",
+     "credit": "Vitaly Pavlenko",
+     "title": "DRAGON PRESS Tutorial (5 Steps to Learn it)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=Rbkrpkejc0k",
+     "credit": "Stefano Ravarino",
+     "title": "Tutorial and Tips about DRAGON PRESS",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=bSGHh4J0Alk",
+     "credit": "Alan Tadzlilan",
+     "title": "Dragon Press Progression - Hard Element in Calisthenics",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [
     "Tuck",
@@ -1064,6 +1824,22 @@
    "prereqs": [
     "v-sit"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/OxIYm7UFaJc?t=8",
+     "credit": "Flo Lit",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/0t1ThGLaAkc",
+     "credit": "Flo Lit",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 15,
@@ -1089,6 +1865,24 @@
    "prereqs": [
     "reverse-planche"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/shorts/n7t4r_d7Zy8",
+     "credit": "DeUanUIs",
+     "title": "Road to Front Lever to Reverse Planche on rings (Spinazzola II)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_qNRNyI3qxM",
+     "credit": "GMB Fitness (Praxis)",
+     "title": "Full Front Lever Tutorial on Gymnastic Rings",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 14,
@@ -1113,6 +1907,29 @@
    },
    "prereqs": [
     "oa-hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/h0HjqYRlXYg?t=18",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/h0HjqYRlXYg",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Y90EIjhdAfY",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Tiger Bend HS Push-Up",
@@ -1148,6 +1965,29 @@
    "prereqs": [
     "hs-push-up"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/jmLGE8sO8nk?t=14",
+     "credit": "Jackmonx",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/jmLGE8sO8nk",
+     "credit": "Jackmonx",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/gQG_s5y37gY",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Straddle HS Press",
     "Tuck HS Press",
@@ -1177,6 +2017,29 @@
    "prereqs": [
     "ol-natural-leg-ext"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/lVqDPymzcDQ?t=18",
+     "credit": "Miguel Santana",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/UE9Tn08BZBA",
+     "credit": "Tom Merrick",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/gN5MozT4A_w",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "//////////////////////////////////////////////////////////",
     "//////////////////////////////////////////////////////////"
@@ -1205,6 +2068,15 @@
    "prereqs": [
     "oa-hs"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xCzD-_-b2Y8?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq&t=221",
+     "credit": "Noa Man Workout",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 8,
@@ -1229,6 +2101,15 @@
    },
    "prereqs": [
     "oa-hs"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/lVqDPymzcDQ?t=163",
+     "credit": "--------------------",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1255,6 +2136,32 @@
    "prereqs": [
     "inv-nordic-hamstring-curl"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+     "credit": "Simonster Strength",
+     "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+     "credit": "E3 Rehab",
+     "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+     "credit": "Paul Twyman",
+     "title": "Train Nordic Hamstring Curls at Home Like This",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 20,
@@ -1279,6 +2186,32 @@
    },
    "prereqs": [
     "pistol-squat"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=4Y30vn1IIe8",
+     "credit": "Chris Gates Fitness",
+     "title": "Proper Sissy Squat Form and Technique",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=cHpDhoud8oo",
+     "credit": "Australian Strength Performance",
+     "title": "How To Sissy Squat (Beginners to Advanced Level)",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=cM_RVGbOzVE",
+     "credit": "Vulcan Performance",
+     "title": "Full Sissy Squat Progression to Get Strong Knees",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1305,6 +2238,24 @@
    "prereqs": [
     "natural-leg-ext"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 10,
@@ -1329,6 +2280,24 @@
    },
    "prereqs": [
     "sissy-squat"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=qnw_7_U_fJU",
+     "credit": "CrossFit Invictus",
+     "title": "Hawaiian Squats | CrossFit Invictus",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=pHtNBTuOn4Q",
+     "credit": "Jenny LaBaw",
+     "title": "Hawaiian Squat",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1355,6 +2324,24 @@
    "prereqs": [
     "ol-natural-leg-ext"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 10,
@@ -1379,6 +2366,32 @@
    },
    "prereqs": [
     "sissy-squat"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=GslczgeVuuE",
+     "credit": "School of Calisthenics",
+     "title": "How to SHRIMP Squat [Lower Body Training]",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=85YE86ipw_w",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat Progression Guide | Beginner to Intermediate",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=xfl7SDj0Gzs",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat | Tutorial & Progressions",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1405,6 +2418,24 @@
    "prereqs": [
     "leg-ext-lever"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=sbOuIfubuds",
+     "credit": "Stefano Ravarino",
+     "title": "MATRIX LEG EXTENSION | Tutorial",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 8,
@@ -1429,6 +2460,32 @@
    },
    "prereqs": [
     "inv-nordic-hamstring-curl"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=dJ8LBl3U85g",
+     "credit": "Simonster Strength",
+     "title": "THE BEST NORDIC CURL TUTORIAL | Master the Nordic Curl",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+     "credit": "E3 Rehab",
+     "title": "How to Set Up, Perform, & Program Nordic Hamstring Curls",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=TanCT6g7nUo",
+     "credit": "Paul Twyman",
+     "title": "Train Nordic Hamstring Curls at Home Like This",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1455,6 +2512,32 @@
    "prereqs": [
     "tuck-sit"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=4Y30vn1IIe8",
+     "credit": "Chris Gates Fitness",
+     "title": "Proper Sissy Squat Form and Technique",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=cHpDhoud8oo",
+     "credit": "Australian Strength Performance",
+     "title": "How To Sissy Squat (Beginners to Advanced Level)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=cM_RVGbOzVE",
+     "credit": "Vulcan Performance",
+     "title": "Full Sissy Squat Progression to Get Strong Knees",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 11,
@@ -1479,6 +2562,22 @@
    },
    "prereqs": [
     "back-lever"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/SQ8zhIe3WJE",
+     "credit": "Viktor Kamenov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/e1KlyRiaiP8",
+     "credit": "Wolf's Bar",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Supinated Hefesto",
@@ -1515,6 +2614,15 @@
    "prereqs": [
     "hefesto"
    ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/JGEBdK2fN4s",
+     "credit": "BaristiWorkout",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Close Grip Back Lever Pull Up",
     "Wide Grip Back Lever Pull Up",
@@ -1548,6 +2656,22 @@
    },
    "prereqs": [
     "bar-mu"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3_iCRuxkX2Y",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/TiimddLns8U",
+     "credit": "Pilous",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Tuck Front Lever",
@@ -1588,6 +2712,15 @@
    "prereqs": [
     "hefesto"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sQCVdibjcC8?t=15",
+     "credit": "matteodeu",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Grip Assisted OA Hefesto"
    ],
@@ -1615,6 +2748,15 @@
    "prereqs": [
     "front-lever"
    ],
+   "videos": [
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Do-Mol-KTy8?t=259",
+     "credit": "Umberto Miletto",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "OA Front Lever Arm Along The Side"
    ],
@@ -1641,6 +2783,29 @@
    },
    "prereqs": [
     "front-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/9X8qDYL86z8",
+     "credit": "TrainingPal",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=Nj1NvN7Te_s",
+     "credit": "FitnessFAQs",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/8REZ-YtVyAM",
+     "credit": "Austin Dunham",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Finger Assisted OA Chin-UP",
@@ -1670,6 +2835,15 @@
    "prereqs": [
     "oa-front-lever"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/smlsCapA3oQ?t=209",
+     "credit": "Andrey Kobelev",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 22,
@@ -1694,6 +2868,15 @@
    },
    "prereqs": [
     "back-lever-pu"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/Gnqsw3dtOWE",
+     "credit": "StevieStayFit",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1720,6 +2903,15 @@
    "prereqs": [
     "oa-front-lever"
    ],
+   "videos": [
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/-a1Nxuowz1w",
+     "credit": "Gyampaolo Calvaresi",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 25,
@@ -1744,6 +2936,15 @@
    },
    "prereqs": [
     "oa-hefesto"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/SQ8zhIe3WJE",
+     "credit": "Viktor Kamenov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -1770,6 +2971,15 @@
    "prereqs": [
     "oa-bl"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/kjBQmtex5UQ?t=4",
+     "credit": "matteodeu",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 17,
@@ -1794,6 +3004,15 @@
    },
    "prereqs": [
     "hefesto-from-bl"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/sQCVdibjcC8?t=15",
+     "credit": "matteodeu",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Grip Assisted OA Hefesto From Back Lever"
@@ -1821,6 +3040,24 @@
    },
    "prereqs": [
     "front-lever-pull"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=NAHHm3kdnrc",
+     "credit": "Calisthenics Milano",
+     "title": "FRONT LEVER PULL UP TUTORIAL",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=4DZPaCOfJOI",
+     "credit": "Ashton Fitness",
+     "title": "How to Advanced Tuck Front Lever Pull Up - 3 AMAZING Tips",
+     "source": "curated",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "No False Grip Front Lever Pull-Up",
@@ -1853,6 +3090,22 @@
    "prereqs": [
     "oa-dip"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/G7GTVsxNU7g?t=47",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=G7GTVsxNU7g",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 28,
@@ -1878,6 +3131,24 @@
    "prereqs": [
     "pseudo-push-up"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+     "credit": "Andry Strong",
+     "title": "How to Do Planche - Full Guide",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+     "credit": "Vitality",
+     "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 27,
@@ -1902,6 +3173,15 @@
    },
    "prereqs": [
     "oa-dragon-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/s3mC7KO-9kg?t=97",
+     "credit": "matteodeu",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Assisted OA Bicep Planche"
@@ -1930,6 +3210,29 @@
    "prereqs": [
     "ring-mu"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/9mKyrPmmPt0",
+     "credit": "GymnasticBodies",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/L6xJyFU9OBA",
+     "credit": "Jakub Kowalski",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/rV_TMhoASpw",
+     "credit": "Eastern Bar Athletics",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 31,
@@ -1955,6 +3258,24 @@
    "prereqs": [
     "morozov"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+     "credit": "Andry Strong",
+     "title": "How to Do Planche - Full Guide",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+     "credit": "Vitality",
+     "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 31,
@@ -1979,6 +3300,22 @@
    },
    "prereqs": [
     "bar-mu"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/TYqUlv401mM?t=5",
+     "credit": "Superando mis limites",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/McSrX-cnv4g?t=25",
+     "credit": "Calisthenics 2.0",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Band Assisted Wide Ring MU"
@@ -2006,6 +3343,15 @@
    },
    "prereqs": [
     "wide-ring-mu"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/3AVzBOSYO-4",
+     "credit": "PlamkoSW",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "No Shoulder Support PB Victorian",
@@ -2037,6 +3383,15 @@
     "ring-hs",
     "ring-planche"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/CvVSQjBGdxY",
+     "credit": "matteodeu",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 33,
@@ -2061,6 +3416,24 @@
    },
    "prereqs": [
     "planche-lean"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+     "credit": "Andry Strong",
+     "title": "How to Do Planche - Full Guide",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+     "credit": "Vitality",
+     "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2087,6 +3460,15 @@
    "prereqs": [
     "ring-planche-press"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/zNqNDhap-QQ?t=45",
+     "credit": "Danny Rodriguez",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 32,
@@ -2111,6 +3493,29 @@
    },
    "prereqs": [
     "dragon-flag"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/rX4zPm95dAY?t=5",
+     "credit": "Gymnastics Bodies",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/playlist?list=PLHh3zEi0_nqeJlBi3-ezRbMj_F7UQcOlD",
+     "credit": "Bodyweight Mastery",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/o9nzRpYbyWQ?list=PL5u0Iy7WhVMVIzguJt8MsGJ-u5beonXFq",
+     "credit": "BarBarics StreetWorkout",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2137,6 +3542,22 @@
    "prereqs": [
     "imp-tigerbend-hs-push-up"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/wD3Mk7WSTgc",
+     "credit": "Yuri Van Gelder",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/Sgah5-gtPUM",
+     "credit": "Gaggy Yatarov",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 6,
@@ -2161,6 +3582,24 @@
    },
    "prereqs": [
     "planche-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+     "credit": "Andry Strong",
+     "title": "How to Do Planche - Full Guide",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+     "credit": "Vitality",
+     "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2187,6 +3626,24 @@
    "prereqs": [
     "ol-sissy-squat"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 9,
@@ -2211,6 +3668,32 @@
    },
    "prereqs": [
     "ol-sissy-squat"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=GslczgeVuuE",
+     "credit": "School of Calisthenics",
+     "title": "How to SHRIMP Squat [Lower Body Training]",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=85YE86ipw_w",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat Progression Guide | Beginner to Intermediate",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=xfl7SDj0Gzs",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat | Tutorial & Progressions",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2237,6 +3720,24 @@
    "prereqs": [
     "ol-leg-ext-lever"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 7,
@@ -2261,6 +3762,32 @@
    },
    "prereqs": [
     "ol-leg-ext-lever"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=4Y30vn1IIe8",
+     "credit": "Chris Gates Fitness",
+     "title": "Proper Sissy Squat Form and Technique",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=cHpDhoud8oo",
+     "credit": "Australian Strength Performance",
+     "title": "How To Sissy Squat (Beginners to Advanced Level)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=cM_RVGbOzVE",
+     "credit": "Vulcan Performance",
+     "title": "Full Sissy Squat Progression to Get Strong Knees",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2287,6 +3814,24 @@
    "prereqs": [
     "natural-leg-press"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=sbOuIfubuds",
+     "credit": "Stefano Ravarino",
+     "title": "MATRIX LEG EXTENSION | Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 5,
@@ -2311,6 +3856,24 @@
    },
    "prereqs": [
     "ol-matrix-leg-ext"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2337,6 +3900,32 @@
    "prereqs": [
     "elv-ol-sissy-squat"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=GslczgeVuuE",
+     "credit": "School of Calisthenics",
+     "title": "How to SHRIMP Squat [Lower Body Training]",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=85YE86ipw_w",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat Progression Guide | Beginner to Intermediate",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=xfl7SDj0Gzs",
+     "credit": "Flow Motion Fitness",
+     "title": "Shrimp Squat | Tutorial & Progressions",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 9,
@@ -2361,6 +3950,24 @@
    },
    "prereqs": [
     "ol-natural-leg-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=sbOuIfubuds",
+     "credit": "Stefano Ravarino",
+     "title": "MATRIX LEG EXTENSION | Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2387,6 +3994,24 @@
    "prereqs": [
     "ol-natural-leg-press"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=YXUgHSOnPaE",
+     "credit": "MEAUXTION FITNESS",
+     "title": "Reverse Nordic Curl (natural leg extensions)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 3,
@@ -2411,6 +4036,24 @@
    },
    "prereqs": [
     "elv-ol-natural-leg-press"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=sbOuIfubuds",
+     "credit": "Stefano Ravarino",
+     "title": "MATRIX LEG EXTENSION | Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=laf9suZKfho",
+     "credit": "Strength Side",
+     "title": "Bodyweight Big Quads Bigger Mobility (Reverse Nordic Tutorial)",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2437,6 +4080,15 @@
    "prereqs": [
     "hefesto-from-bl"
    ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/aH7ob38sGN8",
+     "credit": "willusionist",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 14,
@@ -2461,6 +4113,22 @@
    },
    "prereqs": [
     "front-lever-pull-up"
+   ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/vdjWgw98EeI",
+     "credit": "Calisthenicmovement",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/5yCXYEXQWMw",
+     "credit": "Artem Morozov",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2487,6 +4155,15 @@
    "prereqs": [
     "oa-pu"
    ],
+   "videos": [
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/AbTDBXjAUXI",
+     "credit": "Thenx",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 34,
@@ -2512,6 +4189,24 @@
    "prereqs": [
     "victorian-cross-to-rp"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/shorts/n7t4r_d7Zy8",
+     "credit": "DeUanUIs",
+     "title": "Road to Front Lever to Reverse Planche on rings (Spinazzola II)",
+     "source": "curated",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_qNRNyI3qxM",
+     "credit": "GMB Fitness (Praxis)",
+     "title": "Full Front Lever Tutorial on Gymnastic Rings",
+     "source": "curated",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 39,
@@ -2536,6 +4231,15 @@
    },
    "prereqs": [
     "pseudo-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=3N63S6shAv0",
+     "credit": "Gioser 30",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Tuck Planche",
@@ -2573,6 +4277,15 @@
    "prereqs": [
     "bicep-planche"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hqGiXHOLgoM?t=110",
+     "credit": "Dao ba zai",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [
     "Tuck Planche",
     "Adv. Tuck Planche",
@@ -2607,6 +4320,24 @@
    "prereqs": [
     "planche"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=LgPG0MZPI84",
+     "credit": "Andry Strong",
+     "title": "How to Do Planche - Full Guide",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=wKV5zVJTYBo",
+     "credit": "Vitality",
+     "title": "How To Planche Lean Correctly | Calisthenics Beginner Tutorial",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [
     "Band Assisted OA Planche",
     "Arm Assisted OA Planche"
@@ -2634,6 +4365,15 @@
    },
    "prereqs": [
     "planche-push-up"
+   ],
+   "videos": [
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/sIfl4kpIRt0",
+     "credit": "WARMAXINSO",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Straight Bar Maltese",
@@ -2664,6 +4404,15 @@
    "prereqs": [
     "maltese"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/St6O79TszOY?t=82",
+     "credit": "Ziolus",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 33,
@@ -2688,6 +4437,22 @@
    },
    "prereqs": [
     "bulgarian-dip"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/HZbee93OIdo?t=12",
+     "credit": "Tyler Yamauchi",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://youtu.be/oUltGGhvSsM",
+     "credit": "CalisthenicsDude",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Band Assisted Iron Cross",
@@ -2731,6 +4496,32 @@
    "prereqs": [
     "bulgarian-dip"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=tHf5BsHuFQM",
+     "credit": "Vitaly Pavlenko",
+     "title": "IRON CROSS Tutorial (5 Easy Steps)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=BFswWFvqhoE",
+     "credit": "Strength Project",
+     "title": "How to do the Iron Cross - Gymnastics Skill Training Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=z0iVjGzF6P0",
+     "credit": "Tyson Edwards",
+     "title": "FULL Iron Cross Workout",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 34,
@@ -2755,6 +4546,15 @@
    },
    "prereqs": [
     "iron-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xHO3jP-eF_U?t=27",
+     "credit": "Yuri Van Gelder",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [
     "Ring Straps Assisted Inverted Iron Cross"
@@ -2783,6 +4583,22 @@
    "prereqs": [
     "inverted-iron-cross"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/H7TQ3qtCYIE?t=147",
+     "credit": "Nick Silagy",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=tBcik2wHh5c",
+     "credit": "Tyson Edwards",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 36,
@@ -2807,6 +4623,15 @@
    },
    "prereqs": [
     "ring-victorian-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/--U_mgXrYbY?t=250",
+     "credit": "Yuri Van Gelder",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2833,6 +4658,15 @@
    "prereqs": [
     "pb-victorian"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/hZYaShVZ16o?t=100",
+     "credit": "Zoran Pesterac",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 29,
@@ -2857,6 +4691,15 @@
    },
    "prereqs": [
     "inverted-iron-cross"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/yElLMbilg0g?t=2",
+     "credit": "Pavel Sobolev",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2883,6 +4726,15 @@
    "prereqs": [
     "van-gelder"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/DlAbv0fnBEg",
+     "credit": "coolgymnast",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 36,
@@ -2907,6 +4759,15 @@
    },
    "prereqs": [
     "morozov"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/xHO3jP-eF_U?t=25",
+     "credit": "Yuri Van Gelder",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2933,6 +4794,22 @@
    "prereqs": [
     "iron-cross-press"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/--U_mgXrYbY?t=166",
+     "credit": "Eduard Azaryan",
+     "source": "workbook",
+     "scope": "skill"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://youtu.be/bFSzahMTtzA?list=PLEZ9j_KUTdv6OYAleCmgjmqfGMh1uBCtE&t=76",
+     "credit": "Lachlan Walker",
+     "source": "workbook",
+     "scope": "skill"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 37,
@@ -2957,6 +4834,15 @@
    },
    "prereqs": [
     "azarian-to-ic"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://youtu.be/zNqNDhap-QQ?t=245",
+     "credit": "Aleksandr Balandin",
+     "source": "workbook",
+     "scope": "skill"
+    }
    ],
    "variations": [],
    "pos": {
@@ -2983,6 +4869,32 @@
    "prereqs": [
     "azarian-to-planche-maltese"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=tHf5BsHuFQM",
+     "credit": "Vitaly Pavlenko",
+     "title": "IRON CROSS Tutorial (5 Easy Steps)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=BFswWFvqhoE",
+     "credit": "Strength Project",
+     "title": "How to do the Iron Cross - Gymnastics Skill Training Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=z0iVjGzF6P0",
+     "credit": "Tyson Edwards",
+     "title": "FULL Iron Cross Workout",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 36,
@@ -3007,6 +4919,32 @@
    },
    "prereqs": [
     "oa-planche"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=tHf5BsHuFQM",
+     "credit": "Vitaly Pavlenko",
+     "title": "IRON CROSS Tutorial (5 Easy Steps)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=BFswWFvqhoE",
+     "credit": "Strength Project",
+     "title": "How to do the Iron Cross - Gymnastics Skill Training Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=z0iVjGzF6P0",
+     "credit": "Tyson Edwards",
+     "title": "FULL Iron Cross Workout",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {
@@ -3033,6 +4971,32 @@
    "prereqs": [
     "zanetti"
    ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/watch?v=tHf5BsHuFQM",
+     "credit": "Vitaly Pavlenko",
+     "title": "IRON CROSS Tutorial (5 Easy Steps)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=BFswWFvqhoE",
+     "credit": "Strength Project",
+     "title": "How to do the Iron Cross - Gymnastics Skill Training Tutorial",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "alt",
+     "url": "https://www.youtube.com/watch?v=z0iVjGzF6P0",
+     "credit": "Tyson Edwards",
+     "title": "FULL Iron Cross Workout",
+     "source": "curated",
+     "scope": "family"
+    }
+   ],
    "variations": [],
    "pos": {
     "row": 38,
@@ -3057,6 +5021,24 @@
    },
    "prereqs": [
     "carmona"
+   ],
+   "videos": [
+    {
+     "kind": "form",
+     "url": "https://www.youtube.com/shorts/n7t4r_d7Zy8",
+     "credit": "DeUanUIs",
+     "title": "Road to Front Lever to Reverse Planche on rings (Spinazzola II)",
+     "source": "curated",
+     "scope": "family"
+    },
+    {
+     "kind": "tutorial",
+     "url": "https://www.youtube.com/watch?v=_qNRNyI3qxM",
+     "credit": "GMB Fitness (Praxis)",
+     "title": "Full Front Lever Tutorial on Gymnastic Rings",
+     "source": "curated",
+     "scope": "family"
+    }
    ],
    "variations": [],
    "pos": {

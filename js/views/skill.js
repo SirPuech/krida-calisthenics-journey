@@ -1,12 +1,14 @@
 import { t, getLang } from '../i18n.js';
-import { esc, pct, formatStandard, formatDate } from '../dom.js';
+import { esc, pct, formatStandard, formatDate, youtubeEmbed } from '../dom.js';
 import {
   STATUS, statusOf, standardFor, bestLog, standardProgress, meetsStandard,
 } from '../progress.js';
-import { mountAnimator } from '../exercise/animator.js';
+
+const VIDEO_LABEL = { form: 'Form', tutorial: 'Tutorial', alt: 'Alt.' };
+const isFamily = (video) => video?.scope === 'family';
 
 export default function renderSkill(ctx) {
-  const { catalogue, guide, store, profile, params, mount, rerender, onLeave } = ctx;
+  const { catalogue, guide, store, profile, params, mount, rerender } = ctx;
   const skill = catalogue.byId.get(params[0]);
   if (!skill) {
     mount.innerHTML = `<div class="empty">${esc(t('skill.notFound'))} <a href="#/tree">${esc(t('skill.back'))}</a></div>`;
@@ -21,8 +23,9 @@ export default function renderSkill(ctx) {
   const logs = profile.logs.filter((l) => l.skillId === skill.id).slice(0, 12);
   const prereqs = skill.prereqs.map((id) => catalogue.byId.get(id)).filter(Boolean);
   const opens = catalogue.unlockedBy(skill.id);
+  const primary = skill.videos.find((v) => v.kind === 'form') || skill.videos[0];
+  const embed = primary ? youtubeEmbed(primary.url) : null;
   const how = guide?.skills?.[skill.id];
-  const archLabel = how ? (guide.archetypes[how.archetype]?.label || how.archetype) : '';
   const th = getLang() === 'th';
   const L = (obj, field) => (th && obj?.[field + 'Th']) ? obj[field + 'Th'] : obj?.[field];
   const muscleName = (id) => {
@@ -50,16 +53,15 @@ export default function renderSkill(ctx) {
         <h1>${esc(skill.name)}</h1>
         ${skill.sheetName !== skill.name ? `<p class="muted mono" style="font-size:12px;margin-top:8px">${esc(skill.sheetName)}</p>` : ''}
 
-        <figure class="demo">
-          <div class="demo-stage" id="demo-stage" aria-label="${esc(t('skill.demo'))}: ${esc(skill.name)}"></div>
-          <figcaption class="demo-bar">
-            <button type="button" class="demo-play" id="demo-play" aria-pressed="true">
-              <span class="demo-ico">❚❚</span><span id="demo-play-label">${esc(t('skill.pause'))}</span>
-            </button>
-            <span class="demo-hint">${esc(t('skill.rotateHint'))}</span>
-            <span class="demo-tag mono">${esc(t('skill.demo'))} · ${esc(archLabel)}</span>
-          </figcaption>
-        </figure>
+        ${isFamily(primary) ? `<p class="video-scope">${esc(t('skill.videos.familyShort'))}</p>` : ''}
+        <div class="video-frame ${embed ? '' : 'is-empty'}">
+          ${embed
+            ? `<iframe src="${esc(embed)}" title="${esc(skill.name)}" loading="lazy" allowfullscreen
+                 referrerpolicy="strict-origin-when-cross-origin"
+                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`
+            : `<div><div class="mono" style="font-size:12px;color:var(--ink-3);letter-spacing:.1em">[ NO VIDEO ]</div>
+                 <p class="muted" style="font-size:12px;margin-top:6px">${esc(t('skill.videos.none'))}</p></div>`}
+        </div>
 
         ${how ? `
           <div class="muscles">
@@ -151,6 +153,20 @@ export default function renderSkill(ctx) {
         </div>
 
         <div class="panel">
+          <h4 class="section-label">${esc(t('skill.videos'))}</h4>
+          <div class="link-list">
+            ${skill.videos.length ? skill.videos.map((v) => `
+              <div>
+                <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer"
+                   title="${esc(v.title || '')}">${esc(VIDEO_LABEL[v.kind] || v.kind)}</a>
+                <em>${esc(v.credit || '—')}</em>
+              </div>`).join('')
+              : `<p class="muted" style="font-size:13px">${esc(t('skill.videos.none'))}</p>`}
+          </div>
+          ${isFamily(primary) ? `<p class="video-scope">${esc(t('skill.videos.family'))}</p>` : ''}
+        </div>
+
+        <div class="panel">
           <h4 class="section-label">${esc(t('skill.unlocks'))}</h4>
           ${opens.length
             ? `<div class="pill-row">${opens.map((o) => `<a class="pill" href="#/skill/${esc(o.id)}">${esc(o.name)}</a>`).join('')}</div>`
@@ -158,32 +174,6 @@ export default function renderSkill(ctx) {
         </div>
       </div>
     </div>`;
-
-  // --- the 3D demo -------------------------------------------------------
-  if (how) {
-    const stage = mount.querySelector('#demo-stage');
-    let animator = null;
-    let disposed = false;
-    mountAnimator(stage, how.archetype, { muscles: how.muscles }).then((a) => {
-      if (disposed) { a.dispose(); return; }   // navigated away mid-load
-      animator = a;
-    }).catch((err) => {
-      console.warn('[krida] demo failed to start', err);
-      stage.classList.add('is-fallback');
-      stage.innerHTML = `<span>${esc(t('skill.demoFallback'))}</span>`;
-    });
-    // Dispose when the view is replaced (navigation or re-render).
-    onLeave(() => { disposed = true; if (animator) animator.dispose(); });
-
-    const playBtn = mount.querySelector('#demo-play');
-    playBtn.addEventListener('click', () => {
-      if (!animator) return;
-      const running = animator.toggle();
-      playBtn.setAttribute('aria-pressed', String(running));
-      playBtn.querySelector('.demo-ico').textContent = running ? '❚❚' : '▶';
-      mount.querySelector('#demo-play-label').textContent = running ? t('skill.pause') : t('skill.play');
-    });
-  }
 
   // --- forms -------------------------------------------------------------
   mount.querySelector('#log-form').addEventListener('submit', (e) => {
