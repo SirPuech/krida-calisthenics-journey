@@ -20,7 +20,7 @@ ALLOW_ORIGIN = "https://sirpuech.github.io"
 # Resend, their shared sender "onboarding@resend.dev" works for testing.
 RESET_FROM = "KRIDA <onboarding@resend.dev>"
 # How many accounts may exist at once.
-SEAT_LIMIT = "5"
+SEAT_LIMIT = "100"
 
 # Secrets (set with `npx wrangler secret put NAME`, never committed):
 #   RESEND_API_KEY   — from https://resend.com (required for reset emails)
