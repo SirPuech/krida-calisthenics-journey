@@ -642,3 +642,36 @@ main { flex: 1; padding-block: 40px 64px; }
   border: 1px solid rgba(249,115,22,.4); border-radius: 4px; padding: 1px 5px; font-style: normal;
 }
 .admin-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+
+/* ---------- leaderboard ---------- */
+.page-sub { color: var(--ink-3); font-size: 14px; margin-top: 8px; max-width: 62ch; line-height: 1.55; }
+.lead-note {
+  display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center;
+  padding: 12px 16px; margin-bottom: 18px; border-radius: var(--r-sm);
+  background: var(--raise); border: 1px solid var(--line); font-size: 13px; color: var(--ink-2);
+}
+.lead-note a { color: var(--orange); font-weight: 600; white-space: nowrap; }
+.lead-wrap { overflow-x: auto; }
+.lead-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.lead-table th {
+  font: 700 10px var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3); text-align: left; padding: 0 14px 12px; border-bottom: 1px solid var(--line);
+}
+.lead-table td { padding: 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.lead-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.lead-table th.num { text-align: right; }
+.lead-table tr:last-child td { border-bottom: 0; }
+.lead-rank {
+  display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px;
+  border-radius: 999px; font: 700 13px var(--mono); background: var(--raise); color: var(--ink-2);
+}
+.lead-rank-1 { background: #f5c542; color: #201700; }
+.lead-rank-2 { background: #c9d2dc; color: #1a2430; }
+.lead-rank-3 { background: #d9925a; color: #241000; }
+.lead-name { font-weight: 600; }
+.lead-you {
+  margin-left: 8px; font: 700 9px var(--mono); letter-spacing: .08em; color: var(--orange);
+  border: 1px solid rgba(249, 115, 22, .5); border-radius: 4px; padding: 1px 5px; vertical-align: middle;
+}
+.lead-xp { font-weight: 700; color: var(--orange); }
+.lead-table tr.is-me td { background: rgba(249, 115, 22, .07); }

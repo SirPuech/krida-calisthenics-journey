@@ -12,6 +12,7 @@
  *   email:<email>       -> username           (unique-email index + reset lookup)
  *   session:<token>     -> { username }        (TTL ~30 days)
  *   reset:<token>       -> { username }         (TTL ~1 hour)
+ *   board:<username>    -> public leaderboard row (only while the user is public)
  */
 
 const SESSION_TTL = 60 * 60 * 24 * 30;   // 30 days
@@ -103,6 +104,31 @@ function publicUser(env, user) {
     username: user.username, email: user.email,
     createdAt: user.createdAt, isAdmin: isAdmin(env, user),
   };
+}
+
+// ---- leaderboard ---------------------------------------------------------
+// A compact, public-safe row derived from the summary the frontend writes into
+// profile.stats. It is stored under its own key and only while the athlete is
+// public, so the leaderboard read stays tiny and never touches a private
+// profile or a password hash.
+const boardKey = (u) => `board:${lc(u)}`;
+
+async function writeBoard(env, user) {
+  const p = user.profile || {};
+  if (p.visibility !== 'public') {
+    await env.KV.delete(boardKey(user.username));
+    return;
+  }
+  const s = p.stats || {};
+  await env.KV.put(boardKey(user.username), JSON.stringify({
+    username: user.username,
+    name: p.name || user.username,
+    xp: Number(s.xp) || 0,
+    cleared: Number(s.cleared) || 0,
+    tier: Number(s.tier) || 1,
+    streak: Number(s.streak) || 0,
+    updatedAt: p.updatedAt || user.createdAt || null,
+  }));
 }
 
 async function sessionUser(env, request) {
@@ -201,6 +227,7 @@ async function handle(request, env) {
     };
     await putUser(env, user);
     await env.KV.put(emailKey(email), username);
+    await writeBoard(env, user);
     const token = await newSession(env, username);
     return reply({ token, user: publicUser(env, user), profile: user.profile });
   }
@@ -230,6 +257,22 @@ async function handle(request, env) {
       try { await sendResetEmail(env, user, link); } catch (e) { /* logged below */ }
     }
     return reply({ ok: true });
+  }
+
+  // ---- leaderboard (public: no session required) ----
+  if (path === '/api/leaderboard' && request.method === 'GET') {
+    const list = await env.KV.list({ prefix: 'board:' });
+    const rows = [];
+    for (const k of list.keys) {
+      const row = await env.KV.get(k.name, 'json');
+      if (row) rows.push(row);
+    }
+    // XP first, then who cleared more skills, then who reached the score first.
+    rows.sort((a, b) => (b.xp - a.xp) || (b.cleared - a.cleared)
+      || (Date.parse(a.updatedAt || 0) - Date.parse(b.updatedAt || 0))
+      || String(a.username).localeCompare(String(b.username)));
+    const entries = rows.slice(0, 100).map((r, i) => ({ rank: i + 1, ...r }));
+    return reply({ entries, count: rows.length });
   }
 
   // ---- password reset: confirm ----
@@ -264,6 +307,7 @@ async function handle(request, env) {
   if (path === '/api/profile' && request.method === 'PUT') {
     user.profile = body.profile && typeof body.profile === 'object' ? body.profile : {};
     await putUser(env, user);
+    await writeBoard(env, user);   // keep this user's leaderboard row in sync
     return reply({ ok: true });
   }
 
@@ -321,6 +365,7 @@ async function handle(request, env) {
       if (lc(target.username) === lc(user.username)) return reply({ error: 'CANNOT_DELETE_SELF' }, 400);
       await env.KV.delete(userKey(target.username));
       if (target.email) await env.KV.delete(emailKey(target.email));
+      await env.KV.delete(boardKey(target.username));
       return reply({ ok: true });
     }
   }

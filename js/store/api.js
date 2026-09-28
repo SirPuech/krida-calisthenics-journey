@@ -39,6 +39,7 @@ export function makeApi(apiBase) {
     login: (username, password) =>
       call('/api/login', { method: 'POST', body: { username, password } }),
     me: (token) => call('/api/me', { token }),
+    leaderboard: () => call('/api/leaderboard'),
     logout: (token) => call('/api/logout', { method: 'POST', body: {}, token }),
     putProfile: (token, profile) => call('/api/profile', { method: 'PUT', body: { profile }, token }),
     changePassword: (token, current, password) =>

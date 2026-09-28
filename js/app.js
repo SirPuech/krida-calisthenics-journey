@@ -16,7 +16,9 @@ import renderSkill from './views/skill.js';
 import renderProgram from './views/program.js';
 import renderDashboard from './views/dashboard.js';
 import renderLibrary from './views/library.js';
+import renderLeaderboard from './views/leaderboard.js';
 import renderSettings from './views/settings.js';
+import { summarise } from './progress.js';
 import { resetSignInView } from './views/signin.js';
 import renderReset from './views/reset.js';
 
@@ -27,6 +29,7 @@ const ROUTES = [
   { pattern: /^\/program$/, name: 'program', view: renderProgram },
   { pattern: /^\/dashboard$/, name: 'dashboard', view: renderDashboard },
   { pattern: /^\/library$/, name: 'library', view: renderLibrary },
+  { pattern: /^\/leaderboard$/, name: 'leaderboard', view: renderLeaderboard },
   { pattern: /^\/settings$/, name: 'settings', view: renderSettings },
   { pattern: /^\/reset$/, name: null, view: renderReset },
 ];
@@ -145,6 +148,11 @@ async function boot() {
     main.innerHTML = `<div class="wrap"><div class="empty">${err.message}</div></div>`;
     return;
   }
+  // Let the store attach a leaderboard summary to the profile on every save.
+  store.setSummaryProvider((profile) => {
+    const s = summarise(catalogue, profile);
+    return { xp: s.xp, cleared: s.counts.cleared, tier: s.tier, streak: s.streak };
+  });
   setLang(store.profile.lang || 'en');
   wireChrome();
   window.addEventListener('hashchange', () => render());

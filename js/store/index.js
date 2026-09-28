@@ -138,9 +138,17 @@ export const store = {
   update(mutator) {
     mutator(this.profile);
     this.profile.updatedAt = new Date().toISOString();
+    // Recompute the leaderboard summary so it rides along with the next save.
+    // The provider needs the catalogue, so it is injected once from app boot;
+    // until then the previous stats are kept untouched.
+    if (this.summaryProvider) this.profile.stats = this.summaryProvider(this.profile);
     this.emit();
     persist(this);
   },
+
+  /* ---------------- leaderboard ---------------- */
+
+  leaderboard() { return this.api.leaderboard(); },
 
   replace(profile) {
     const id = this.profile.id;
